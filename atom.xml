@@ -10,7 +10,25 @@
   <rights>All rights reserved 2026, thginWalker</rights>
   <subtitle>计算机没什么用，他们只会告诉你答案。</subtitle>
   <title>小小博客</title>
-  <updated>2026-02-23T14:07:32.949Z</updated>
+  <updated>2026-03-01T14:25:55.940Z</updated>
+  <entry>
+    <author>
+      <name>thginWalker</name>
+    </author>
+    <category term="技术" scheme="https://thginwalker.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    <category term="路线" scheme="https://thginwalker.github.io/tags/%E8%B7%AF%E7%BA%BF/"/>
+    <content>
+      <![CDATA[<h2 id="阶段1：基础能力奠基"><a href="#阶段1：基础能力奠基" class="headerlink" title="阶段1：基础能力奠基"></a>阶段1：基础能力奠基</h2><p>单模态基础：掌握NLP核心知识；理解Transformer架构、词向量&#x2F;分词器；搭建Python+Pytorch开发环境<br>多模态基础：学习ViT（视觉Transformer）、CLIP（跨模态对齐）、了解音频Mel频谱+语音Transformer<br>工具：熟悉Hugging Face、Transformers&#x2F;Datasets工具链</p><h2 id="阶段2：训练与推理核心"><a href="#阶段2：训练与推理核心" class="headerlink" title="阶段2：训练与推理核心"></a>阶段2：训练与推理核心</h2><p>经典范式：学习预训练逻辑、SFT有监督微调；掌握RLHF+Reward模型<br>高效学方法：新增ORRO（轻量RLHF替代）、PPO-ptx（RLHF改进）；了解DPO推理优化<br>推理优化：补充动态批处理、INT4&#x2F;8量化推理</p><h2 id="阶段3：微调与蒸馏实践"><a href="#阶段3：微调与蒸馏实践" class="headerlink" title="阶段3：微调与蒸馏实践"></a>阶段3：微调与蒸馏实践</h2><p>微调技术：实操LoRA&#x2F;QLORA；掌握Adapter&#x2F;Prefix Tuning；尝试多模态模型（如Qwen-VL）跨模态微调<br>蒸馏方法：数据蒸馏压缩模型；学习对比蒸馏、结构化&#x2F;非结构化模型剪枝</p><h2 id="阶段4：评估体系升级"><a href="#阶段4：评估体系升级" class="headerlink" title="阶段4：评估体系升级"></a>阶段4：评估体系升级</h2><p>文本指标：BLEU、ROUGE、Perplexity<br>多模态指标：CLIPScore（跨模态匹配）、FID（生成图质量）<br>人类对齐：MT-Bench（对话评估）、MMLU（多任务理解）</p><h2 id="阶段5：性能优化技术"><a href="#阶段5：性能优化技术" class="headerlink" title="阶段5：性能优化技术"></a>阶段5：性能优化技术</h2><p>架构优化：研究RoPE编码、Flash Attention；学习MoE（混合专家）、LongLoRA（长文本）<br>量化优化：掌握GPTQ&#x2F;AWQ高效量化；了解量化感知训练（QAT）<br>训练优化：混合精度训练、KV Cache优化</p><h2 id="阶段6：主流模型家族梳理"><a href="#阶段6：主流模型家族梳理" class="headerlink" title="阶段6：主流模型家族梳理"></a>阶段6：主流模型家族梳理</h2><p>通用模型：梳理GPT、LLaMA、Qwen等开源&#x2F;闭源模型迭代脉络<br>多模态模型：覆盖GPT-4V、Qwen-VL、Llava的适配场景<br>垂直模型：了解Med-PalM（医疗）、CodeLlama（代码）等领域模型</p><h2 id="阶段7：分布式训练进阶"><a href="#阶段7：分布式训练进阶" class="headerlink" title="阶段7：分布式训练进阶"></a>阶段7：分布式训练进阶</h2><p>框架：掌握DeepSeek（ZeRO优化）、Megatron-LM<br>并行策略：组合张量&#x2F;流水线&#x2F;数据并行；学习梯度累积、检查点优化</p><h2 id="阶段8：安全与合规对齐"><a href="#阶段8：安全与合规对齐" class="headerlink" title="阶段8：安全与合规对齐"></a>阶段8：安全与合规对齐</h2><p>安全：红队测试（对抗Prompt）、有害内容过滤微调<br>合规：差分隐私训练（数据隐私）；了解欧盟AI法案等行业规范</p><h2 id="阶段9：应用落地全流程"><a href="#阶段9：应用落地全流程" class="headerlink" title="阶段9：应用落地全流程"></a>阶段9：应用落地全流程</h2><p>技术：基于RAG&#x2F;Agent开发智能问答、文生图&#x2F;视频、图文检索项目<br>部署：掌握边缘端模型压缩、联邦学习（隐私部署）；完成需求-开发-上线全流程</p><h2 id="阶段10：前沿方向探索"><a href="#阶段10：前沿方向探索" class="headerlink" title="阶段10：前沿方向探索"></a>阶段10：前沿方向探索</h2><p>前沿架构：具身智能、Agent生态（AutoGPT&#x2F;LangChain进阶）<br>新兴结合：大模型+机器人、小样本&#x2F;零样本学习最新进展</p>]]>
+    </content>
+    <id>https://thginwalker.github.io/2026/03/01/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/</id>
+    <link href="https://thginwalker.github.io/2026/03/01/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/"/>
+    <published>2026-03-01T07:26:31.000Z</published>
+    <summary>
+      <![CDATA[<h2 id="阶段1：基础能力奠基"><a href="#阶段1：基础能力奠基" class="headerlink" title="阶段1：基础能力奠基"></a>阶段1：基础能力奠基</h2><p>单模态基础：掌握NLP核心知识；理解Transformer架构、词向量&#x]]>
+    </summary>
+    <title>大模型学习路线</title>
+    <updated>2026-03-01T14:25:55.940Z</updated>
+  </entry>
   <entry>
     <author>
       <name>thginWalker</name>
