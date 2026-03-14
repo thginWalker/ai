@@ -10,13 +10,15 @@
   <rights>All rights reserved 2026, thginWalker</rights>
   <subtitle>计算机没什么用，他们只会告诉你答案。</subtitle>
   <title>小小博客</title>
-  <updated>2026-03-14T14:51:29.437Z</updated>
+  <updated>2026-03-14T14:54:16.285Z</updated>
   <entry>
     <author>
       <name>thginWalker</name>
     </author>
     <category term="math" scheme="https://thginwalker.github.io/categories/math/"/>
-    <category term="RNN;LSTM;GRU" scheme="https://thginwalker.github.io/tags/RNN-LSTM-GRU/"/>
+    <category term="RNN" scheme="https://thginwalker.github.io/tags/RNN/"/>
+    <category term="LSTM" scheme="https://thginwalker.github.io/tags/LSTM/"/>
+    <category term="GRU" scheme="https://thginwalker.github.io/tags/GRU/"/>
     <content>
       <![CDATA[<h2 id="RNN"><a href="#RNN" class="headerlink" title="RNN"></a>RNN</h2><h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p><a href="https://thginwalker.github.io/ai/2026/03/12/NLP%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">前期</a>已经学习了如何将文本进行分词，并通过词嵌入技术（如 Word2Vec）将每个独立的词元转换成一个静态的、稠密的词向量。这解决了模型输入的第一个问题，即文本数值化。<br>接下来的关键问题是<strong>如何从一个词向量序列中，有效地提取整个序列的特征</strong>。例如，对于一个意图识别任务，需要将指令“<strong>播放周杰伦的《稻香》</strong>”归类到“<strong>音乐播放</strong>”。目前已经能得到“播放”、“周杰伦”、“的”、“《稻香》”这几个词元各自的词向量，但如何将这些向量融合成一个能代表整句指令含义的“<strong>文本向量</strong>”，并送入分类器呢？</p><h3 id="简单方法的局限性"><a href="#简单方法的局限性" class="headerlink" title="简单方法的局限性"></a>简单方法的局限性</h3><h3 id="引入“记忆”的RNN"><a href="#引入“记忆”的RNN" class="headerlink" title="引入“记忆”的RNN"></a>引入“记忆”的RNN</h3><h3 id="RNN工作原理解析"><a href="#RNN工作原理解析" class="headerlink" title="RNN工作原理解析"></a>RNN工作原理解析</h3><h4 id="文本分类示例"><a href="#文本分类示例" class="headerlink" title="文本分类示例"></a>文本分类示例</h4><h4 id="从静态到动态的飞跃"><a href="#从静态到动态的飞跃" class="headerlink" title="从静态到动态的飞跃"></a>从静态到动态的飞跃</h4><h3 id="从零实现一个RNN"><a href="#从零实现一个RNN" class="headerlink" title="从零实现一个RNN"></a>从零实现一个RNN</h3><h4 id="RNN公式简化"><a href="#RNN公式简化" class="headerlink" title="RNN公式简化"></a>RNN公式简化</h4><h4 id="数据准备"><a href="#数据准备" class="headerlink" title="数据准备"></a>数据准备</h4><h4 id="基于NumPy实现RNN"><a href="#基于NumPy实现RNN" class="headerlink" title="基于NumPy实现RNN"></a>基于NumPy实现RNN</h4><h4 id="PyTorch的nn-RNN实现"><a href="#PyTorch的nn-RNN实现" class="headerlink" title="PyTorch的nn.RNN实现"></a>PyTorch的<code>nn.RNN</code>实现</h4><h4 id="数值对齐验证"><a href="#数值对齐验证" class="headerlink" title="数值对齐验证"></a>数值对齐验证</h4><h2 id="LSTM"><a href="#LSTM" class="headerlink" title="LSTM"></a>LSTM</h2><h2 id="GRU"><a href="#GRU" class="headerlink" title="GRU"></a>GRU</h2>]]>
     </content>
@@ -27,7 +29,7 @@
       <![CDATA[<h2 id="RNN"><a href="#RNN" class="headerlink" title="RNN"></a>RNN</h2><h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p]]>
     </summary>
     <title>RNN、LSTM与GRU</title>
-    <updated>2026-03-14T14:51:29.437Z</updated>
+    <updated>2026-03-14T14:54:16.285Z</updated>
   </entry>
   <entry>
     <author>
