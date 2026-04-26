@@ -1,9 +1,20 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content=""><title>NLP基础知识 | 小小博客</title><link rel="stylesheet" type="text/css" href="/ai/css/style.css?v=1.0.0"><link rel="stylesheet" type="text/css" href="https://unpkg.com/normalize.css"><link rel="stylesheet" type="text/css" href="https://unpkg.com/purecss/build/pure-min.css"><link rel="stylesheet" type="text/css" href="https://unpkg.com/purecss/build/grids-responsive-min.css"><link rel="stylesheet" href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="https://unpkg.com/jquery/dist/jquery.min.js"></script><link rel="icon" mask="" sizes="any" href="/ai/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/ai/favicon.ico"><link rel="apple-touch-icon" href="/ai/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/ai/apple-touch-icon.png"><script type="text/javascript" src="https://unpkg.com/clipboard/dist/clipboard.min.js"></script><script type="text/javascript" src="https://unpkg.com/toastr/build/toastr.min.js"></script><link rel="stylesheet" href="https://unpkg.com/toastr/build/toastr.min.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">NLP基础知识</h1><a id="logo" href="/ai/.">小小博客</a><p class="description">计算机没什么用，他们只会告诉你答案。</p></div><div id="nav-menu"><a class="current" href="/ai/."><i class="fa fa-home"> 首页</i></a><a href="/ai/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/ai/about/"><i class="fa fa-user"> 关于</i></a><a href="/ai/special/"><i class="fa fa-file-pdf-o"> 专题</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">NLP基础知识</h1><div class="post-meta">2026-03-12<span> | </span><span class="category"><a href="/ai/categories/NLP/">NLP</a></span></div><div class="post-content"><h2 id="NLP简介"><a href="#NLP简介" class="headerlink" title="NLP简介"></a>NLP简介</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p><strong>自然语言处理（Natural Language Processing, NLP）</strong> 是人工智能（AI）领域的重要组成部分，它赋予计算机<strong>理解、解释、生成人类语言</strong>的能力，并基于这些能力<strong>对文本数据进行决策</strong>。</p>
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content=""><title>NLP基础知识 | 小小博客</title><link rel="stylesheet" type="text/css" href="/ai/css/style.css?v=1.0.0"><link rel="stylesheet" type="text/css" href="https://unpkg.com/normalize.css"><link rel="stylesheet" type="text/css" href="https://unpkg.com/purecss/build/pure-min.css"><link rel="stylesheet" type="text/css" href="https://unpkg.com/purecss/build/grids-responsive-min.css"><link rel="stylesheet" href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="https://unpkg.com/jquery/dist/jquery.min.js"></script><link rel="icon" mask="" sizes="any" href="/ai/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/ai/favicon.ico"><link rel="apple-touch-icon" href="/ai/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/ai/apple-touch-icon.png"><script type="text/javascript" src="https://unpkg.com/clipboard/dist/clipboard.min.js"></script><script type="text/javascript" src="https://unpkg.com/toastr/build/toastr.min.js"></script><link rel="stylesheet" href="https://unpkg.com/toastr/build/toastr.min.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">NLP基础知识</h1><a id="logo" href="/ai/.">小小博客</a><p class="description">计算机没什么用，他们只会告诉你答案。</p></div><div id="nav-menu"><a class="current" href="/ai/."><i class="fa fa-home"> 首页</i></a><a href="/ai/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/ai/about/"><i class="fa fa-user"> 关于</i></a><a href="/ai/special/"><i class="fa fa-file-pdf-o"> 专题</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">NLP基础知识</h1><div class="post-meta">2026-03-12<span> | </span><span class="category"><a href="/ai/categories/NLP/">NLP</a></span></div><div class="post-content"><h2 id="nlp简介">NLP简介</h2>
+<h3 id="定义">定义</h3>
+<p><strong>自然语言处理（Natural Language Processing, NLP）</strong>
+是人工智能（AI）领域的重要组成部分，它赋予计算机<strong>理解、解释、生成人类语言</strong>的能力，并基于这些能力<strong>对文本数据进行决策</strong>。</p>
 <blockquote>
 <p><strong>通俗理解</strong>就是教会计算机“读懂”文字、“听懂”语音，并能像人一样“说出”话语、完成任务。</p>
 </blockquote>
-<h3 id="NLP的技术层次"><a href="#NLP的技术层次" class="headerlink" title="NLP的技术层次"></a>NLP的技术层次</h3><p>语法分析 -&gt; 句法分析 -&gt; 语义分析 -&gt;语用分析</p>
-<h3 id="NLP的主要任务"><a href="#NLP的主要任务" class="headerlink" title="NLP的主要任务"></a>NLP的主要任务</h3><table>
+<h3 id="nlp的技术层次">NLP的技术层次</h3>
+<p>语法分析 -&gt; 句法分析 -&gt; 语义分析 -&gt;语用分析</p>
+<h3 id="nlp的主要任务">NLP的主要任务</h3>
+<table>
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 29%" />
+<col style="width: 24%" />
+<col style="width: 29%" />
+</colgroup>
 <thead>
 <tr>
 <th><strong>任务</strong></th>
@@ -12,7 +23,8 @@
 <th><strong>举例</strong></th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td><strong>文本分类 (Text Classification)</strong></td>
 <td>给一段文本自动分配一个或多个预定义的标签</td>
 <td>信息组织与过滤；入门最广泛的任务之一</td>
@@ -45,8 +57,9 @@
 <tr>
 <td><strong>问答系统 (Question Answering)</strong></td>
 <td>针对问题给出精准、简洁的答案</td>
-<td>高效信息获取，是智能客服&#x2F;搜索的核心能力</td>
-<td>“珠穆朗玛峰多高？→ 8848.86米”；“我的订单何时到？→ 预计明天下午 3 点前”</td>
+<td>高效信息获取，是智能客服/搜索的核心能力</td>
+<td>“珠穆朗玛峰多高？→ 8848.86米”；“我的订单何时到？→ 预计明天下午 3
+点前”</td>
 </tr>
 <tr>
 <td><strong>文本生成 (Text Generation)</strong></td>
@@ -60,26 +73,61 @@
 <td>智能助理、情感陪伴、客服等交互式应用</td>
 <td>连续对话、记忆上下文的应答</td>
 </tr>
-</tbody></table>
-<h2 id="文本表示"><a href="#文本表示" class="headerlink" title="文本表示"></a>文本表示</h2><h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>要让计算机开始理解人类语言，首先要做的就是把连续不断的文本“敲碎”，变成一块块有意义的“积木”——这个过程就是<strong>分词（Tokenization）</strong>。</p>
-<p>在以Transformer为基础的大语言模型兴起后，传统意义上“语言学分词”的应用场景在逐步减少，现代大预言更多采用分子词（Subword）等切分策略。但 <code>jieba</code> 作为一个经典、简单、代码开源的中文分词库，仍是<strong>理解传统分词思想、学习 NLP 基础工程实践</strong>的重要工具。</p>
-<h3 id="基于规则与词典"><a href="#基于规则与词典" class="headerlink" title="基于规则与词典"></a>基于规则与词典</h3><p><code>jieba</code> 是目前流行的 Python 中文分词库之一，同时也是<strong>基于规则与词典</strong>的分词方法，该方法是NLP领域最早期的技术方案，也是最符合人类直觉的分词方式。它会先基于一个<strong>前缀词典（Trie 树）</strong>，高效地构建出一个包含句子中所有可能词语组合的<strong>有向无环图（DAG）</strong>。接着，通过动态规划算法寻找一条概率最大的路径，作为最终分词结果。</p>
-<p>前文介绍的<strong>基于词典构建 DAG 并利用动态规划寻找最大概率路径</strong>的方法，在 <code>jieba</code> 中对应的就是<strong>精确模式</strong>。该模式力图将句子尽可能精确地切开，适合很多文本分析场景。下面我们通过代码来看看这种分词方式的效果。</p>
+</tbody>
+</table>
+<h2 id="文本表示">文本表示</h2>
+<h3 id="背景">背景</h3>
+<p>要让计算机开始理解人类语言，首先要做的就是把连续不断的文本“敲碎”，变成一块块有意义的“积木”——这个过程就是<strong>分词（Tokenization）</strong>。</p>
+<p>在以Transformer为基础的大语言模型兴起后，传统意义上“语言学分词”的应用场景在逐步减少，现代大预言更多采用分子词（Subword）等切分策略。但
+<code>jieba</code>
+作为一个经典、简单、代码开源的中文分词库，仍是<strong>理解传统分词思想、学习
+NLP 基础工程实践</strong>的重要工具。</p>
+<h3 id="基于规则与词典">基于规则与词典</h3>
+<p><code>jieba</code> 是目前流行的 Python
+中文分词库之一，同时也是<strong>基于规则与词典</strong>的分词方法，该方法是NLP领域最早期的技术方案，也是最符合人类直觉的分词方式。它会先基于一个<strong>前缀词典（Trie
+树）</strong>，高效地构建出一个包含句子中所有可能词语组合的<strong>有向无环图（DAG）</strong>。接着，通过动态规划算法寻找一条概率最大的路径，作为最终分词结果。</p>
+<p>前文介绍的<strong>基于词典构建 DAG
+并利用动态规划寻找最大概率路径</strong>的方法，在 <code>jieba</code>
+中对应的就是<strong>精确模式</strong>。该模式力图将句子尽可能精确地切开，适合很多文本分析场景。下面我们通过代码来看看这种分词方式的效果。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> jieba  </span><br><span class="line"></span><br><span class="line">text = <span class="string">&quot;我在梦里收到清华大学录取通知书&quot;</span>  </span><br><span class="line">seg_list = jieba.lcut(text, cut_all=<span class="literal">False</span>) <span class="comment"># cut_all=False 表示精确模式  </span></span><br><span class="line"><span class="built_in">print</span>(seg_list)  </span><br><span class="line"></span><br><span class="line"><span class="comment"># [&#x27;我&#x27;, &#x27;在&#x27;, &#x27;梦里&#x27;, &#x27;收到&#x27;, &#x27;清华大学&#x27;, &#x27;录取&#x27;, &#x27;通知书&#x27;]  </span></span><br></pre></td></tr></table></figure>
-
-<p>但是一旦遇到词典里没有收录的新词（例如“奔波儿灞”），就容易被拆成更小的片段，出现不符合预期的切分。这时，<strong>基于词典的分词方法</strong>的优势就体现出来了。我们可以进行<strong>人工干预</strong>，通过<strong>自定义词典</strong>把新词加入词表，“教会”<code>jieba</code>认识它。通过自定义词典，能很方便地解决 <strong>OOV</strong> 的问题，让分词结果符合预期，这在处理特定业务领域文本时尤其有用。</p>
+<p>但是一旦遇到词典里没有收录的新词（例如“奔波儿灞”），就容易被拆成更小的片段，出现不符合预期的切分。这时，<strong>基于词典的分词方法</strong>的优势就体现出来了。我们可以进行<strong>人工干预</strong>，通过<strong>自定义词典</strong>把新词加入词表，“教会”<code>jieba</code>认识它。通过自定义词典，能很方便地解决
+<strong>OOV</strong>
+的问题，让分词结果符合预期，这在处理特定业务领域文本时尤其有用。</p>
 <blockquote>
-<p>未登录词（OOV, Out-Of-Vocabulary）是一个“相对概念”——<strong>相对某个词典&#x2F;词表未被收录的词</strong>。对词典法来说，就是词典里没有。典型表现是<strong>本该作为一个整体的词因未被收录而被错误地切碎成单字或无关的片段</strong>。</p>
+<p>未登录词（OOV,
+Out-Of-Vocabulary）是一个“相对概念”——<strong>相对某个词典/词表未被收录的词</strong>。对词典法来说，就是词典里没有。典型表现是<strong>本该作为一个整体的词因未被收录而被错误地切碎成单字或无关的片段</strong>。</p>
 </blockquote>
-<h3 id="统计学习时代的方法"><a href="#统计学习时代的方法" class="headerlink" title="统计学习时代的方法"></a>统计学习时代的方法</h3><p>为了解决对人工词典的过度依赖，研究者们转向了统计学习。主要思想是把分词看作一个<strong>序列标注</strong>问题，即为句子中的每个字打上一个位置标签。<br>例如，我们可以用 <code>B</code> (Begin) 表示词的开始，<code>M</code> (Middle) 表示词的中间，<code>E</code> (End) 表示词的结束，<code>S</code> (Single) 表示单字成词。在这种标注体系下，“我爱北京”会被标注为 <code>S S B E</code>，通过这种方式，分词任务就转化为了寻找字序列对应的最合理标签序列的问题。</p>
-<p><strong>隐马尔科夫模型（HMM）</strong> 就是解决这类问题的经典生成模型。它能学习到字与标签之间的对应关系（发射概率）以及标签与标签之间的转移关系（转移概率）。<code>jieba</code> 就利用了 HMM 来识别词典中不存在的 OOV。当基于词典的图算法在句子中遇到无法切分的、连续的未登录字串时，就会调用HMM模型对该局部子句进行二次分词。这种方法的优点是能够发现词典外的新词，在一定程度上缓解了 OOV 问题。但缺点也显而易见，HMM 的两个核心假设（观测独立假设和齐次马尔可夫假设）过于严格，限制了模型利用更丰富上下文特征的能力，所以在处理复杂的歧义场景时，它的效果往往不如后续的 CRF 等模型。</p>
-<h4 id="HMM对未登录词的识别"><a href="#HMM对未登录词的识别" class="headerlink" title="HMM对未登录词的识别"></a>HMM对未登录词的识别</h4><p>为了修复jieba针对未收录的词时，往往只能将其切碎成单字。为了修正这种行为，默认开启的 <code>__cut_DAG</code> 方法采用了 “<strong>单字缓冲，二次加工</strong>” 的混合策略。它在遍历动态规划生成的路径时，不会立即输出结果，而是设置一个<strong>缓冲区</strong>。凡是路径上的<strong>单字</strong>，都先扔进缓冲区攒着；一旦遇到<strong>多字词</strong>或句子结束，就说明一段由单字组成的“未登录区域”结束了。此时，<code>jieba</code> 会调用 HMM 模型对缓冲区里的字符串进行<strong>二次分词</strong>，试图用统计规律把这些被切碎的字重新“粘”回成词。这也解释了为什么 <code>jieba</code> 的默认分词策略能够识别很多词典里没有的新词。下面的例子直观地展示了 <code>__cut_DAG</code> 中 HMM 模块的作用：</p>
+<h3 id="统计学习时代的方法">统计学习时代的方法</h3>
+<p>为了解决对人工词典的过度依赖，研究者们转向了统计学习。主要思想是把分词看作一个<strong>序列标注</strong>问题，即为句子中的每个字打上一个位置标签。<br />
+例如，我们可以用 <code>B</code> (Begin) 表示词的开始，<code>M</code>
+(Middle) 表示词的中间，<code>E</code> (End) 表示词的结束，<code>S</code>
+(Single) 表示单字成词。在这种标注体系下，“我爱北京”会被标注为
+<code>S S B E</code>，通过这种方式，分词任务就转化为了寻找字序列对应的最合理标签序列的问题。</p>
+<p><strong>隐马尔科夫模型（HMM）</strong>
+就是解决这类问题的经典生成模型。它能学习到字与标签之间的对应关系（发射概率）以及标签与标签之间的转移关系（转移概率）。<code>jieba</code>
+就利用了 HMM 来识别词典中不存在的
+OOV。当基于词典的图算法在句子中遇到无法切分的、连续的未登录字串时，就会调用HMM模型对该局部子句进行二次分词。这种方法的优点是能够发现词典外的新词，在一定程度上缓解了
+OOV 问题。但缺点也显而易见，HMM
+的两个核心假设（观测独立假设和齐次马尔可夫假设）过于严格，限制了模型利用更丰富上下文特征的能力，所以在处理复杂的歧义场景时，它的效果往往不如后续的
+CRF 等模型。</p>
+<h4 id="hmm对未登录词的识别">HMM对未登录词的识别</h4>
+<p>为了修复jieba针对未收录的词时，往往只能将其切碎成单字。为了修正这种行为，默认开启的
+<code>__cut_DAG</code> 方法采用了 “<strong>单字缓冲，二次加工</strong>”
+的混合策略。它在遍历动态规划生成的路径时，不会立即输出结果，而是设置一个<strong>缓冲区</strong>。凡是路径上的<strong>单字</strong>，都先扔进缓冲区攒着；一旦遇到<strong>多字词</strong>或句子结束，就说明一段由单字组成的“未登录区域”结束了。此时，<code>jieba</code>
+会调用 HMM
+模型对缓冲区里的字符串进行<strong>二次分词</strong>，试图用统计规律把这些被切碎的字重新“粘”回成词。这也解释了为什么
+<code>jieba</code>
+的默认分词策略能够识别很多词典里没有的新词。下面的例子直观地展示了
+<code>__cut_DAG</code> 中 HMM 模块的作用：</p>
 <p>HMM 模块的作用：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">text = <span class="string">&quot;我在Boss直聘找工作&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 开启HMM（默认）</span></span><br><span class="line">seg_list_hmm = jieba.lcut(text, HMM=<span class="literal">True</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;HMM开启: <span class="subst">&#123;seg_list_hmm&#125;</span>&quot;</span>)</span><br><span class="line"><span class="comment"># HMM开启: [&#x27;我&#x27;, &#x27;在&#x27;, &#x27;Boss&#x27;, &#x27;直聘&#x27;, &#x27;找&#x27;, &#x27;工作&#x27;]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭HMM</span></span><br><span class="line">seg_list_no_hmm = jieba.lcut(text, HMM=<span class="literal">False</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;HMM关闭: <span class="subst">&#123;seg_list_no_hmm&#125;</span>&quot;</span>)</span><br><span class="line"><span class="comment"># HMM关闭: [&#x27;我&#x27;, &#x27;在&#x27;, &#x27;Boss&#x27;, &#x27;直&#x27;, &#x27;聘&#x27;, &#x27;找&#x27;, &#x27;工作&#x27;]</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="词性标注"><a href="#词性标注" class="headerlink" title="词性标注"></a>词性标注</h4><p>除了分词，<code>jieba</code>还提供了词性标注功能。采用了<strong>词典查询与隐马尔可夫模型相结合</strong>的混合策略，来识别出每个词语的语法属性（名词、动词、形容词等）。这需要使用<code>jieba.posseg</code>模块。由于在前面已经通过 <code>jieba.load_userdict()</code> 加载了包含“奔波儿灞”的词典，所以 <code>jieba</code> 已经能够正确地将其切分出来。但是，因为初始词典未提供词性，<code>jieba</code> 会给它一个默认的、不一定准确的词性（如下面的<code>x</code>）。</p>
+<h4 id="词性标注">词性标注</h4>
+<p>除了分词，<code>jieba</code>还提供了词性标注功能。采用了<strong>词典查询与隐马尔可夫模型相结合</strong>的混合策略，来识别出每个词语的语法属性（名词、动词、形容词等）。这需要使用<code>jieba.posseg</code>模块。由于在前面已经通过
+<code>jieba.load_userdict()</code> 加载了包含“奔波儿灞”的词典，所以
+<code>jieba</code>
+已经能够正确地将其切分出来。但是，因为初始词典未提供词性，<code>jieba</code>
+会给它一个默认的、不一定准确的词性（如下面的<code>x</code>）。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> jieba.posseg <span class="keyword">as</span> pseg</span><br><span class="line"></span><br><span class="line">text = <span class="string">&quot;九头虫让奔波儿灞把唐僧师徒除掉&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># HMM=False 强制只使用词典和动态规划</span></span><br><span class="line">words = pseg.lcut(text, HMM=<span class="literal">False</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;默认词性输出: <span class="subst">&#123;words&#125;</span>&quot;</span>)</span><br><span class="line"><span class="comment"># 默认词性输出: [pair(&#x27;九头虫&#x27;, &#x27;x&#x27;), pair(&#x27;让&#x27;, &#x27;v&#x27;), pair(&#x27;奔波儿灞&#x27;, &#x27;x&#x27;), pair(&#x27;把&#x27;, &#x27;p&#x27;), pair(&#x27;唐僧&#x27;, &#x27;nr&#x27;), pair(&#x27;师徒&#x27;, &#x27;n&#x27;), pair(&#x27;除掉&#x27;, &#x27;v&#x27;)]</span></span><br></pre></td></tr></table></figure>
-
 <p>常见标签及其含义如下表所示。</p>
 <table>
 <thead>
@@ -90,7 +138,8 @@
 <th>含义</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>n</td>
 <td>名词</td>
 <td>nr</td>
@@ -144,250 +193,667 @@
 <td>un</td>
 <td>未知词</td>
 </tr>
-</tbody></table>
-<h3 id="从“分词”到“分块”"><a href="#从“分词”到“分块”" class="headerlink" title="从“分词”到“分块”"></a>从“分词”到“分块”</h3><p>随着深度学习，特别是 <code>BERT</code> 和 <code>GPT</code> 等大规模预训练模型的兴起，传统意义上“将橘子切分成标准词语”的分词范式有了重大改变。现代NLP更倾向于采用 <strong>“无分词”或“弱分词”</strong> 的策略，将文本处理成更基础的、数据驱动的单元，主要分为<strong>字粒度</strong>和<strong>子词粒度</strong>两种流派。</p>
-<h4 id="字粒度分词"><a href="#字粒度分词" class="headerlink" title="字粒度分词"></a>字粒度分词</h4><p>以<code>BERT</code>模型为代表，在处理中文时，它的分词策略就是<strong>字粒度</strong>，也就是直接将每个汉字视为一个独立的Token。这种策略有效解决了OOV问题，因为常用汉字的数量是有限的，模型可以轻松构建一个全覆盖的“字表”，摆脱对庞大词典的依赖。但是，它的代价也显而易见。首先是<strong>词汇语义的丢失</strong>，像“博物馆”这样的词被拆散为三个独立的字后，模型需要消耗更多资源去重新学习它们之间的组合关系；其次，相较于词，字的<strong>序列长度会显著增加</strong>，这加大了模型的计算负担。</p>
-<h4 id="子词分词"><a href="#子词分词" class="headerlink" title="子词分词"></a>子词分词</h4><p>以GPT系列为代表的大语言模型，则采用了更灵活的<strong>子词（Subword）</strong> 切分方案，其中最主流的算法是 <strong>BPE（BytePair Encoding）</strong>。BPE的思路是在原始预料上迭代合并高频<strong>相邻</strong>字节对（或字符对）成一个新的、更大的单元，并将其加入词表。<br>例如，如果 “deep” 和 “er” 经常<strong>相邻</strong>出现，BPE 就会将它们合并，最终可能将 “deeper” 作为一个整体加入词表。这种方案在“词”和“字”之间取得了有效平衡，高频词被完整保留，低频词或新词则被拆解为更小的有意义单元（如字或字节组合），既保持了信息完整性又有效解决了 OOV 问题，同时还能通过控制合并次数来限制词表大小。</p>
+</tbody>
+</table>
+<h3 id="从分词到分块">从“分词”到“分块”</h3>
+<p>随着深度学习，特别是 <code>BERT</code> 和 <code>GPT</code>
+等大规模预训练模型的兴起，传统意义上“将橘子切分成标准词语”的分词范式有了重大改变。现代NLP更倾向于采用
+<strong>“无分词”或“弱分词”</strong>
+的策略，将文本处理成更基础的、数据驱动的单元，主要分为<strong>字粒度</strong>和<strong>子词粒度</strong>两种流派。</p>
+<h4 id="字粒度分词">字粒度分词</h4>
+<p>以<code>BERT</code>模型为代表，在处理中文时，它的分词策略就是<strong>字粒度</strong>，也就是直接将每个汉字视为一个独立的Token。这种策略有效解决了OOV问题，因为常用汉字的数量是有限的，模型可以轻松构建一个全覆盖的“字表”，摆脱对庞大词典的依赖。但是，它的代价也显而易见。首先是<strong>词汇语义的丢失</strong>，像“博物馆”这样的词被拆散为三个独立的字后，模型需要消耗更多资源去重新学习它们之间的组合关系；其次，相较于词，字的<strong>序列长度会显著增加</strong>，这加大了模型的计算负担。</p>
+<h4 id="子词分词">子词分词</h4>
+<p>以GPT系列为代表的大语言模型，则采用了更灵活的<strong>子词（Subword）</strong>
+切分方案，其中最主流的算法是 <strong>BPE（BytePair
+Encoding）</strong>。BPE的思路是在原始预料上迭代合并高频<strong>相邻</strong>字节对（或字符对）成一个新的、更大的单元，并将其加入词表。<br />
+例如，如果 “deep” 和 “er” 经常<strong>相邻</strong>出现，BPE
+就会将它们合并，最终可能将 “deeper”
+作为一个整体加入词表。这种方案在“词”和“字”之间取得了有效平衡，高频词被完整保留，低频词或新词则被拆解为更小的有意义单元（如字或字节组合），既保持了信息完整性又有效解决了
+OOV 问题，同时还能通过控制合并次数来限制词表大小。</p>
 <p>不过，由于BPE生成的子词主要基于统计频率而非语言学规则（如词根词缀），结果可解释性较差，且对训练语料有较强依赖，遇到领域外文本时可能会因过度切分而导致效果下降。尽管存在这些局限性，子词分词凭借在词表大小和语义表达之间的出色平衡，依然成为了当前大语言模型处理文本的标准方案。它能够在保留词的语义信息的同时，又具备字的灵活性。</p>
-<h2 id="词向量表示"><a href="#词向量表示" class="headerlink" title="词向量表示"></a>词向量表示</h2><h3 id="背景-1"><a href="#背景-1" class="headerlink" title="背景"></a>背景</h3><p>以<strong>文本分类</strong>这种最基础的 NLP 任务为例，假如我们需要判断一段文本“国足爱吃海参”的是否属于“负面”类别。对于人类来说，理解这串汉字轻而易举，但对于计算机而言，它们本质上仍然是无法直接理解的“字符串”。机器学习和深度学习模型，无论结构多么复杂，处理的输入都必须是<strong>数值形式</strong>。具体来说，是由数字组成的特征向量或矩阵。这意味着，模型无法直接“消化”文本数据。</p>
-<p>因此，我们的核心任务就是要<strong>弥补自然语言（符号世界）与数学模型（向量空间）之间的鸿沟</strong>。我们需要一种系统性的方法，将分词后得到的词元序列（如 <code>[&quot;国足&quot;, &quot;爱&quot;, &quot;吃&quot;, &quot;海参&quot;]</code>），整体转换成模型能够处理的一个或一组有意义的数字。这个将符号转换为数字的过程，统称为<strong>词向量表示 (Word Representation)。我们常听到的词嵌入 (Word Embedding)，通常特指由神经网络学习得到的一种更加稠密、高效的词向量表示，它是词向量家族中重要的一员。当然，仅仅把词转换成数字是不够的。一个优秀的词向量表示，不仅要能唯一地标识每一个词，更理想的情况是，向量本身能够蕴含词语的语义信息</strong>。例如，我们希望在数学空间中，“国王”和“女王”对应的向量距离，要远远小于“国王”和“香蕉”的向量距离。如何让计算机更深入的“理解”词语之间的语义关系，也一直是 NLP 领域追求的重要方向。</p>
-<h3 id="离散表示"><a href="#离散表示" class="headerlink" title="离散表示"></a>离散表示</h3><p>在深度学习普及之前，研究者们提出了多种将词语表示为固定向量的方法。这些方法通常将每个词视为一个独立的、不可再分的单元，生成的向量因此也被称为<strong>离散向量（Discrete Vector）</strong>。其特点是维度高且稀疏，在机器学习领域应用广泛。</p>
-<h4 id="独热编码（One-Hot-Encoding）"><a href="#独热编码（One-Hot-Encoding）" class="headerlink" title="独热编码（One-Hot Encoding）"></a>独热编码（One-Hot Encoding）</h4><p><strong>独热编码</strong>，也称“哑编码”，是最直观、基础的<strong>词元级别</strong>表示方法。它将每个词元都看作一个独立的类别，其思想与机器学习中的类别特征处理一致。</p>
-<p>例如，假设词典是从句子“我先挣它一个亿”构建的，分词后得到的词表为 <code>[&quot;我&quot;, &quot;先&quot;, &quot;挣&quot;, &quot;它&quot;, &quot;一个&quot;, &quot;亿&quot;]</code>，各词对应的独热向量表示如下：</p>
+<h2 id="词向量表示">词向量表示</h2>
+<h3 id="背景-1">背景</h3>
+<p>以<strong>文本分类</strong>这种最基础的 NLP
+任务为例，假如我们需要判断一段文本“国足爱吃海参”的是否属于“负面”类别。对于人类来说，理解这串汉字轻而易举，但对于计算机而言，它们本质上仍然是无法直接理解的“字符串”。机器学习和深度学习模型，无论结构多么复杂，处理的输入都必须是<strong>数值形式</strong>。具体来说，是由数字组成的特征向量或矩阵。这意味着，模型无法直接“消化”文本数据。</p>
+<p>因此，我们的核心任务就是要<strong>弥补自然语言（符号世界）与数学模型（向量空间）之间的鸿沟</strong>。我们需要一种系统性的方法，将分词后得到的词元序列（如
+<code>["国足", "爱", "吃", "海参"]</code>），整体转换成模型能够处理的一个或一组有意义的数字。这个将符号转换为数字的过程，统称为<strong>词向量表示
+(Word Representation)。我们常听到的词嵌入 (Word
+Embedding)，通常特指由神经网络学习得到的一种更加稠密、高效的词向量表示，它是词向量家族中重要的一员。当然，仅仅把词转换成数字是不够的。一个优秀的词向量表示，不仅要能唯一地标识每一个词，更理想的情况是，向量本身能够蕴含词语的语义信息</strong>。例如，我们希望在数学空间中，“国王”和“女王”对应的向量距离，要远远小于“国王”和“香蕉”的向量距离。如何让计算机更深入的“理解”词语之间的语义关系，也一直是
+NLP 领域追求的重要方向。</p>
+<h3 id="离散表示">离散表示</h3>
+<p>在深度学习普及之前，研究者们提出了多种将词语表示为固定向量的方法。这些方法通常将每个词视为一个独立的、不可再分的单元，生成的向量因此也被称为<strong>离散向量（Discrete
+Vector）</strong>。其特点是维度高且稀疏，在机器学习领域应用广泛。</p>
+<h4 id="独热编码one-hot-encoding">独热编码（One-Hot Encoding）</h4>
+<p><strong>独热编码</strong>，也称“哑编码”，是最直观、基础的<strong>词元级别</strong>表示方法。它将每个词元都看作一个独立的类别，其思想与机器学习中的类别特征处理一致。</p>
+<p>例如，假设词典是从句子“我先挣它一个亿”构建的，分词后得到的词表为
+<code>["我", "先", "挣", "它", "一个", "亿"]</code>，各词对应的独热向量表示如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&quot;我&quot;   -&gt; [1, 0, 0, 0, 0, 0]  </span><br><span class="line">&quot;先&quot;   -&gt; [0, 1, 0, 0, 0, 0]  </span><br><span class="line">&quot;挣&quot;   -&gt; [0, 0, 1, 0, 0, 0]  </span><br><span class="line">&quot;它&quot;   -&gt; [0, 0, 0, 1, 0, 0]  </span><br><span class="line">&quot;一个&quot; -&gt; [0, 0, 0, 0, 1, 0]  </span><br><span class="line">&quot;亿&quot;   -&gt; [0, 0, 0, 0, 0, 1]  </span><br></pre></td></tr></table></figure>
-
 <p>优点：实现简单，能够清晰地将词语区分开。</p>
 <p>缺点：</p>
 <ul>
 <li><strong>维度灾难</strong>，如果词典中有数万个词，每个词的向量维度就高达数万，造成数据极其稀疏，浪费计算和存储资源；</li>
-<li><strong>语义鸿沟</strong>，任意两个不同词的独热向量都是<strong>正交</strong>的（点积为 0）。这是因为<strong>点积</strong>是通过将两个向量的对应元素相乘再求和来计算的。（在几何上，点积为 0 意味着向量<strong>正交</strong>（互相垂直），即所有词都被视为同等的不相似。这说明模型无法从向量层面得知词与词之间的任何相似关系，例如“国王”与“女王”的距离和“国王”与“香蕉”的距离完全一样，严重丢失了语义信息。）</li>
+<li><strong>语义鸿沟</strong>，任意两个不同词的独热向量都是<strong>正交</strong>的（点积为
+0）。这是因为<strong>点积</strong>是通过将两个向量的对应元素相乘再求和来计算的。（在几何上，点积为
+0
+意味着向量<strong>正交</strong>（互相垂直），即所有词都被视为同等的不相似。这说明模型无法从向量层面得知词与词之间的任何相似关系，例如“国王”与“女王”的距离和“国王”与“香蕉”的距离完全一样，严重丢失了语义信息。）</li>
 </ul>
-<h4 id="词袋模型（Bag-of-Words-BoW）"><a href="#词袋模型（Bag-of-Words-BoW）" class="headerlink" title="词袋模型（Bag-of-Words, BoW）"></a>词袋模型（Bag-of-Words, BoW）</h4><p><strong>词袋模型</strong>是表示<strong>文档级别</strong>特征最常用的方法之一。这种方法的理论基础可以追溯到向量空间模型的提出。</p>
-<h5 id="基本思想与实现"><a href="#基本思想与实现" class="headerlink" title="基本思想与实现"></a>基本思想与实现</h5><p><strong>词袋模型</strong>的基础思想是<strong>忽略文本中的词序和语法，将其仅仅视作一个装满词的“袋子”，用袋子中每个词出现的统计量</strong>来表示整个文档。它的实现过程可以理解为将文档中所有词的独热向量相加，得到一个最终的出现频次。</p>
-<p>实际实现时，通常直接统计每个词的出现次数，而不需要真正构造和相加One-Hot向量。假设假设词典与基于“我先挣它一个亿”构建的词典相同，现有两个文档，其中文档 1 的内容为 <code>我 先 挣 一个 亿</code>，文档 2 的内容为 <code>我 挣 它 一个 亿</code>。那么它们的词袋表示就是：</p>
+<h4 id="词袋模型bag-of-words-bow">词袋模型（Bag-of-Words, BoW）</h4>
+<p><strong>词袋模型</strong>是表示<strong>文档级别</strong>特征最常用的方法之一。这种方法的理论基础可以追溯到向量空间模型的提出。</p>
+<h5 id="基本思想与实现">基本思想与实现</h5>
+<p><strong>词袋模型</strong>的基础思想是<strong>忽略文本中的词序和语法，将其仅仅视作一个装满词的“袋子”，用袋子中每个词出现的统计量</strong>来表示整个文档。它的实现过程可以理解为将文档中所有词的独热向量相加，得到一个最终的出现频次。</p>
+<p>实际实现时，通常直接统计每个词的出现次数，而不需要真正构造和相加One-Hot向量。假设假设词典与基于“我先挣它一个亿”构建的词典相同，现有两个文档，其中文档
+1 的内容为 <code>我 先 挣 一个 亿</code>，文档 2 的内容为
+<code>我 挣 它 一个 亿</code>。那么它们的词袋表示就是：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vec(文档1) = vec(我) + vec(先) + vec(挣) + vec(一个) + vec(亿) = [1, 1, 1, 0, 1, 1]  </span><br><span class="line">vec(文档2) = vec(我) + vec(挣) + vec(它) + vec(一个) + vec(亿) = [1, 0, 1, 1, 1, 1]</span><br></pre></td></tr></table></figure>
-
 <p>这个结果中向量的每一维，代表对应词典中的词在该文档中出现的次数。通过计算两个向量的距离（如余弦相似度），可以发现这两个文档是比较相似的，因为它们共享了”我”、”挣”、”一个”、”亿”这几个词。</p>
-<h5 id="余弦相似度计算"><a href="#余弦相似度计算" class="headerlink" title="余弦相似度计算"></a>余弦相似度计算</h5><p><strong>余弦相似度（Cosine Similarity）<strong>通过计算两个向量夹角的余弦值来衡量它们的相似性。对于非负向量（如词袋模型产生的向量），其值范围在 <code>[0, 1]</code> 之间，值越接近<code>1</code>，表示两个向量越相似。公式如下：<br>$<br>\text{similarity} &#x3D; \cos(\theta) &#x3D; \frac{\mathbf{A} \cdot \mathbf{B}}{|\mathbf{A}| \cdot |\mathbf{B}|} &#x3D; \frac{\sum_{i&#x3D;1}^{n} A_i B_i}{\sqrt{\sum_{i&#x3D;1}^{n} A_i^2} \cdot \sqrt{\sum_{i&#x3D;1}^{n} B_i^2}}<br>$<br>我们以上文中的文档向量为例，令</strong>A</strong> &#x3D; <code>vec(文档1)</code> &#x3D; <code>[1, 1, 1, 0, 1, 1]</code>，<strong>B</strong> &#x3D; <code>vec(文档2)</code> &#x3D; <code>[1, 0, 1, 1, 1, 1]</code></p>
+<h5 id="余弦相似度计算">余弦相似度计算</h5>
+<p><strong>余弦相似度（Cosine
+Similarity）</strong>通过计算两个向量夹角的余弦值来衡量它们的相似性。对于非负向量（如词袋模型产生的向量），其值范围在
+<code>[0, 1]</code>
+之间，值越接近<code>1</code>，表示两个向量越相似。公式如下： $<br />
+= () = = <br />
+$ 我们以上文中的文档向量为例，令<strong>A</strong> =
+<code>vec(文档1)</code> =
+<code>[1, 1, 1, 0, 1, 1]</code>，<strong>B</strong> =
+<code>vec(文档2)</code> = <code>[1, 0, 1, 1, 1, 1]</code></p>
 <ul>
-<li><strong>计算点积 A · B</strong>：$(1×1)+(1×0)+(1×1)+(0×1)+(1×1)+(1×1)&#x3D;1+0+1+0+1+1&#x3D;4$</li>
-<li><strong>计算模长$|\mathbf{A}|$ 和 $|\mathbf{B}|$</strong>：$|\mathbf{A}| &#x3D; \sqrt{1^2+1^2+1^2+0^2+1^2+1^2}&#x3D;\sqrt{5}$，$|\mathbf{B}| &#x3D; \sqrt{1^2+0^2+1^2+1^2+1^2+1^2}&#x3D;\sqrt{5}$</li>
-<li><strong>计算相似度</strong>：$\cos(\theta)&#x3D;\frac{4}{\sqrt{5} \cdot \sqrt{5}} &#x3D; \frac{4}{5}&#x3D;0.8$</li>
+<li><strong>计算点积 A · B</strong>：<span
+class="math inline">(1 × 1) + (1 × 0) + (1 × 1) + (0 × 1) + (1 × 1) + (1 × 1) = 1 + 0 + 1 + 0 + 1 + 1 = 4</span></li>
+<li><strong>计算模长<span
+class="math inline">|<strong>A</strong>|</span> 和 <span
+class="math inline">|<strong>B</strong>|</span></strong>：<span
+class="math inline">$|\mathbf{A}| =
+\sqrt{1^2+1^2+1^2+0^2+1^2+1^2}=\sqrt{5}$</span>，<span
+class="math inline">$|\mathbf{B}| =
+\sqrt{1^2+0^2+1^2+1^2+1^2+1^2}=\sqrt{5}$</span></li>
+<li><strong>计算相似度</strong>：<span
+class="math inline">$\cos(\theta)=\frac{4}{\sqrt{5} \cdot \sqrt{5}} =
+\frac{4}{5}=0.8$</span></li>
 </ul>
-<p>结果为 <code>0.8</code>，这是一个非常接近 <code>1</code> 的值，从数学上证明了这两个文档是高度相似的。</p>
-<h5 id="不同统计方式"><a href="#不同统计方式" class="headerlink" title="不同统计方式"></a>不同统计方式</h5><p>词袋模型向量中每一维的值可以采用不同策略。最直接的方式是使用<strong>频数</strong>，也就是单词在文档中出现的次数，但这会导致长文章的计数值普遍偏高。为缓解文档长度的影响，可以使用<strong>频率</strong>，即用单词次数除以文档总词数（词频）。另一种方式是二进制，仅关注单词是否出现，若出现记为1，否则为0，忽略具体出现次数。</p>
+<p>结果为 <code>0.8</code>，这是一个非常接近 <code>1</code>
+的值，从数学上证明了这两个文档是高度相似的。</p>
+<h5 id="不同统计方式">不同统计方式</h5>
+<p>词袋模型向量中每一维的值可以采用不同策略。最直接的方式是使用<strong>频数</strong>，也就是单词在文档中出现的次数，但这会导致长文章的计数值普遍偏高。为缓解文档长度的影响，可以使用<strong>频率</strong>，即用单词次数除以文档总词数（词频）。另一种方式是二进制，仅关注单词是否出现，若出现记为1，否则为0，忽略具体出现次数。</p>
 <blockquote>
 <p>正是这种忽略语序、仅关注词汇统计的特性，赋予了词袋模型鲜明的优缺点。</p>
 </blockquote>
 <p>优点：实现简单，尤其在文本分类等任务上表现不错，因为这类任务的核心往往在于判断“文档里有什么词”，而非“词与词之间如何关联”，所以即使丢失了词序也能取得较好效果。</p>
 <p>缺点：</p>
 <ul>
-<li><strong>丢失词序</strong>，导致如“我 爱 你”和“你 爱 我”的词袋表示完全相同，无法区分语义差异；</li>
+<li><strong>丢失词序</strong>，导致如“我 爱 你”和“你 爱
+我”的词袋表示完全相同，无法区分语义差异；</li>
 <li><strong>未考虑词的重要性</strong>，像“的”、“是”这类在所有文档中都频繁出现的<strong>停用词</strong>会获得很高频次，却对区分文档主题贡献寥寥，反而形成干扰。</li>
 </ul>
-<h4 id="TF-IDF"><a href="#TF-IDF" class="headerlink" title="TF-IDF"></a>TF-IDF</h4><p>为了提升文档在向量空间中的区分度，解决”常见词权重过高”导致文档混淆的问题，<strong>TF-IDF（Term Frequency-Inverse Document Frequency）</strong> 被提出。</p>
+<h4 id="tf-idf">TF-IDF</h4>
+<p>为了提升文档在向量空间中的区分度，解决”常见词权重过高”导致文档混淆的问题，<strong>TF-IDF（Term
+Frequency-Inverse Document Frequency）</strong> 被提出。</p>
 <blockquote>
-<p>TF-IDF 的理念是一个词的重要性与其在<strong>当前文档中出现的次数</strong>成正比，而与其在<strong>整个语料库中出现的频率</strong>成反比。换言之，一个词在当前文档里越常见，但在其他文档里越罕见，它的权重就越高。</p>
+<p>TF-IDF
+的理念是一个词的重要性与其在<strong>当前文档中出现的次数</strong>成正比，而与其在<strong>整个语料库中出现的频率</strong>成反比。换言之，一个词在当前文档里越常见，但在其他文档里越罕见，它的权重就越高。</p>
 </blockquote>
-<h5 id="算法组成"><a href="#算法组成" class="headerlink" title="算法组成"></a>算法组成</h5><p>TF-IDF主要由两部分组成：</p>
-<ol>
-<li><strong>词频（Term Frequency, TF）</strong>，用来衡量一个词在当前文档中出现的频繁程度。它的计算方式主要有两种，一是直接使用<strong>原始频数</strong> $TF(t,d)&#x3D;f_{t,d}$ （其中 $f_{t,d}$ 表示词 $t$ 在文档 $d$ 中出现的次数）；二是采用<strong>归一化频率</strong> $TF(t,d)&#x3D;f_{t,d}&#x3D;\frac{f_{t,d}}{\sum_{t^\prime \in d}f_{t^\prime,d}}$，通过除以文档总词数来消除长文档带来的偏差。</li>
-<li>是<strong>逆文档频率（Inverse Document Frequency, IDF）</strong>，用于衡量一个词的”稀有”程度或”信息量”。其定义如下：<br>$<br>\text{IDF}(t,D)&#x3D;\log \frac{|D|}{|{d \in D : t \in d}|}<br>$<br>其中 ∣D∣ 是语料库中的总文档数，$|{d \in D : t \in d}|$是包含词 $t$ 的文档数。为避免除零错误，实际应用中常使用平滑版本：<br>$<br>\text{IDF}(t,D)&#x3D;\log \frac{|D|}{1 + |{d \in D : t \in d}|}<br>$</li>
+<h5 id="算法组成">算法组成</h5>
+<p>TF-IDF主要由两部分组成：</p>
+<ol type="1">
+<li><strong>词频（Term Frequency,
+TF）</strong>，用来衡量一个词在当前文档中出现的频繁程度。它的计算方式主要有两种，一是直接使用<strong>原始频数</strong>
+<span
+class="math inline"><em>T</em><em>F</em>(<em>t</em>, <em>d</em>) = <em>f</em><sub><em>t</em>, <em>d</em></sub></span>
+（其中 <span
+class="math inline"><em>f</em><sub><em>t</em>, <em>d</em></sub></span>
+表示词 <span class="math inline"><em>t</em></span> 在文档 <span
+class="math inline"><em>d</em></span>
+中出现的次数）；二是采用<strong>归一化频率</strong> <span
+class="math inline">$TF(t,d)=f_{t,d}=\frac{f_{t,d}}{\sum_{t^\prime \in
+d}f_{t^\prime,d}}$</span>，通过除以文档总词数来消除长文档带来的偏差。</li>
+<li>是<strong>逆文档频率（Inverse Document Frequency,
+IDF）</strong>，用于衡量一个词的”稀有”程度或”信息量”。其定义如下：
+$<br />
+(t,D)=<br />
+$ 其中 ∣D∣ 是语料库中的总文档数，<span
+class="math inline">|<em>d</em> ∈ <em>D</em> : <em>t</em> ∈ <em>d</em>|</span>是包含词
+<span class="math inline"><em>t</em></span>
+的文档数。为避免除零错误，实际应用中常使用平滑版本： $<br />
+(t,D)=<br />
+$</li>
 <li>最终，一个词的 TF-IDF 权重就是这两者的乘积：</li>
 </ol>
-<p>$<br>\text{TF-IDF}(t,d,D)&#x3D;\text{TF}(t,d) \times \text{IDF}(t,D)<br>$<br> 一个文档的TF-IDF向量，就是由该文档中每个词的 TF-IDF 值构成的向量。</p>
-<h5 id="实际应用"><a href="#实际应用" class="headerlink" title="实际应用"></a>实际应用</h5><p>TF-IDF最常见的是进行<strong>关键词提取</strong>，就是计算文章中每个词的 TF-IDF 值并降序排列，排在最前面的便是关键词，像 <code>jieba</code> 分词工具就内置了这种功能。</p>
-<p>其次也常用于<strong>文本相似度计算</strong>，通过构建两篇文档的 TF-IDF 向量并计算其余弦相似度来判断内容是否相近。</p>
-<p>在早期的<strong>传统搜索引擎</strong>中，TF-IDF 更是衡量用户查询词与网页内容相关性的核心指标之一。</p>
-<h4 id="N-gram模型"><a href="#N-gram模型" class="headerlink" title="N-gram模型"></a>N-gram模型</h4><p>词袋模型和 TF-IDF 虽然在统计上很有效，但它们最大的局限在于彻底丢失了<strong>词序信息</strong>。而 <strong>N-gram（N元语法）</strong> 通过统计连续词组的方式弥补了这一短板。它不仅仅是对传统方法的改进，更是现代大语言模型的<strong>鼻祖</strong>，因为它最早引入了<strong>预测下一个词</strong>的思想。</p>
-<h5 id="预测下一个词"><a href="#预测下一个词" class="headerlink" title="预测下一个词"></a>预测下一个词</h5><p>与词袋模型只关心“有什么词”不同，N-gram（1-gram 是特例）关心的是“词的顺序”。</p>
-<p>它的核心基于<strong>马尔科夫假设</strong>，也就是认为<strong>一个词出现的概率只取决于它前面N-1个词</strong>。这种简化大大降低了建模的复杂度，并且由于它基于前文预测后续内容，常被视为<strong>生成式AI</strong>的雏形。根据依赖的前文长度不同，N-gram 模型可分为多种类型，其中 <strong>Unigram（1-gram）</strong> 和词袋模型一样，假设每个词独立且不依赖前文；<strong>Bigram（2-gram）</strong> 只依赖前 <strong>1</strong> 个词，例如看到“喜欢”预测“玩”的概率；而 <strong>Trigram（3-gram）</strong> 则依赖前 <strong>2</strong> 个词，例如根据“喜欢 玩”来预测“GTA6”的概率。</p>
+<p>$<br />
+(t,d,D)=(t,d) (t,D)<br />
+$ 一个文档的TF-IDF向量，就是由该文档中每个词的 TF-IDF 值构成的向量。</p>
+<h5 id="实际应用">实际应用</h5>
+<p>TF-IDF最常见的是进行<strong>关键词提取</strong>，就是计算文章中每个词的
+TF-IDF 值并降序排列，排在最前面的便是关键词，像 <code>jieba</code>
+分词工具就内置了这种功能。</p>
+<p>其次也常用于<strong>文本相似度计算</strong>，通过构建两篇文档的
+TF-IDF 向量并计算其余弦相似度来判断内容是否相近。</p>
+<p>在早期的<strong>传统搜索引擎</strong>中，TF-IDF
+更是衡量用户查询词与网页内容相关性的核心指标之一。</p>
+<h4 id="n-gram模型">N-gram模型</h4>
+<p>词袋模型和 TF-IDF
+虽然在统计上很有效，但它们最大的局限在于彻底丢失了<strong>词序信息</strong>。而
+<strong>N-gram（N元语法）</strong>
+通过统计连续词组的方式弥补了这一短板。它不仅仅是对传统方法的改进，更是现代大语言模型的<strong>鼻祖</strong>，因为它最早引入了<strong>预测下一个词</strong>的思想。</p>
+<h5 id="预测下一个词">预测下一个词</h5>
+<p>与词袋模型只关心“有什么词”不同，N-gram（1-gram
+是特例）关心的是“词的顺序”。</p>
+<p>它的核心基于<strong>马尔科夫假设</strong>，也就是认为<strong>一个词出现的概率只取决于它前面N-1个词</strong>。这种简化大大降低了建模的复杂度，并且由于它基于前文预测后续内容，常被视为<strong>生成式AI</strong>的雏形。根据依赖的前文长度不同，N-gram
+模型可分为多种类型，其中 <strong>Unigram（1-gram）</strong>
+和词袋模型一样，假设每个词独立且不依赖前文；<strong>Bigram（2-gram）</strong>
+只依赖前 <strong>1</strong> 个词，例如看到“喜欢”预测“玩”的概率；而
+<strong>Trigram（3-gram）</strong> 则依赖前 <strong>2</strong>
+个词，例如根据“喜欢 玩”来预测“GTA6”的概率。</p>
 <blockquote>
-<p>现在的 GPT 等大模型，本质上可以被视为一个 <strong>N 非常非常大</strong>（比如 N&#x3D;128000）的超级 N-gram 模型。它们都在执行根据上文预测下一个词这一任务。</p>
+<p>现在的 GPT 等大模型，本质上可以被视为一个 <strong>N
+非常非常大</strong>（比如 N=128000）的超级 N-gram
+模型。它们都在执行根据上文预测下一个词这一任务。</p>
 </blockquote>
-<p>我们以句子“我喜欢玩 GTA6”为例，它的 <strong>Bigram 特征</strong> 是 <code>{&quot;我 喜欢&quot;, &quot;喜欢 玩&quot;, &quot;玩 GTA6&quot;}</code>，<strong>Trigram 特征</strong> 则是 <code>{&quot;我 喜欢 玩&quot;, &quot;喜欢 玩 GTA6&quot;}</code>。通过这种<strong>统计连续相邻词组</strong>的方式，模型就能区分 <code>&quot;我 喜欢&quot;</code> 和 <code>&quot;喜欢 我&quot;</code> 了。因为在词袋模型眼中，这两句话包含的词完全一样（都是“我”和“喜欢”）；但在 <strong>Bigram</strong> 眼中，它们生成的特征分别是 <code>{&quot;我 喜欢&quot;}</code> 和 <code>{&quot;喜欢 我&quot;}</code>，这完全是两个不同的“词组”，由此捕捉到语序的变化。</p>
-<h5 id="N-gram模型的挑战"><a href="#N-gram模型的挑战" class="headerlink" title="N-gram模型的挑战"></a>N-gram模型的挑战</h5><p>虽然 N-gram 找回了词序，但它付出了巨大的代价，这也是它被神经网络取代的原因。</p>
+<p>我们以句子“我喜欢玩 GTA6”为例，它的 <strong>Bigram 特征</strong> 是
+<code>{"我 喜欢", "喜欢 玩", "玩 GTA6"}</code>，<strong>Trigram
+特征</strong> 则是
+<code>{"我 喜欢 玩", "喜欢 玩 GTA6"}</code>。通过这种<strong>统计连续相邻词组</strong>的方式，模型就能区分
+<code>"我 喜欢"</code> 和 <code>"喜欢 我"</code>
+了。因为在词袋模型眼中，这两句话包含的词完全一样（都是“我”和“喜欢”）；但在
+<strong>Bigram</strong> 眼中，它们生成的特征分别是
+<code>{"我 喜欢"}</code> 和
+<code>{"喜欢 我"}</code>，这完全是两个不同的“词组”，由此捕捉到语序的变化。</p>
+<h5 id="n-gram模型的挑战">N-gram模型的挑战</h5>
+<p>虽然 N-gram
+找回了词序，但它付出了巨大的代价，这也是它被神经网络取代的原因。</p>
 <p>面临如下挑战：</p>
 <ul>
-<li><strong>指数级爆炸</strong>，如果词典有 10,000 个词，Bigram 就有 108108 种组合，Trigram 则高达 10121012 种，这种<strong>维度灾难</strong>是传统计算机无法承受的。</li>
-<li><strong>数据稀疏</strong>问题，绝大多数词的组合（如“大象 骑着 张三 驾驶 飞机”）在语料中永远不会出现，导致概率为 0。</li>
+<li><strong>指数级爆炸</strong>，如果词典有 10,000 个词，Bigram 就有
+108108 种组合，Trigram 则高达 10121012
+种，这种<strong>维度灾难</strong>是传统计算机无法承受的。</li>
+<li><strong>数据稀疏</strong>问题，绝大多数词的组合（如“大象 骑着 张三
+驾驶 飞机”）在语料中永远不会出现，导致概率为 0。</li>
 </ul>
-<p>为了解决这个问题，传统NLP发展出了复杂的<strong>平滑技术</strong>以及通过将词聚类来减少参数的<strong>基于类的 N-gram 模型</strong>。也正是为了从根本上解决这些限制，后续诞生了<strong>词向量</strong>和<strong>神经网络语言模型</strong>。</p>
-<h3 id="序号化表示"><a href="#序号化表示" class="headerlink" title="序号化表示"></a>序号化表示</h3><h4 id="背景-2"><a href="#背景-2" class="headerlink" title="背景"></a>背景</h4><p>虽然上述方法在传统机器学习时代扮演了重要角色，但在深度学习时代，它们已不再是主流。</p>
-<p>现代深度学习模型，尤其是大语言模型，采用的是一种更简洁、更灵活的输入方式——<strong>序号化（Sequentialization）</strong>。在深度学习中，通常<strong>只进行最少的预处理</strong>。不会再像传统方法那样，费尽心思地设计复杂的特征工程（如计算 TF-IDF）来告诉模型哪些词重要。相反，只需要把文本转换成最基础的<strong>整数 ID 序列</strong>，然后把”学习词语的含义和重要性”这个更复杂的任务，<strong>交给模型自己去完成</strong>。</p>
-<h4 id="序号化过程"><a href="#序号化过程" class="headerlink" title="序号化过程"></a>序号化过程</h4><p><strong>序号化</strong>，也称<strong>整数编码</strong>，是将<strong>分词后的词元序列</strong>转换为深度学习模型能够处理的<strong>整数序列</strong>的<strong>核心步骤</strong>。其过程如下：</p>
-<ol>
-<li><strong>构建词典</strong>：与 One-Hot 类似，首先从训练语料中构建一个词典。但在深度学习中，这个词典通常是<strong>字级别</strong>的（如 BERT），或是<strong>子词级别</strong>的（如 GPT），而不是词级别的。</li>
-<li><strong>增加特殊词元</strong>：在词典中加入一些有特殊功能的 Token，至少包括 <code>[PAD]</code>（Padding）和 <code>[UNK]</code>（Unknown）。<code>[PAD]</code> 的 ID 通常为 <code>0</code>，用于将短句子<strong>填充</strong>至同一批次内的最长长度，以满足批处理需求；<code>[UNK]</code> 的 ID 通常为 <code>1</code>，用于表示所有词典中<strong>未出现过</strong>的词。根据任务需求，还可能加入 <code>[CLS]</code>（分类）、<code>[SEP]</code>（分隔）等其他特殊词元。</li>
-<li><strong>ID映射</strong>：将文本序列中的每个词元（字&#x2F;子词）直接映射为其在词典中的<strong>整数 ID</strong>。</li>
+<p>为了解决这个问题，传统NLP发展出了复杂的<strong>平滑技术</strong>以及通过将词聚类来减少参数的<strong>基于类的
+N-gram
+模型</strong>。也正是为了从根本上解决这些限制，后续诞生了<strong>词向量</strong>和<strong>神经网络语言模型</strong>。</p>
+<h3 id="序号化表示">序号化表示</h3>
+<h4 id="背景-2">背景</h4>
+<p>虽然上述方法在传统机器学习时代扮演了重要角色，但在深度学习时代，它们已不再是主流。</p>
+<p>现代深度学习模型，尤其是大语言模型，采用的是一种更简洁、更灵活的输入方式——<strong>序号化（Sequentialization）</strong>。在深度学习中，通常<strong>只进行最少的预处理</strong>。不会再像传统方法那样，费尽心思地设计复杂的特征工程（如计算
+TF-IDF）来告诉模型哪些词重要。相反，只需要把文本转换成最基础的<strong>整数
+ID
+序列</strong>，然后把”学习词语的含义和重要性”这个更复杂的任务，<strong>交给模型自己去完成</strong>。</p>
+<h4 id="序号化过程">序号化过程</h4>
+<p><strong>序号化</strong>，也称<strong>整数编码</strong>，是将<strong>分词后的词元序列</strong>转换为深度学习模型能够处理的<strong>整数序列</strong>的<strong>核心步骤</strong>。其过程如下：</p>
+<ol type="1">
+<li><strong>构建词典</strong>：与 One-Hot
+类似，首先从训练语料中构建一个词典。但在深度学习中，这个词典通常是<strong>字级别</strong>的（如
+BERT），或是<strong>子词级别</strong>的（如 GPT），而不是词级别的。</li>
+<li><strong>增加特殊词元</strong>：在词典中加入一些有特殊功能的
+Token，至少包括 <code>[PAD]</code>（Padding）和
+<code>[UNK]</code>（Unknown）。<code>[PAD]</code> 的 ID 通常为
+<code>0</code>，用于将短句子<strong>填充</strong>至同一批次内的最长长度，以满足批处理需求；<code>[UNK]</code>
+的 ID 通常为
+<code>1</code>，用于表示所有词典中<strong>未出现过</strong>的词。根据任务需求，还可能加入
+<code>[CLS]</code>（分类）、<code>[SEP]</code>（分隔）等其他特殊词元。</li>
+<li><strong>ID映射</strong>：将文本序列中的每个词元（字/子词）直接映射为其在词典中的<strong>整数
+ID</strong>。</li>
 </ol>
-<p>在实践中，很少从零开始为自己的小数据集构建词典。更常见的做法是，直接使用像 <code>BERT</code>、<code>GPT</code> 这类预训练模型官方提供的<strong>词典文件（vocab.txt）</strong>。这些词典通常包含了数万个字、子词、符号等，是在海量通用语料上构建的，覆盖面非常广。例如，Google 的中文 BERT 模型词典 <code>vocab.txt</code> 中就包含了约 21128 个词元，其中不仅有常用汉字，还包括了英文字母、数字、标点及 <code>[PAD]</code>&#x2F;<code>[UNK]</code> 等特殊符号。</p>
-<h4 id="序号化实例"><a href="#序号化实例" class="headerlink" title="序号化实例"></a>序号化实例</h4><p>假设我们现在有三个句子需要处理，分别是“我挣一个亿”、“比方说我”和“我先挣钱”。同时现在有一个精简词典内容如下：</p>
+<p>在实践中，很少从零开始为自己的小数据集构建词典。更常见的做法是，直接使用像
+<code>BERT</code>、<code>GPT</code>
+这类预训练模型官方提供的<strong>词典文件（vocab.txt）</strong>。这些词典通常包含了数万个字、子词、符号等，是在海量通用语料上构建的，覆盖面非常广。例如，Google
+的中文 BERT 模型词典 <code>vocab.txt</code> 中就包含了约 21128
+个词元，其中不仅有常用汉字，还包括了英文字母、数字、标点及
+<code>[PAD]</code>/<code>[UNK]</code> 等特殊符号。</p>
+<h4 id="序号化实例">序号化实例</h4>
+<p>假设我们现在有三个句子需要处理，分别是“我挣一个亿”、“比方说我”和“我先挣钱”。同时现在有一个精简词典内容如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#x27;[PAD]&#x27;: 0, &#x27;[UNK]&#x27;: 1, &#x27;比&#x27;: 2, &#x27;方&#x27;: 3, &#x27;说&#x27;: 4, &#x27;我&#x27;: 5, &#x27;先&#x27;: 6, &#x27;挣&#x27;: 7, &#x27;它&#x27;: 8, &#x27;一&#x27;: 9, &#x27;个&#x27;: 10, &#x27;亿&#x27;: 11&#125;  </span><br></pre></td></tr></table></figure>
-
-<p>首先，对这三个句子进行<strong>分词</strong>，并根据词典查找每个词元对应的 <strong>ID</strong>。由于“钱”字不在词典中，将其映射为 <code>[UNK]</code> 的 ID <code>1</code>：</p>
+<p>首先，对这三个句子进行<strong>分词</strong>，并根据词典查找每个词元对应的
+<strong>ID</strong>。由于“钱”字不在词典中，将其映射为 <code>[UNK]</code>
+的 ID <code>1</code>：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">句子1 (我挣一个亿): 我 (5), 挣 (7), 一 (9), 个 (10), 亿 (11) -&gt; [5, 7, 9, 10, 11]  </span><br><span class="line">句子2 (比方说我): 比 (2), 方 (3), 说 (4), 我 (5) -&gt; [2, 3, 4, 5]  </span><br><span class="line">句子3 (我先挣钱): 我 (5), 先 (6), 挣 (7), 钱 (不在词典中) -&gt; [5, 6, 7, 1]</span><br></pre></td></tr></table></figure>
-
-
-<p>为了将这三个长短不一的序列组成一个<strong>矩阵</strong>，我们需要以最长的序列（句子1，长度为5）为基准，使用 <code>[PAD]</code> 的 ID <code>0</code> 对其他短序列进行<strong>填充 (Padding)</strong>：</p>
+<p>为了将这三个长短不一的序列组成一个<strong>矩阵</strong>，我们需要以最长的序列（句子1，长度为5）为基准，使用
+<code>[PAD]</code> 的 ID <code>0</code> 对其他短序列进行<strong>填充
+(Padding)</strong>：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">序列1 (长度5): [5, 7, 9, 10, 11] </span><br><span class="line">序列2 (长度4→5): [2, 3, 4, 5, 0] </span><br><span class="line">序列3 (长度4→5): [5, 6, 7, 1, 0] </span><br></pre></td></tr></table></figure>
-
-<p>最终，我们得到一个 <code>3x5</code> 的<strong>整数矩阵</strong>，这个矩阵就是喂给深度学习模型的最终输入。</p>
+<p>最终，我们得到一个 <code>3x5</code>
+的<strong>整数矩阵</strong>，这个矩阵就是喂给深度学习模型的最终输入。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 最终输入模型的张量（Tensor）  </span><br><span class="line"></span><br><span class="line">[[5, 7, 9, 10, 11],  </span><br><span class="line"> [2, 3, 4, 5,  0],  </span><br><span class="line"> [5, 6, 7, 1,  0]] </span><br></pre></td></tr></table></figure>
-
 <blockquote>
-<p>序号化本身并非解决语义鸿沟，其整数ID（如 <code>2</code> 和 <code>3</code>）不具备数学意义，它真正价值是作为后续<strong>嵌入层</strong>的输入。嵌入层会将这些ID查询并映射为低维、稠密的浮点数向量（即<strong>词向量</strong>），而这个映射关系本身是在模型训练中<strong>学习</strong>出来的。</p>
+<p>序号化本身并非解决语义鸿沟，其整数ID（如 <code>2</code> 和
+<code>3</code>）不具备数学意义，它真正价值是作为后续<strong>嵌入层</strong>的输入。嵌入层会将这些ID查询并映射为低维、稠密的浮点数向量（即<strong>词向量</strong>），而这个映射关系本身是在模型训练中<strong>学习</strong>出来的。</p>
 </blockquote>
-<h2 id="寻找理想的词向量"><a href="#寻找理想的词向量" class="headerlink" title="寻找理想的词向量"></a>寻找理想的词向量</h2><h3 id="背景-3"><a href="#背景-3" class="headerlink" title="背景"></a>背景</h3><p>无论是哑编码还是序号化，它们本身都存在一个根本性的缺陷，那就是无法表达词与词之间的语义关系。</p>
-<p>为了解决这个问题，分布式表示（Distributed Representation）被提出，目的是将词语映射到一个低维、稠密、且蕴含丰富语义信息的连续向量空间中。理想中的词向量需要同时满足<strong>语义蕴含</strong>和<strong>低维稠密</strong>两个主要目标。</p>
+<h2 id="寻找理想的词向量">寻找理想的词向量</h2>
+<h3 id="背景-3">背景</h3>
+<p>无论是哑编码还是序号化，它们本身都存在一个根本性的缺陷，那就是无法表达词与词之间的语义关系。</p>
+<p>为了解决这个问题，分布式表示（Distributed
+Representation）被提出，目的是将词语映射到一个低维、稠密、且蕴含丰富语义信息的连续向量空间中。理想中的词向量需要同时满足<strong>语义蕴含</strong>和<strong>低维稠密</strong>两个主要目标。</p>
 <p>为了实现这一目标，研究者探索了不同的技术路径。主要分为两条路径：</p>
 <ul>
 <li>基于<strong>全局文档统计</strong>的<strong>主题模型</strong>。</li>
 <li>基于<strong>局部上下文预测</strong>的<strong>神经网络模型</strong>。</li>
 </ul>
-<h3 id="主题模型"><a href="#主题模型" class="headerlink" title="主题模型"></a>主题模型</h3><p>主题模型是基于机器学习和传统数学思想的经典方法。它尝试从宏观的视角，通过分析大量文档的词语共现统计，来发现词语间的潜在语义关联。它的关键假设是<strong>一篇文档由多个“主题”按一定比例混合而成，而一个主题又由多个“词语”按一定概率组成</strong>。词语之所以会一同出现在某篇文档中，是因为它们都在共同描述这篇文章所包含的某个或某些潜在主题。例如，一篇关于”人工智能”的文档，会高频出现”深度学习”、”Transformer”、”注意力机制”等词。正是因为这些词都强关联于“AI技术”这个主题，它们才频繁地共现在一起。所以，<strong>一个词的向量，就可以用它与各个主题的关联强度来表示</strong>。而这其中最核心的技术就是<strong>矩阵分解（Matrix Factorization）</strong>。</p>
-<h4 id="SVD矩阵分解"><a href="#SVD矩阵分解" class="headerlink" title="SVD矩阵分解"></a>SVD矩阵分解</h4><p>SVD矩阵分解将获取词向量的过程，巧妙地转化成一个矩阵分解问题。具体步骤如下：</p>
-<ol>
-<li><strong>构建“词-文档”矩阵</strong>：首先，我们需要以整个语料库为基础，构建一个巨大的<strong>词-文档矩阵 $X$。这个矩阵的每一行代表一个词，每一列代表一篇文档，矩阵中 $X(i,j)$的值是词 $i$ 在文档 $j$ 中的重要性权重，可以使用 TF-IDF 值来填充。这个矩阵通常是巨大且高度稀疏</strong>的。</li>
-<li><strong>矩阵分解</strong>：从线程代数的角度看，这个巨大的稀疏矩阵 X_X_ 可以被近似分解为两个更小的、更稠密的矩阵的乘积。最常用的分解技术之一是 <strong>奇异值分解（SVD）</strong>。</li>
+<h3 id="主题模型">主题模型</h3>
+<p>主题模型是基于机器学习和传统数学思想的经典方法。它尝试从宏观的视角，通过分析大量文档的词语共现统计，来发现词语间的潜在语义关联。它的关键假设是<strong>一篇文档由多个“主题”按一定比例混合而成，而一个主题又由多个“词语”按一定概率组成</strong>。词语之所以会一同出现在某篇文档中，是因为它们都在共同描述这篇文章所包含的某个或某些潜在主题。例如，一篇关于”人工智能”的文档，会高频出现”深度学习”、”Transformer”、”注意力机制”等词。正是因为这些词都强关联于“AI技术”这个主题，它们才频繁地共现在一起。所以，<strong>一个词的向量，就可以用它与各个主题的关联强度来表示</strong>。而这其中最核心的技术就是<strong>矩阵分解（Matrix
+Factorization）</strong>。</p>
+<h4 id="svd矩阵分解">SVD矩阵分解</h4>
+<p>SVD矩阵分解将获取词向量的过程，巧妙地转化成一个矩阵分解问题。具体步骤如下：</p>
+<ol type="1">
+<li><strong>构建“词-文档”矩阵</strong>：首先，我们需要以整个语料库为基础，构建一个巨大的<strong>词-文档矩阵
+<span
+class="math inline"><em>X</em></span>。这个矩阵的每一行代表一个词，每一列代表一篇文档，矩阵中
+<span
+class="math inline"><em>X</em>(<em>i</em>, <em>j</em>)</span>的值是词
+<span class="math inline"><em>i</em></span> 在文档 <span
+class="math inline"><em>j</em></span> 中的重要性权重，可以使用 TF-IDF
+值来填充。这个矩阵通常是巨大且高度稀疏</strong>的。</li>
+<li><strong>矩阵分解</strong>：从线程代数的角度看，这个巨大的稀疏矩阵
+X_X_
+可以被近似分解为两个更小的、更稠密的矩阵的乘积。最常用的分解技术之一是
+<strong>奇异值分解（SVD）</strong>。</li>
 </ol>
-<p>$<br>X_{m \times n} \approx W_{topic \thinspace m \times k} \times H_{topic \thinspace k \times n}<br>$</p>
-<p> 其中，</p>
-<p> $X_{m \times n}$是原始的词-文档矩阵，$m$是词典大小，$n$是文档数量。<br> $k$是一个远小于$m$和$n$的超参数，代表期望发现的<strong>潜在主题数量</strong>。<br> $W_{topic}$表示“<strong>词-主题矩阵</strong>”。它的每一行，都是一个$k$维的稠密向量，表示一个词与$k$个主题的关联度。<br> $H_{topic}$表示 “<strong>文档-主题矩阵</strong>”。它的每一列，都是一个 k_k_ 维的稠密向量，表示一篇文档在 k_k_ 个主题上的分布。</p>
-<ol start="3">
-<li><strong>获取词向量</strong>：分解完成后，我们真正关心的是 <strong>“词-主题”矩阵 $W_{topic}$。这个矩阵的每一行</strong>，正是我们需要的<strong>词向量</strong>。它将原来 m_m_ 维的 One-Hot 编码，降维到了 k_k_ 维，而且还是一个稠密向量，每个维度都代表了与某个主题的关联强度。这个矩阵还蕴含了语义信息。如果两个词（如”CPU”和”GPU”）经常在描述”硬件”这个主题的文档中共同出现，那么SVD分解的结果会使它们在对应”硬件”主题的那个维度上都有很高的值，从而使它们的最终词向量在空间上非常接近。</li>
+<p>$<br />
+X_{m n} W_{topic m k} H_{topic k n}<br />
+$</p>
+<p>其中，</p>
+<p><span
+class="math inline"><em>X</em><sub><em>m</em> × <em>n</em></sub></span>是原始的词-文档矩阵，<span
+class="math inline"><em>m</em></span>是词典大小，<span
+class="math inline"><em>n</em></span>是文档数量。 <span
+class="math inline"><em>k</em></span>是一个远小于<span
+class="math inline"><em>m</em></span>和<span
+class="math inline"><em>n</em></span>的超参数，代表期望发现的<strong>潜在主题数量</strong>。
+<span
+class="math inline"><em>W</em><sub><em>t</em><em>o</em><em>p</em><em>i</em><em>c</em></sub></span>表示“<strong>词-主题矩阵</strong>”。它的每一行，都是一个<span
+class="math inline"><em>k</em></span>维的稠密向量，表示一个词与<span
+class="math inline"><em>k</em></span>个主题的关联度。 <span
+class="math inline"><em>H</em><sub><em>t</em><em>o</em><em>p</em><em>i</em><em>c</em></sub></span>表示
+“<strong>文档-主题矩阵</strong>”。它的每一列，都是一个 k_k_
+维的稠密向量，表示一篇文档在 k_k_ 个主题上的分布。</p>
+<ol start="3" type="1">
+<li><strong>获取词向量</strong>：分解完成后，我们真正关心的是
+<strong>“词-主题”矩阵 <span
+class="math inline"><em>W</em><sub><em>t</em><em>o</em><em>p</em><em>i</em><em>c</em></sub></span>。这个矩阵的每一行</strong>，正是我们需要的<strong>词向量</strong>。它将原来
+m_m_ 维的 One-Hot 编码，降维到了 k_k_
+维，而且还是一个稠密向量，每个维度都代表了与某个主题的关联强度。这个矩阵还蕴含了语义信息。如果两个词（如”CPU”和”GPU”）经常在描述”硬件”这个主题的文档中共同出现，那么SVD分解的结果会使它们在对应”硬件”主题的那个维度上都有很高的值，从而使它们的最终词向量在空间上非常接近。</li>
 </ol>
-<h4 id="主题模型的局限性"><a href="#主题模型的局限性" class="headerlink" title="主题模型的局限性"></a>主题模型的局限性</h4><p>从机器学习的角度看，主题模型本质上是一个<strong>聚类算法</strong>。其中，文档主题矩阵$H_{topic}$将$n$ 篇文档聚成 $k$ 个主题类别，每篇文档都有一个 $k$ 维向量，表示它属于各个主题的<strong>置信度</strong>或<strong>软分配</strong>。</p>
-<p>尽管主题模型（如其更广为人知的名字 <strong>LSA, Latent Semantic Analysis</strong> <a target="_blank" rel="noopener" href="https://datawhalechina.github.io/base-llm/#fn-1">1</a>）通过对全局的”词-文档”共现矩阵进行分解，成功地将词语映射到了一个低维的”主题空间”，得到了能够表达语义的稠密词向量，但它也存在明显的局限性。</p>
+<h4 id="主题模型的局限性">主题模型的局限性</h4>
+<p>从机器学习的角度看，主题模型本质上是一个<strong>聚类算法</strong>。其中，文档主题矩阵<span
+class="math inline"><em>H</em><sub><em>t</em><em>o</em><em>p</em><em>i</em><em>c</em></sub></span>将<span
+class="math inline"><em>n</em></span> 篇文档聚成 <span
+class="math inline"><em>k</em></span> 个主题类别，每篇文档都有一个 <span
+class="math inline"><em>k</em></span>
+维向量，表示它属于各个主题的<strong>置信度</strong>或<strong>软分配</strong>。</p>
+<p>尽管主题模型（如其更广为人知的名字 <strong>LSA, Latent Semantic
+Analysis</strong> <a
+target="_blank" rel="noopener" href="https://datawhalechina.github.io/base-llm/#fn-1">1</a>）通过对全局的”词-文档”共现矩阵进行分解，成功地将词语映射到了一个低维的”主题空间”，得到了能够表达语义的稠密词向量，但它也存在明显的局限性。</p>
 <p>局限：</p>
 <ul>
-<li>比如对一个大型语料库进行 SVD 分解，计算量和内存开销都极大，导致计算代价高昂；</li>
+<li>比如对一个大型语料库进行 SVD
+分解，计算量和内存开销都极大，导致计算代价高昂；</li>
 <li>其次，它依赖的是全局的、粗粒度的文档级别共现信息，忽略了词语在句子中的局部上下文和词序信息，使得它难以捕捉更精细的语义关系；</li>
 <li>“先统计，再分解”的流程，很难与现代的深度学习模型进行端到端的联合训练，难以集成。</li>
 </ul>
-<h3 id="Word2Vec"><a href="#Word2Vec" class="headerlink" title="Word2Vec"></a>Word2Vec</h3><h4 id="背景-4"><a href="#背景-4" class="headerlink" title="背景"></a>背景</h4><p>由 Google 在 2013 年提出的 Word2Vec 算法，将视角聚焦于词语的<strong>局部上下文</strong>。它的思想来源于语言学的<strong>分布式假设，即一个词的含义，由其上下文的词语所决定</strong>。换言之，如果两个词的上下文经常是相似的，那么这两个词的语义就是相近的。Word2Vec 正是这一思想的数学实现。</p>
-<h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h4><p>Word2Vec通常被认为是一种<strong>浅层神经网络模型</strong>。它的“浅层”体现在网络结构的简单性上，因为它移除了传统神经概率语言模型（NNLM）中计算昂贵的<strong>非线性隐藏层</strong>，直接将投影层与输出层相连。这种简洁的设计使Word2Vec的计算非常高效，能够在大规模语料库上进行训练。理解Word2Vec的关键在于区分它的<strong>最终目标</strong>和<strong>实现手段</strong>，神经网络结构本身只是获取词向量的一种方式，<strong>并非模型的最终目的</strong>。</p>
-<p>Word2Vec的<strong>最终目标</strong>是获取一个高质量的<strong>词向量查询表</strong>，本质上是一个巨大的矩阵 $W_{in}$，其中每一行都是对应单词的稠密向量。为达成此目标，Word2Vec 设计了一个巧妙的“伪任务”作为<strong>实现手段</strong>，也就是<strong>根据上下文预测中心词</strong>（或反之），并在此过程中将词向量查询表作为<strong>模型参数</strong>进行训练和优化。训练结束后，执行预测任务的神经网络本身会被<strong>丢弃</strong>，我们真正保留和使用的，只有作为其内部参数的那个<strong>词向量查询表</strong>。</p>
-<h4 id="可学习的词向量矩阵"><a href="#可学习的词向量矩阵" class="headerlink" title="可学习的词向量矩阵"></a>可学习的词向量矩阵</h4><p>将一个单词的 ID 转换为其稠密向量的过程，可以分解为三步。</p>
-<ol>
+<h3 id="word2vec">Word2Vec</h3>
+<h4 id="背景-4">背景</h4>
+<p>由 Google 在 2013 年提出的 Word2Vec
+算法，将视角聚焦于词语的<strong>局部上下文</strong>。它的思想来源于语言学的<strong>分布式假设，即一个词的含义，由其上下文的词语所决定</strong>。换言之，如果两个词的上下文经常是相似的，那么这两个词的语义就是相近的。Word2Vec
+正是这一思想的数学实现。</p>
+<h4 id="概述">概述</h4>
+<p>Word2Vec通常被认为是一种<strong>浅层神经网络模型</strong>。它的“浅层”体现在网络结构的简单性上，因为它移除了传统神经概率语言模型（NNLM）中计算昂贵的<strong>非线性隐藏层</strong>，直接将投影层与输出层相连。这种简洁的设计使Word2Vec的计算非常高效，能够在大规模语料库上进行训练。理解Word2Vec的关键在于区分它的<strong>最终目标</strong>和<strong>实现手段</strong>，神经网络结构本身只是获取词向量的一种方式，<strong>并非模型的最终目的</strong>。</p>
+<p>Word2Vec的<strong>最终目标</strong>是获取一个高质量的<strong>词向量查询表</strong>，本质上是一个巨大的矩阵
+<span
+class="math inline"><em>W</em><sub><em>i</em><em>n</em></sub></span>，其中每一行都是对应单词的稠密向量。为达成此目标，Word2Vec
+设计了一个巧妙的“伪任务”作为<strong>实现手段</strong>，也就是<strong>根据上下文预测中心词</strong>（或反之），并在此过程中将词向量查询表作为<strong>模型参数</strong>进行训练和优化。训练结束后，执行预测任务的神经网络本身会被<strong>丢弃</strong>，我们真正保留和使用的，只有作为其内部参数的那个<strong>词向量查询表</strong>。</p>
+<h4 id="可学习的词向量矩阵">可学习的词向量矩阵</h4>
+<p>将一个单词的 ID 转换为其稠密向量的过程，可以分解为三步。</p>
+<ol type="1">
 <li>首先输入一个代表单词的 ID（例如 3）；</li>
-<li>接着进行哑编码，将 ID 3 转换为一个维度等于词典大小$|\mathbf{V}|$的高维稀疏向量（例如$[0,0,0,1,0,…]$，其中只有第 3 个位置为 1）；</li>
-<li>最后进行矩阵乘法，用这个 One-Hot 向量去乘以一个巨大的、可学习的<strong>参数矩阵 $W_{in}$</strong>*（尺寸为 $|V| \times D$），该矩阵即为最终的词向量查询表。</li>
+<li>接着进行哑编码，将 ID 3 转换为一个维度等于词典大小<span
+class="math inline">|<strong>V</strong>|</span>的高维稀疏向量（例如<span
+class="math inline">[0, 0, 0, 1, 0, …]</span>，其中只有第 3 个位置为
+1）；</li>
+<li>最后进行矩阵乘法，用这个 One-Hot
+向量去乘以一个巨大的、可学习的<strong>参数矩阵 <span
+class="math inline"><em>W</em><sub><em>i</em><em>n</em></sub></span></strong>*（尺寸为
+<span
+class="math inline">|<em>V</em>|×<em>D</em></span>），该矩阵即为最终的词向量查询表。</li>
 </ol>
 <p>111111111111111111</p>
-<h1 id="由于-One-Hot-向量只有一个位置是-1，这个矩阵乘法的结果等效于直接从矩阵-Win-W-in-中-“抽取”出索引为-3-的那一行。-left-begin-matrix-0-0-0-1-0-0-end-matrix-right-times-left-begin-matrix-2-8-5-3-1-9-4-7-2-6-3-1-8-5-0-5-6-2-9-4-8-0-3-7-2-4-2-9-6-1-end-matrix-right"><a href="#由于-One-Hot-向量只有一个位置是-1，这个矩阵乘法的结果等效于直接从矩阵-Win-W-in-中-“抽取”出索引为-3-的那一行。-left-begin-matrix-0-0-0-1-0-0-end-matrix-right-times-left-begin-matrix-2-8-5-3-1-9-4-7-2-6-3-1-8-5-0-5-6-2-9-4-8-0-3-7-2-4-2-9-6-1-end-matrix-right" class="headerlink" title="由于 One-Hot 向量只有一个位置是 1，这个矩阵乘法的结果等效于直接从矩阵 Win_W**in_ 中 “抽取”出索引为 3 的那一行。$$\left[\begin{matrix}0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0\\end{matrix}\right]\times\left[\begin{matrix}2 &amp; 8 &amp; 5 &amp; 3 &amp; 1 \9 &amp; 4 &amp; 7 &amp; 2 &amp; 6 \3 &amp; 1 &amp; 8 &amp; 5 &amp; 0 \5 &amp; 6 &amp; 2 &amp; 9 &amp; 4 \8 &amp; 0 &amp; 3 &amp; 7 &amp; 2 \4 &amp; 2 &amp; 9 &amp; 6 &amp; 1 \\end{matrix}\right]  "></a>由于 One-Hot 向量只有一个位置是 1，这个矩阵乘法的结果等效于直接从矩阵 Win_W**in_ 中 <strong>“抽取”出索引为 3 的那一行</strong>。<br>$$<br>\left[<br>\begin{matrix}<br>0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0\<br>\end{matrix}<br>\right]<br>\times<br>\left[<br>\begin{matrix}<br>2 &amp; 8 &amp; 5 &amp; 3 &amp; 1 \<br>9 &amp; 4 &amp; 7 &amp; 2 &amp; 6 \<br>3 &amp; 1 &amp; 8 &amp; 5 &amp; 0 \<br>5 &amp; 6 &amp; 2 &amp; 9 &amp; 4 \<br>8 &amp; 0 &amp; 3 &amp; 7 &amp; 2 \<br>4 &amp; 2 &amp; 9 &amp; 6 &amp; 1 \<br>\end{matrix}<br>\right]  </h1><p>\left[<br>\begin{matrix}<br>5 &amp; 6 &amp; 2 &amp; 9 &amp; 4\<br>\end{matrix}<br>\right]  $$<br>在实践中，为了极大地提升效率，程序并不会真的执行稀疏的矩阵乘法，而是直接实现一个 <strong>查询</strong> 操作：根据输入的单词 ID，直接从 $W_{in}$ 矩阵中获取对应的行向量。理解这里的关键在于，这个参数矩阵 $W_{in}$ <strong>本身就是学习的目标</strong>。它被随机初始化，并在后续的训练过程中，通过 CBOW 或 Skip-gram 这样的 <strong>预测任务</strong> 不断地被优化和调整。</p>
+<p>由于 One-Hot 向量只有一个位置是 1，这个矩阵乘法的结果等效于直接从矩阵
+Win_W<strong>in_ 中 </strong>“抽取”出索引为 3 的那一行<strong>。 <span
+class="math display">$$  
+\left[  
+\begin{matrix}  
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0\  
+\end{matrix}  
+\right]  
+\times  
+\left[  
+\begin{matrix}  
+2 &amp; 8 &amp; 5 &amp; 3 &amp; 1 \  
+9 &amp; 4 &amp; 7 &amp; 2 &amp; 6 \  
+3 &amp; 1 &amp; 8 &amp; 5 &amp; 0 \  
+5 &amp; 6 &amp; 2 &amp; 9 &amp; 4 \  
+8 &amp; 0 &amp; 3 &amp; 7 &amp; 2 \  
+4 &amp; 2 &amp; 9 &amp; 6 &amp; 1 \  
+\end{matrix}  
+\right]  
+=  
+\left[  
+\begin{matrix}  
+5 &amp; 6 &amp; 2 &amp; 9 &amp; 4\  
+\end{matrix}  
+\right]  $$</span><br />
+在实践中，为了极大地提升效率，程序并不会真的执行稀疏的矩阵乘法，而是直接实现一个
+</strong>查询** 操作：根据输入的单词 ID，直接从 <span
+class="math inline"><em>W</em><sub><em>i</em><em>n</em></sub></span>
+矩阵中获取对应的行向量。理解这里的关键在于，这个参数矩阵 <span
+class="math inline"><em>W</em><sub><em>i</em><em>n</em></sub></span>
+<strong>本身就是学习的目标</strong>。它被随机初始化，并在后续的训练过程中，通过
+CBOW 或 Skip-gram 这样的 <strong>预测任务</strong>
+不断地被优化和调整。</p>
 <blockquote>
-<p>以 PyTorch 为例，它的 <code>nn.Embedding</code> 层本质上就是维护了这个 $W_{in}$矩阵（词向量查找表）。当我们在后续章节中搭建模型时，第一层通常都是 Embedding 层。它接收输入序列的整数 ID，直接通过查表将其映射为稠密的词向量，而这个矩阵的参数会随着整个模型的训练（反向传播）而被自动更新和学习。</p>
+<p>以 PyTorch 为例，它的 <code>nn.Embedding</code>
+层本质上就是维护了这个 <span
+class="math inline"><em>W</em><sub><em>i</em><em>n</em></sub></span>矩阵（词向量查找表）。当我们在后续章节中搭建模型时，第一层通常都是
+Embedding 层。它接收输入序列的整数
+ID，直接通过查表将其映射为稠密的词向量，而这个矩阵的参数会随着整个模型的训练（反向传播）而被自动更新和学习。</p>
 </blockquote>
-<h4 id="模型架构"><a href="#模型架构" class="headerlink" title="模型架构"></a>模型架构</h4><h5 id="背景-5"><a href="#背景-5" class="headerlink" title="背景"></a>背景</h5><p>Word2Vec包含CBOW和Skip-gram两种具体的实现模型。两者在任务设计上恰好相反，但最终都实现了相同的目标，即通过<strong>训练过程</strong>得到一个高质量的词向量查询表。</p>
-<h5 id="CBOW模型详解"><a href="#CBOW模型详解" class="headerlink" title="CBOW模型详解"></a>CBOW模型详解</h5><p>如下图，CBOW（Continuous Bag-of-Words）的任务是 <strong>“根据上下文预测中心词”</strong>。</p>
-<p><img src="https://datawhalechina.github.io/base-llm/chapter2/images/2_3_2.svg"></p>
-<p>在数学公式层面，最开始要进行的是<strong>词向量转换</strong>，对于上下文中的每个词$w_{c-k}$，从输入矩阵$W_{in}$中获取对应的词向量$v_{c-k}&#x3D;W_{in}w_{c-k}$。接着计算<strong>上下文向量</strong>，将上下文窗口中所有词的词向量聚合（通常求和或平均），得到$h&#x3D;\frac{1}{S}\sum(v_{c-m}+…+v_{c+m})$（此处以平均为例）。然后计算<strong>输出得分</strong>，将上下文向量与输出矩阵$W_{out}$相乘得到$z_c&#x3D;W^T_{out}h$。最后定义<strong>损失函数</strong>，模型的优化目标是最小化负对数依然：</p>
-<p>11111<br>其中：</p>
+<h4 id="模型架构">模型架构</h4>
+<h5 id="背景-5">背景</h5>
+<p>Word2Vec包含CBOW和Skip-gram两种具体的实现模型。两者在任务设计上恰好相反，但最终都实现了相同的目标，即通过<strong>训练过程</strong>得到一个高质量的词向量查询表。</p>
+<h5 id="cbow模型详解">CBOW模型详解</h5>
+<p>如下图，CBOW（Continuous Bag-of-Words）的任务是
+<strong>“根据上下文预测中心词”</strong>。</p>
+<p><img
+src="https://datawhalechina.github.io/base-llm/chapter2/images/2_3_2.svg" /></p>
+<p>在数学公式层面，最开始要进行的是<strong>词向量转换</strong>，对于上下文中的每个词<span
+class="math inline"><em>w</em><sub><em>c</em> − <em>k</em></sub></span>，从输入矩阵<span
+class="math inline"><em>W</em><sub><em>i</em><em>n</em></sub></span>中获取对应的词向量<span
+class="math inline"><em>v</em><sub><em>c</em> − <em>k</em></sub> = <em>W</em><sub><em>i</em><em>n</em></sub><em>w</em><sub><em>c</em> − <em>k</em></sub></span>。接着计算<strong>上下文向量</strong>，将上下文窗口中所有词的词向量聚合（通常求和或平均），得到<span
+class="math inline">$h=\frac{1}{S}\sum(v_{c-m}+…+v_{c+m})$</span>（此处以平均为例）。然后计算<strong>输出得分</strong>，将上下文向量与输出矩阵<span
+class="math inline"><em>W</em><sub><em>o</em><em>u</em><em>t</em></sub></span>相乘得到<span
+class="math inline"><em>z</em><sub><em>c</em></sub> = <em>W</em><sub><em>o</em><em>u</em><em>t</em></sub><sup><em>T</em></sup><em>h</em></span>。最后定义<strong>损失函数</strong>，模型的优化目标是最小化负对数依然：</p>
+<p>11111 其中：</p>
 <ul>
-<li>$u_c$是目标中心词的输出向量</li>
-<li>$h$是上下文向量</li>
+<li><span
+class="math inline"><em>u</em><sub><em>c</em></sub></span>是目标中心词的输出向量</li>
+<li><span class="math inline"><em>h</em></span>是上下文向量</li>
 </ul>
-<p>为了直观理解主要流程，以一个具体的例子为例。<br>假设批大小$B&#x3D;2$，上下问窗口大小$S&#x3D;6$，词典大小$|V|&#x3D;10000$，词向量维度$D&#x3D;128$。<br>第一步是<strong>输入层</strong>，输入一个形状为(2,6)的整数张量，例如<code>[[1, 8, ...], [8, 5, ...]]</code>，代表两个句子片段的上下文ID。<br>第二步是<strong>词向量转换</strong>，通过查表（$W_{in}$矩阵，大小$10000 \times 128$），将这12个单词ID全部转换为对应的128维向量，相当于公式中的$v_{c-k}&#x3D;W_{in}w_{c-k}$，此时数据形状变为$(2,6.128)$。<br>第三步是<strong>上下文聚合</strong>，对每个样本中的6个词向量求平均（原论文中使用的是平均，部分实现中也会采用求和），将时间步维度压缩，得到两个128维的上下文向量$h$，数据形状变为(2,128)。<br>第四步是<strong>输出得分</strong>，将这两个上下文向量与输出矩阵$W_{out}$（大小$128 \times 10000$）相乘，计算每个样本在词典中10000个词上的预测得分，数据形状变为$(2,10000)$。<br>最后<strong>损失计算</strong>将得分通过Softmax将得分转换为概率分布，并于真实的中心词计算交叉熵损失，通过反向传播驱动模型参数$W_{in}$和$W_{out}$的更新。<br>我们最后需要的其实就是训练好的输入矩阵$W_{in}$。</p>
-<h5 id="Skip-gram模型详解"><a href="#Skip-gram模型详解" class="headerlink" title="Skip-gram模型详解"></a>Skip-gram模型详解</h5><p>与 CBOW 恰好相反，Skip-gram 的任务是 <strong>“根据中心词预测上下文”</strong>。在具体实现上，它将一个预测任务，分解成了多个独立的子任务。</p>
+<p>为了直观理解主要流程，以一个具体的例子为例。 假设批大小<span
+class="math inline"><em>B</em> = 2</span>，上下问窗口大小<span
+class="math inline"><em>S</em> = 6</span>，词典大小<span
+class="math inline">|<em>V</em>| = 10000</span>，词向量维度<span
+class="math inline"><em>D</em> = 128</span>。
+第一步是<strong>输入层</strong>，输入一个形状为(2,6)的整数张量，例如<code>[[1, 8, ...], [8, 5, ...]]</code>，代表两个句子片段的上下文ID。
+第二步是<strong>词向量转换</strong>，通过查表（<span
+class="math inline"><em>W</em><sub><em>i</em><em>n</em></sub></span>矩阵，大小<span
+class="math inline">10000 × 128</span>），将这12个单词ID全部转换为对应的128维向量，相当于公式中的<span
+class="math inline"><em>v</em><sub><em>c</em> − <em>k</em></sub> = <em>W</em><sub><em>i</em><em>n</em></sub><em>w</em><sub><em>c</em> − <em>k</em></sub></span>，此时数据形状变为<span
+class="math inline">(2, 6.128)</span>。
+第三步是<strong>上下文聚合</strong>，对每个样本中的6个词向量求平均（原论文中使用的是平均，部分实现中也会采用求和），将时间步维度压缩，得到两个128维的上下文向量<span
+class="math inline"><em>h</em></span>，数据形状变为(2,128)。
+第四步是<strong>输出得分</strong>，将这两个上下文向量与输出矩阵<span
+class="math inline"><em>W</em><sub><em>o</em><em>u</em><em>t</em></sub></span>（大小<span
+class="math inline">128 × 10000</span>）相乘，计算每个样本在词典中10000个词上的预测得分，数据形状变为<span
+class="math inline">(2, 10000)</span>。
+最后<strong>损失计算</strong>将得分通过Softmax将得分转换为概率分布，并于真实的中心词计算交叉熵损失，通过反向传播驱动模型参数<span
+class="math inline"><em>W</em><sub><em>i</em><em>n</em></sub></span>和<span
+class="math inline"><em>W</em><sub><em>o</em><em>u</em><em>t</em></sub></span>的更新。
+我们最后需要的其实就是训练好的输入矩阵<span
+class="math inline"><em>W</em><sub><em>i</em><em>n</em></sub></span>。</p>
+<h5 id="skip-gram模型详解">Skip-gram模型详解</h5>
+<p>与 CBOW 恰好相反，Skip-gram 的任务是
+<strong>“根据中心词预测上下文”</strong>。在具体实现上，它将一个预测任务，分解成了多个独立的子任务。</p>
 <blockquote>
 <p><strong>Skip-gram 与 N-gram 的关系</strong></p>
 <ul>
-<li><strong>名字渊源</strong>：Skip-gram 这个名字确实源于传统的 <strong>k-skip-n-gram</strong> 模型（允许跳过中间词的 N-gram）。</li>
+<li><strong>名字渊源</strong>：Skip-gram 这个名字确实源于传统的
+<strong>k-skip-n-gram</strong> 模型（允许跳过中间词的 N-gram）。</li>
 <li><strong>核心区别</strong>：虽然借用了“跳跃”的思想，但Word2Vec的Skip-gram是一种<strong>预测模型</strong>，而非统计模型。它并不是为了“修复”N-gram，而是为了<strong>更高效地学习稠密词向量</strong>。它通过“用中心词预测上下文”这一任务，强迫模型学习到词语的语义特征，从而彻底解决了传统N-gram面临的<strong>稀疏性</strong>和<strong>维度灾难</strong>问题。</li>
 </ul>
 </blockquote>
-<p>同样从公式来看，开始的<strong>词向量转换</strong>对于中心词$w_c$，从输入矩阵$W_{in}$中获取对应的词向量$v_c&#x3D;W_{in}w_c$。然后计算<strong>输出得分</strong>，将中心词与输出矩阵$W_{out}$相乘得到$z&#x3D;W^T_{out}v_c$。最后还是定义<strong>损失函数</strong>：</p>
+<p>同样从公式来看，开始的<strong>词向量转换</strong>对于中心词<span
+class="math inline"><em>w</em><sub><em>c</em></sub></span>，从输入矩阵<span
+class="math inline"><em>W</em><sub><em>i</em><em>n</em></sub></span>中获取对应的词向量<span
+class="math inline"><em>v</em><sub><em>c</em></sub> = <em>W</em><sub><em>i</em><em>n</em></sub><em>w</em><sub><em>c</em></sub></span>。然后计算<strong>输出得分</strong>，将中心词与输出矩阵<span
+class="math inline"><em>W</em><sub><em>o</em><em>u</em><em>t</em></sub></span>相乘得到<span
+class="math inline"><em>z</em> = <em>W</em><sub><em>o</em><em>u</em><em>t</em></sub><sup><em>T</em></sup><em>v</em><sub><em>c</em></sub></span>。最后还是定义<strong>损失函数</strong>：</p>
 <p>11111</p>
 <p>其中：</p>
 <ul>
-<li>$v_c$是中心词的输入向量</li>
-<li>$u_{c-m+j}$是上下文词的输出向量</li>
+<li><span
+class="math inline"><em>v</em><sub><em>c</em></sub></span>是中心词的输入向量</li>
+<li><span
+class="math inline"><em>u</em><sub><em>c</em> − <em>m</em> + <em>j</em></sub></span>是上下文词的输出向量</li>
 </ul>
-<p>同样以具体数值为例，假设批大小$B&#x3D;2$，上下问窗口大小$S&#x3D;6$，词典大小$|V|&#x3D;10000$，词向量维度$D&#x3D;128$。<br>首先是<strong>输入层</strong>，输入中心词的ID，数据形状为$(2,1)$。<br>接着进行<strong>词向量转换</strong>，将中心词ID通过查表（输入矩阵$W_{in}$，大小$10000 \times 128$）转换为对应的128维词向量$v_{w_c}$，数据形状变为$(2,1,128)$。<br>随后进行<strong>输出得分计算</strong>，将128维的中心词向量与输出矩阵$W_{out}$（大小$128 \times 10000$）相乘，计算在词典中10000个词上的得分，数据形状变为$(2,10000)$。<br>最后的<strong>损失计算</strong>环节与CBOW不同，，这也是 Skip-gram 的主要特点。因为目标是利用中心词预测 66 个上下文单词，这一个形状为 $(2,10000)$ 的得分向量将被<strong>复用 6 次</strong>，分别与 66 个真实的上下文词（标签）计算交叉熵损失。<br>在优化时，会将这 66 个位置的损失<strong>全部相加</strong>，作为最终的损失值进行反向传播，同时更新 $W_{in}$ 和 $W_{out}$。由于一个输入对应多个输出标签，这本质上是一个<strong>多标签分类问题</strong>，在实际实现中，通常将其分解为 66 个独立的单标签分类任务，对每个上下文位置都进行一次 Softmax 预测并求和损失。</p>
+<p>同样以具体数值为例，假设批大小<span
+class="math inline"><em>B</em> = 2</span>，上下问窗口大小<span
+class="math inline"><em>S</em> = 6</span>，词典大小<span
+class="math inline">|<em>V</em>| = 10000</span>，词向量维度<span
+class="math inline"><em>D</em> = 128</span>。
+首先是<strong>输入层</strong>，输入中心词的ID，数据形状为<span
+class="math inline">(2, 1)</span>。
+接着进行<strong>词向量转换</strong>，将中心词ID通过查表（输入矩阵<span
+class="math inline"><em>W</em><sub><em>i</em><em>n</em></sub></span>，大小<span
+class="math inline">10000 × 128</span>）转换为对应的128维词向量<span
+class="math inline"><em>v</em><sub><em>w</em><sub><em>c</em></sub></sub></span>，数据形状变为<span
+class="math inline">(2, 1, 128)</span>。
+随后进行<strong>输出得分计算</strong>，将128维的中心词向量与输出矩阵<span
+class="math inline"><em>W</em><sub><em>o</em><em>u</em><em>t</em></sub></span>（大小<span
+class="math inline">128 × 10000</span>）相乘，计算在词典中10000个词上的得分，数据形状变为<span
+class="math inline">(2, 10000)</span>。
+最后的<strong>损失计算</strong>环节与CBOW不同，，这也是 Skip-gram
+的主要特点。因为目标是利用中心词预测 66 个上下文单词，这一个形状为 <span
+class="math inline">(2, 10000)</span> 的得分向量将被<strong>复用 6
+次</strong>，分别与 66 个真实的上下文词（标签）计算交叉熵损失。
+在优化时，会将这 66
+个位置的损失<strong>全部相加</strong>，作为最终的损失值进行反向传播，同时更新
+<span
+class="math inline"><em>W</em><sub><em>i</em><em>n</em></sub></span> 和
+<span
+class="math inline"><em>W</em><sub><em>o</em><em>u</em><em>t</em></sub></span>。由于一个输入对应多个输出标签，这本质上是一个<strong>多标签分类问题</strong>，在实际实现中，通常将其分解为
+66 个独立的单标签分类任务，对每个上下文位置都进行一次 Softmax
+预测并求和损失。</p>
 <blockquote>
-<p>Skip-gram 为每个”中心词-上下文词”对都创建了一个独立的学习任务，这使得它能够更好地学习到词与词之间更精细的关系。在处理<strong>低频词</strong>和<strong>大数据集</strong>时，通常能得到质量更高的词向量，但由于其任务量是 CBOW 的 S_S_ 倍，训练速度相对较慢。</p>
+<p>Skip-gram
+为每个”中心词-上下文词”对都创建了一个独立的学习任务，这使得它能够更好地学习到词与词之间更精细的关系。在处理<strong>低频词</strong>和<strong>大数据集</strong>时，通常能得到质量更高的词向量，但由于其任务量是
+CBOW 的 S_S_ 倍，训练速度相对较慢。</p>
 </blockquote>
-<h4 id="滑动窗口的直观理解"><a href="#滑动窗口的直观理解" class="headerlink" title="滑动窗口的直观理解"></a>滑动窗口的直观理解</h4><p>在了解了模型的基本构造后，可以深入探讨 Word2Vec 是如何真正捕捉到语义的。<br>以CBOW模型为例，其关键在于<strong>滑动窗口</strong>机制如何生成大量高度重叠的训练样本。假设有一个很长的句子，并设窗口大小为$k&#x3D;7$（中心词左右各7个词），通过在文本上滑动该窗口可以生成大量训练样本。对于 CBOW 任务，当窗口中心位于第 8 个单词时，模型使用上下文 $[w_1,…,w_7]$ 与 $[w_9,…,w_{15}]$ 预测 $w_8$；随后窗口右移一格，中心变为第 9 个单词，模型使用新的上下文 $[w_2,…,w_8]$ 与 $[w_{10},…,w_{16}]$ 预测 $w_9$。比较这两次样本可见，它们有 12 个上下文词<strong>完全相同</strong>（ $w_2∼w_7$ 与 $w_{10}∼w_{15}$），所以两者的 <strong>上下文向量</strong>（所有上下文词向量之和）在初始时就非常相似。</p>
-<p>面对着两个拥有几乎相同上下文却对应不同目标词的样本，模型的目标看似矛盾，因为既要调整参数使第一个样本的上下文向量成功预测出$w_8$，又要让几乎完全一样的第二个样本上下文向量也能成功预测出$w_9$。为了同时达成这两个目的，优化算法（如梯度下降）会找到一个“捷径”，也就是<strong>当$w_8$和$w_9$的词向量本身就足够接近时，模型就能用一个相似的上下文向量同时很好地预测出它们俩</strong>。这一现象在整个语料库中不断重复，当两个不同的词（如“笔记本”和“电脑”）因语言习惯而频繁出现在相似的上下文（如与“键盘”、“屏幕”、“CPU”等共现）时，为了降低总体损失，模型会将它们的词向量在空间中推向彼此靠近的位置，形成语义相似性。<br>从数学角度看，模型的最终目标是让$|V|$维得分向量中，对应真实目标词的那个维度的值最大化。这个得分值，是由上下文向量 $x$（CBOW）或中心词向量 $v_c$（Skip-gram）与输出矩阵 $W_{out}$ 中对应目标词的行向量 $u_{target}$ 进行<strong>点积</strong>得到的，计算公式如下：<br>$<br>\text{score}&#x3D;x \cdot u_{target}<br>$<br>两个向量的点积是余弦相似度公式的分子部分。所以，最大化这个点积得分，在几何上就是在<strong>促使上下文向量 $x$和目标词向量 $u_{target}$ 的夹角尽可能小，即让它们在空间上更接近</strong>。这为前述的滑动窗口机制，提供了数学解释。实际训练中，为避免对整个词表进行 Softmax 归一化带来的高开销，可以用 Hierarchical Softmax 与负采样等近似方法加速训练。</p>
-<h4 id="Word2Vec的局限"><a href="#Word2Vec的局限" class="headerlink" title="Word2Vec的局限"></a>Word2Vec的局限</h4><p>尽管 Word2Vec 是里程碑式的算法，但存在一个根本性的局限性。它产生的是<strong>静态词向量</strong>，具体表现在以下两个方面：</p>
-<p>（1）<strong>上下文无关</strong>：对于词典中的任意一个词，Word2Vec 只会生成一个<strong>固定</strong>的向量表示。这个向量是在整个语料库上训练得到的“平均”语义，与该词出现的具体上下文无关。这直接导致了 Word2Vec <strong>无法解决一词多义</strong>的问题。例如，“小米”这个词，无论是在“农民伯伯正在收割小米”的语境中，还是在“小米公司发布了新手机”的语境中，Word2Vec 赋予它的词向量都是<strong>完全相同</strong>的。</p>
-<p>（2）<strong>静态的本质</strong>：Word2Vec 的输出是一个巨大的查询表。训练完成后，这个表就固定下来了。在使用时，只是根据单词 ID 去查找对应的行向量，整个过程不涉及对上下文的动态分析。</p>
-<h2 id="词向量实战"><a href="#词向量实战" class="headerlink" title="词向量实战"></a>词向量实战</h2><p>前面已经学习了多种词向量表示，接下来我们尝试将这些理论转化为可运行的代码。</p>
-<h3 id="Gensim简介"><a href="#Gensim简介" class="headerlink" title="Gensim简介"></a>Gensim简介</h3><p><strong>Gensim (Generate Similar)</strong> 是一个功能强大且高效的Python库，专门用于处理原始的、非结构化的纯文本文档。它内置了多种主流的词向量和主题模型算法，如 Word2Vec、TF-IDF、LSA、LDA 等。使用pip安装即可。</p>
-<h4 id="核心概念"><a href="#核心概念" class="headerlink" title="核心概念"></a>核心概念</h4><p><strong>语料库</strong>：这是 Gensim 处理的主要对象，可以简单理解为<strong>训练数据集</strong>。分词后的文档通常表示为 <code>list[list[str]]</code>；用于 TF-IDF、LDA 等模型的标准 BoW 语料库是包含稀疏向量的可迭代对象，每篇文档表示为 <code>[(token_id, frequency), ...]</code>。例如 <code>[[&quot;我&quot;, &quot;爱&quot;, &quot;吃&quot;, &quot;海参&quot;], [&quot;国足&quot;, &quot;惨败&quot;, &quot;泰国&quot;]]</code> 中每个子列表代表一篇独立的文档。<br><strong>词典</strong>：这是一个将词语（token）映射到唯一整数ID的<strong>词汇表</strong>。在使用词袋模型之前，必须先根据整个语料库构建一个词典。<br><strong>向量</strong>：在 Gensim 中，一篇文档最终会被转换成一个数学向量。例如，使用词袋模型时，一篇文档 <code>[&quot;我&quot;, &quot;爱&quot;, &quot;我&quot;]</code> 可能会被表示为 <code>[(0, 2), (1, 1)]</code>。<br><strong>稀疏向量</strong>：这是 Gensim 为了节省内存而采用的一种高效表示法。对于像 One-Hot 或词袋模型这样维度巨大且绝大多数值为0的向量，Gensim 不会存储所有0。例如，一个词袋向量 <code>[2, 1, 0, 0, ... , 0]</code> 会被表示成 <code>[(0, 2), (1, 1)]</code>，仅记录<strong>非零项的索引和值</strong>，极大地减少了存储开销。<br><strong>模型</strong>：在 Gensim 中，模型是一个用于实现<strong>向量转换</strong>的算法。例如，<code>TfidfModel</code> 可以将一个由词频构成的词袋向量，转换为一个由TF-IDF权重构成的向量。</p>
-<h4 id="内置算法与安装"><a href="#内置算法与安装" class="headerlink" title="内置算法与安装"></a>内置算法与安装</h4><p>Gensim 几乎涵盖了前面章节中讨论过的所有经典算法。对于基础的权重计算，它提供了 <strong>TF-IDF</strong> (<code>models.TfidfModel</code>)；在主题模型与矩阵分解方面，支持 <strong>LSA</strong> (<code>models.LsiModel</code>)、<strong>LDA</strong> (<code>models.LdaModel</code>) 以及 <strong>NMF</strong> (<code>models.Nmf</code>)；而在神经网络词向量领域，它实现了经典的 <strong>Word2Vec</strong> (<code>models.Word2Vec</code>)、<strong>FastText</strong> (<code>models.FastText</code>) 以及用于段落向量化的 <strong>Doc2Vec</strong> (<code>models.Doc2Vec</code>)。</p>
+<h4 id="滑动窗口的直观理解">滑动窗口的直观理解</h4>
+<p>在了解了模型的基本构造后，可以深入探讨 Word2Vec
+是如何真正捕捉到语义的。<br />
+以CBOW模型为例，其关键在于<strong>滑动窗口</strong>机制如何生成大量高度重叠的训练样本。假设有一个很长的句子，并设窗口大小为<span
+class="math inline"><em>k</em> = 7</span>（中心词左右各7个词），通过在文本上滑动该窗口可以生成大量训练样本。对于
+CBOW 任务，当窗口中心位于第 8 个单词时，模型使用上下文 <span
+class="math inline">[<em>w</em><sub>1</sub>, …, <em>w</em><sub>7</sub>]</span>
+与 <span
+class="math inline">[<em>w</em><sub>9</sub>, …, <em>w</em><sub>15</sub>]</span>
+预测 <span
+class="math inline"><em>w</em><sub>8</sub></span>；随后窗口右移一格，中心变为第
+9 个单词，模型使用新的上下文 <span
+class="math inline">[<em>w</em><sub>2</sub>, …, <em>w</em><sub>8</sub>]</span>
+与 <span
+class="math inline">[<em>w</em><sub>10</sub>, …, <em>w</em><sub>16</sub>]</span>
+预测 <span
+class="math inline"><em>w</em><sub>9</sub></span>。比较这两次样本可见，它们有
+12 个上下文词<strong>完全相同</strong>（ <span
+class="math inline"><em>w</em><sub>2</sub> ∼ <em>w</em><sub>7</sub></span>
+与 <span
+class="math inline"><em>w</em><sub>10</sub> ∼ <em>w</em><sub>15</sub></span>），所以两者的
+<strong>上下文向量</strong>（所有上下文词向量之和）在初始时就非常相似。</p>
+<p>面对着两个拥有几乎相同上下文却对应不同目标词的样本，模型的目标看似矛盾，因为既要调整参数使第一个样本的上下文向量成功预测出<span
+class="math inline"><em>w</em><sub>8</sub></span>，又要让几乎完全一样的第二个样本上下文向量也能成功预测出<span
+class="math inline"><em>w</em><sub>9</sub></span>。为了同时达成这两个目的，优化算法（如梯度下降）会找到一个“捷径”，也就是<strong>当<span
+class="math inline"><em>w</em><sub>8</sub></span>和<span
+class="math inline"><em>w</em><sub>9</sub></span>的词向量本身就足够接近时，模型就能用一个相似的上下文向量同时很好地预测出它们俩</strong>。这一现象在整个语料库中不断重复，当两个不同的词（如“笔记本”和“电脑”）因语言习惯而频繁出现在相似的上下文（如与“键盘”、“屏幕”、“CPU”等共现）时，为了降低总体损失，模型会将它们的词向量在空间中推向彼此靠近的位置，形成语义相似性。
+从数学角度看，模型的最终目标是让<span
+class="math inline">|<em>V</em>|</span>维得分向量中，对应真实目标词的那个维度的值最大化。这个得分值，是由上下文向量
+<span class="math inline"><em>x</em></span>（CBOW）或中心词向量 <span
+class="math inline"><em>v</em><sub><em>c</em></sub></span>（Skip-gram）与输出矩阵
+<span
+class="math inline"><em>W</em><sub><em>o</em><em>u</em><em>t</em></sub></span>
+中对应目标词的行向量 <span
+class="math inline"><em>u</em><sub><em>t</em><em>a</em><em>r</em><em>g</em><em>e</em><em>t</em></sub></span>
+进行<strong>点积</strong>得到的，计算公式如下： $<br />
+=x u_{target}<br />
+$
+两个向量的点积是余弦相似度公式的分子部分。所以，最大化这个点积得分，在几何上就是在<strong>促使上下文向量
+<span class="math inline"><em>x</em></span>和目标词向量 <span
+class="math inline"><em>u</em><sub><em>t</em><em>a</em><em>r</em><em>g</em><em>e</em><em>t</em></sub></span>
+的夹角尽可能小，即让它们在空间上更接近</strong>。这为前述的滑动窗口机制，提供了数学解释。实际训练中，为避免对整个词表进行
+Softmax 归一化带来的高开销，可以用 Hierarchical Softmax
+与负采样等近似方法加速训练。</p>
+<h4 id="word2vec的局限">Word2Vec的局限</h4>
+<p>尽管 Word2Vec
+是里程碑式的算法，但存在一个根本性的局限性。它产生的是<strong>静态词向量</strong>，具体表现在以下两个方面：</p>
+<p>（1）<strong>上下文无关</strong>：对于词典中的任意一个词，Word2Vec
+只会生成一个<strong>固定</strong>的向量表示。这个向量是在整个语料库上训练得到的“平均”语义，与该词出现的具体上下文无关。这直接导致了
+Word2Vec
+<strong>无法解决一词多义</strong>的问题。例如，“小米”这个词，无论是在“农民伯伯正在收割小米”的语境中，还是在“小米公司发布了新手机”的语境中，Word2Vec
+赋予它的词向量都是<strong>完全相同</strong>的。</p>
+<p>（2）<strong>静态的本质</strong>：Word2Vec
+的输出是一个巨大的查询表。训练完成后，这个表就固定下来了。在使用时，只是根据单词
+ID 去查找对应的行向量，整个过程不涉及对上下文的动态分析。</p>
+<h2 id="词向量实战">词向量实战</h2>
+<p>前面已经学习了多种词向量表示，接下来我们尝试将这些理论转化为可运行的代码。</p>
+<h3 id="gensim简介">Gensim简介</h3>
+<p><strong>Gensim (Generate Similar)</strong>
+是一个功能强大且高效的Python库，专门用于处理原始的、非结构化的纯文本文档。它内置了多种主流的词向量和主题模型算法，如
+Word2Vec、TF-IDF、LSA、LDA 等。使用pip安装即可。</p>
+<h4 id="核心概念">核心概念</h4>
+<p><strong>语料库</strong>：这是 Gensim
+处理的主要对象，可以简单理解为<strong>训练数据集</strong>。分词后的文档通常表示为
+<code>list[list[str]]</code>；用于 TF-IDF、LDA 等模型的标准 BoW
+语料库是包含稀疏向量的可迭代对象，每篇文档表示为
+<code>[(token_id, frequency), ...]</code>。例如
+<code>[["我", "爱", "吃", "海参"], ["国足", "惨败", "泰国"]]</code>
+中每个子列表代表一篇独立的文档。
+<strong>词典</strong>：这是一个将词语（token）映射到唯一整数ID的<strong>词汇表</strong>。在使用词袋模型之前，必须先根据整个语料库构建一个词典。
+<strong>向量</strong>：在 Gensim
+中，一篇文档最终会被转换成一个数学向量。例如，使用词袋模型时，一篇文档
+<code>["我", "爱", "我"]</code> 可能会被表示为
+<code>[(0, 2), (1, 1)]</code>。 <strong>稀疏向量</strong>：这是 Gensim
+为了节省内存而采用的一种高效表示法。对于像 One-Hot
+或词袋模型这样维度巨大且绝大多数值为0的向量，Gensim
+不会存储所有0。例如，一个词袋向量 <code>[2, 1, 0, 0, ... , 0]</code>
+会被表示成
+<code>[(0, 2), (1, 1)]</code>，仅记录<strong>非零项的索引和值</strong>，极大地减少了存储开销。
+<strong>模型</strong>：在 Gensim
+中，模型是一个用于实现<strong>向量转换</strong>的算法。例如，<code>TfidfModel</code>
+可以将一个由词频构成的词袋向量，转换为一个由TF-IDF权重构成的向量。</p>
+<h4 id="内置算法与安装">内置算法与安装</h4>
+<p>Gensim
+几乎涵盖了前面章节中讨论过的所有经典算法。对于基础的权重计算，它提供了
+<strong>TF-IDF</strong>
+(<code>models.TfidfModel</code>)；在主题模型与矩阵分解方面，支持
+<strong>LSA</strong>
+(<code>models.LsiModel</code>)、<strong>LDA</strong>
+(<code>models.LdaModel</code>) 以及 <strong>NMF</strong>
+(<code>models.Nmf</code>)；而在神经网络词向量领域，它实现了经典的
+<strong>Word2Vec</strong>
+(<code>models.Word2Vec</code>)、<strong>FastText</strong>
+(<code>models.FastText</code>) 以及用于段落向量化的
+<strong>Doc2Vec</strong> (<code>models.Doc2Vec</code>)。</p>
 <p>可以使用<code>pip</code>命令进行安装：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install gensim </span><br></pre></td></tr></table></figure>
-
-<h3 id="Gensim工作流"><a href="#Gensim工作流" class="headerlink" title="Gensim工作流"></a>Gensim工作流</h3><p>在 Gensim 中，将原始文本转换为TF-IDF或主题模型向量，通常遵循一个标准的三步流程。这个流程是后续应用的基础。</p>
-<p>（1）<strong>准备语料</strong>：将原始的文本文档进行分词，并整理成 Gensim 要求的由列表构成的列表 <code>list[list[str]]</code>格式，其中每个子列表代表一篇独立的文档。</p>
-<p>（2）<strong>创建词典</strong>：遍历所有分词后的文档，创建一个词典，将每个唯一的词元映射到一个从 0 开始的整数 ID。</p>
-<p>（3）<strong>词袋化</strong>：使用创建好的词典，将每一篇文档转换为其稀疏的词袋（BoW）向量。这个向量只记录文档中出现的词的 ID 及其频次，格式为 <code>[(token_id, frequency), ...]</code>。</p>
-<p>这个最终生成的 <strong>BoW语料库</strong>，就是训练 TF-IDF、LDA 等模型的标准输入。</p>
+<h3 id="gensim工作流">Gensim工作流</h3>
+<p>在 Gensim
+中，将原始文本转换为TF-IDF或主题模型向量，通常遵循一个标准的三步流程。这个流程是后续应用的基础。</p>
+<p>（1）<strong>准备语料</strong>：将原始的文本文档进行分词，并整理成
+Gensim 要求的由列表构成的列表
+<code>list[list[str]]</code>格式，其中每个子列表代表一篇独立的文档。</p>
+<p>（2）<strong>创建词典</strong>：遍历所有分词后的文档，创建一个词典，将每个唯一的词元映射到一个从
+0 开始的整数 ID。</p>
+<p>（3）<strong>词袋化</strong>：使用创建好的词典，将每一篇文档转换为其稀疏的词袋（BoW）向量。这个向量只记录文档中出现的词的
+ID 及其频次，格式为 <code>[(token_id, frequency), ...]</code>。</p>
+<p>这个最终生成的 <strong>BoW语料库</strong>，就是训练 TF-IDF、LDA
+等模型的标准输入。</p>
 <blockquote>
 <blockquote>
-<p>以上三步适用于 TF-IDF、LSA、LDA、NMF 等基于 BoW 的模型；不适用于 Word2Vec&#x2F;FastText&#x2F;Doc2Vec 等神经网络词向量模型。后者直接以分词后的句子序列（<code>list[list[str]]</code>）为输入，无需词袋化。</p>
+<p>以上三步适用于 TF-IDF、LSA、LDA、NMF 等基于 BoW 的模型；不适用于
+Word2Vec/FastText/Doc2Vec
+等神经网络词向量模型。后者直接以分词后的句子序列（<code>list[list[str]]</code>）为输入，无需词袋化。</p>
 </blockquote>
 </blockquote>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> jieba  </span><br><span class="line"><span class="keyword">from</span> gensim <span class="keyword">import</span> corpora  </span><br><span class="line"></span><br><span class="line"><span class="comment"># Step 1: 准备分词后的语料 (新闻标题)  </span></span><br><span class="line"></span><br><span class="line">raw_headlines = [  </span><br><span class="line"> <span class="string">&quot;央行降息，刺激股市反弹&quot;</span>,  </span><br><span class="line"> <span class="string">&quot;球队赢得总决赛冠军，球员表现出色&quot;</span>  </span><br><span class="line">]  </span><br><span class="line">tokenized_headlines = [jieba.lcut(doc) <span class="keyword">for</span> doc <span class="keyword">in</span> raw_headlines]  </span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;分词后语料: <span class="subst">&#123;tokenized_headlines&#125;</span>&quot;</span>)  </span><br><span class="line"></span><br><span class="line"><span class="comment"># Step 2: 创建词典  </span></span><br><span class="line"></span><br><span class="line">dictionary = corpora.Dictionary(tokenized_headlines)  </span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;词典: <span class="subst">&#123;dictionary.token2id&#125;</span>&quot;</span>)  </span><br><span class="line"></span><br><span class="line"><span class="comment"># Step 3: 转换为 BoW 向量语料库  </span></span><br><span class="line"></span><br><span class="line">corpus_bow = [dictionary.doc2bow(doc) <span class="keyword">for</span> doc <span class="keyword">in</span> tokenized_headlines]  </span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;BoW语料库: <span class="subst">&#123;corpus_bow&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
-
 <p>输出如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">分词后语料: [[&#x27;央行&#x27;, &#x27;降息&#x27;, &#x27;，&#x27;, &#x27;刺激&#x27;, &#x27;股市&#x27;, &#x27;反弹&#x27;], [&#x27;球队&#x27;, &#x27;赢得&#x27;, &#x27;总决赛&#x27;, &#x27;冠军&#x27;, &#x27;，&#x27;, &#x27;球员&#x27;, &#x27;表现出色&#x27;]]  </span><br><span class="line">词典: &#123;&#x27;刺激&#x27;: 0, &#x27;反弹&#x27;: 1, &#x27;央行&#x27;: 2, &#x27;股市&#x27;: 3, &#x27;降息&#x27;: 4, &#x27;，&#x27;: 5, &#x27;冠军&#x27;: 6, &#x27;总决赛&#x27;: 7, &#x27;球员&#x27;: 8, &#x27;球队&#x27;: 9, &#x27;表现出色&#x27;: 10, &#x27;赢得&#x27;: 11&#125;  </span><br><span class="line">BoW语料库: [[(0, 1), (1, 1), (2, 1), (3, 1), (4, 1), (5, 1)], [(5, 1), (6, 1), (7, 1), (8, 1), (9, 1), (10, 1), (11, 1)]] </span><br></pre></td></tr></table></figure>
-
-<h3 id="TF-IDF与关键词权重"><a href="#TF-IDF与关键词权重" class="headerlink" title="TF-IDF与关键词权重"></a>TF-IDF与关键词权重</h3><p>TF-IDF是衡量一个词在文档中重要性的经典加权方法。下面将继续使用新闻标题的例子，演示如何计算其TF-IDF向量。</p>
+<h3 id="tf-idf与关键词权重">TF-IDF与关键词权重</h3>
+<p>TF-IDF是衡量一个词在文档中重要性的经典加权方法。下面将继续使用新闻标题的例子，演示如何计算其TF-IDF向量。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> jieba  </span><br><span class="line"><span class="keyword">from</span> gensim <span class="keyword">import</span> corpora, models  </span><br><span class="line"></span><br><span class="line"><span class="comment"># 1. 准备语料 (新闻标题，包含财经和体育两个明显主题)  </span></span><br><span class="line"></span><br><span class="line">headlines = [  </span><br><span class="line"> <span class="string">&quot;央行降息，刺激股市反弹&quot;</span>,  </span><br><span class="line"> <span class="string">&quot;球队赢得总决赛冠军，球员表现出色&quot;</span>,  </span><br><span class="line"> <span class="string">&quot;国家队公布最新一期足球集训名单&quot;</span>,  </span><br><span class="line"> <span class="string">&quot;A股市场持续震荡，投资者需谨慎&quot;</span>,  </span><br><span class="line"> <span class="string">&quot;篮球巨星刷新历史得分记录&quot;</span>,  </span><br><span class="line"> <span class="string">&quot;理财产品收益率创下新高&quot;</span>  </span><br><span class="line">]  </span><br><span class="line">tokenized_headlines = [jieba.lcut(title) <span class="keyword">for</span> title <span class="keyword">in</span> headlines]  </span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 创建词典和 BoW 语料库  </span></span><br><span class="line"></span><br><span class="line">dictionary = corpora.Dictionary(tokenized_headlines)  </span><br><span class="line">corpus_bow = [dictionary.doc2bow(doc) <span class="keyword">for</span> doc <span class="keyword">in</span> tokenized_headlines]  </span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 训练 TF-IDF 模型  </span></span><br><span class="line"></span><br><span class="line">tfidf_model = models.TfidfModel(corpus_bow)  </span><br><span class="line"></span><br><span class="line"><span class="comment"># 4. 将BoW语料库转换为 TF-IDF 向量表示  </span></span><br><span class="line"></span><br><span class="line">corpus_tfidf = tfidf_model[corpus_bow]  </span><br><span class="line"></span><br><span class="line"><span class="comment"># 辅助函数：把 (token_id, weight) 转成 (token, weight)，并按权重降序展示  </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">tfidf_with_words</span>(<span class="params">tfidf_vec, id2word</span>):  </span><br><span class="line"> pairs = [(id2word[token_id], weight) <span class="keyword">for</span> token_id, weight <span class="keyword">in</span> tfidf_vec]  </span><br><span class="line"> <span class="keyword">return</span> <span class="built_in">sorted</span>(pairs, key=<span class="keyword">lambda</span> x: x[<span class="number">1</span>], reverse=<span class="literal">True</span>)  </span><br><span class="line"></span><br><span class="line"><span class="comment"># 打印第一篇标题的 TF-IDF 向量  </span></span><br><span class="line"></span><br><span class="line">first_tfidf = <span class="built_in">list</span>(corpus_tfidf)[<span class="number">0</span>]  </span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;第一篇标题的 TF-IDF 向量:&quot;</span>)  </span><br><span class="line"><span class="built_in">print</span>(first_tfidf)  </span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;第一篇标题的 TF-IDF 向量(带词语):&quot;</span>)  </span><br><span class="line"><span class="built_in">print</span>(tfidf_with_words(first_tfidf, dictionary))  </span><br><span class="line"></span><br><span class="line"><span class="comment"># 5. 对新标题应用模型  </span></span><br><span class="line"></span><br><span class="line">new_headline = <span class="string">&quot;股市大涨，牛市来了&quot;</span>  </span><br><span class="line">new_headline_bow = dictionary.doc2bow(jieba.lcut(new_headline))  </span><br><span class="line">new_headline_tfidf = tfidf_model[new_headline_bow]  </span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\n新标题的 TF-IDF 向量:&quot;</span>)  </span><br><span class="line"><span class="built_in">print</span>(new_headline_tfidf)  </span><br></pre></td></tr></table></figure>
-
 <p>输出如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">第一篇标题的 TF-IDF 向量:  </span><br><span class="line">[(0, 0.44066740566370055), (1, 0.44066740566370055), (2, 0.44066740566370055), (3, 0.44066740566370055), (4, 0.44066740566370055), (5, 0.1704734229377651)]  </span><br><span class="line">第一篇标题的 TF-IDF 向量(带词语):  </span><br><span class="line">[(&quot;刺激&quot;, 0.44066740566370055), (&quot;反弹&quot;, 0.44066740566370055), (&quot;央行&quot;, 0.44066740566370055), (&quot;股市&quot;, 0.44066740566370055), (&quot;降息&quot;, 0.44066740566370055), (&quot;，&quot;, 0.1704734229377651)]  </span><br><span class="line"></span><br><span class="line">新标题的 TF-IDF 向量:  </span><br><span class="line">[(3, 0.9326446771245245), (5, 0.360796211497975)] </span><br></pre></td></tr></table></figure>
-
-<p>通过输出可以看出，原始的BoW向量只包含词频（整数），而TF-IDF向量则包含浮点数权重。像“，”这样在多篇文档中都出现的词，其 TF-IDF 权重会较低；而在特定财经新闻中出现的“股市”、“降息”等词，权重会相对较高。这个 TF-IDF 向量后续可用于计算文档相似度或作为机器学习模型的输入特征。需注意，词典外的新词会被忽略，新文本的向量仅由词典中已有词构成。本示例中标点“，”进入了词典并具有非零权重；如不希望其影响权重或相似度，建议在构建词典前移除标点&#x2F;停用词。此外，新标题的 TF-IDF 仅包含“股市”和“，”两项，这是因为其他词为 OOV 被忽略。</p>
-<h3 id="LDA-与文档主题挖掘"><a href="#LDA-与文档主题挖掘" class="headerlink" title="LDA 与文档主题挖掘"></a>LDA 与文档主题挖掘</h3><p>主题模型（如LDA）能从大量文档中自动发现隐藏的、无监督的主题。它的输入同样是词典和BoW语料库。</p>
+<p>通过输出可以看出，原始的BoW向量只包含词频（整数），而TF-IDF向量则包含浮点数权重。像“，”这样在多篇文档中都出现的词，其
+TF-IDF
+权重会较低；而在特定财经新闻中出现的“股市”、“降息”等词，权重会相对较高。这个
+TF-IDF
+向量后续可用于计算文档相似度或作为机器学习模型的输入特征。需注意，词典外的新词会被忽略，新文本的向量仅由词典中已有词构成。本示例中标点“，”进入了词典并具有非零权重；如不希望其影响权重或相似度，建议在构建词典前移除标点/停用词。此外，新标题的
+TF-IDF 仅包含“股市”和“，”两项，这是因为其他词为 OOV 被忽略。</p>
+<h3 id="lda-与文档主题挖掘">LDA 与文档主题挖掘</h3>
+<p>主题模型（如LDA）能从大量文档中自动发现隐藏的、无监督的主题。它的输入同样是词典和BoW语料库。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> jieba  </span><br><span class="line"><span class="keyword">from</span> gensim <span class="keyword">import</span> corpora, models  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 1. 准备语料  </span></span><br><span class="line"></span><br><span class="line">headlines = [  </span><br><span class="line"> <span class="string">&quot;央行降息，刺激股市反弹&quot;</span>,  </span><br><span class="line"> <span class="string">&quot;球队赢得总决赛冠军，球员表现出色&quot;</span>,  </span><br><span class="line"> <span class="string">&quot;国家队公布最新一期足球集训名单&quot;</span>,  </span><br><span class="line"> <span class="string">&quot;A股市场持续震荡，投资者需谨慎&quot;</span>,  </span><br><span class="line"> <span class="string">&quot;篮球巨星刷新历史得分记录&quot;</span>,  </span><br><span class="line"> <span class="string">&quot;理财产品收益率创下新高&quot;</span>  </span><br><span class="line">]  </span><br><span class="line">tokenized_headlines = [jieba.lcut(title) <span class="keyword">for</span> title <span class="keyword">in</span> headlines]  </span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 创建词典和 BoW 语料库  </span></span><br><span class="line"></span><br><span class="line">dictionary = corpora.Dictionary(tokenized_headlines)  </span><br><span class="line">corpus_bow = [dictionary.doc2bow(doc) <span class="keyword">for</span> doc <span class="keyword">in</span> tokenized_headlines]  </span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 训练 LDA 模型 (假设需要发现 2 个主题)  </span></span><br><span class="line"></span><br><span class="line">lda_model = models.LdaModel(corpus=corpus_bow, id2word=dictionary, num_topics=<span class="number">2</span>, random_state=<span class="number">100</span>)  </span><br><span class="line"></span><br><span class="line"><span class="comment"># 4. 查看模型发现的主题  </span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;模型发现的2个主题及其关键词:&quot;</span>)  </span><br><span class="line"><span class="keyword">for</span> topic <span class="keyword">in</span> lda_model.print_topics():  </span><br><span class="line"> <span class="built_in">print</span>(topic)  </span><br><span class="line"></span><br><span class="line"><span class="comment"># 5. 推断新文档的主题分布  </span></span><br><span class="line"></span><br><span class="line">new_headline = <span class="string">&quot;巨星詹姆斯获得常规赛MVP&quot;</span>  </span><br><span class="line">new_headline_bow = dictionary.doc2bow(jieba.lcut(new_headline))  </span><br><span class="line">topic_distribution = lda_model[new_headline_bow]  </span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;\n新标题 &#x27;<span class="subst">&#123;new_headline&#125;</span>&#x27; 的主题分布:&quot;</span>)  </span><br><span class="line"><span class="built_in">print</span>(topic_distribution)  </span><br></pre></td></tr></table></figure>
-
 <p>输出如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">模型发现的2个主题及其关键词:  </span><br><span class="line">(0, &#x27;0.045*&quot;，&quot; + 0.040*&quot;公布&quot; + 0.039*&quot;一期&quot; + 0.039*&quot;名单&quot; + 0.039*&quot;足球&quot; + 0.039*&quot;最新&quot; + 0.038*&quot;集训&quot; + 0.038*&quot;国家队&quot; + 0.037*&quot;A股&quot; + 0.037*&quot;市场&quot;&#x27;)  </span><br><span class="line">(1, &#x27;0.066*&quot;，&quot; + 0.039*&quot;篮球&quot; + 0.039*&quot;刷新&quot; + 0.039*&quot;历史&quot; + 0.039*&quot;记录&quot; + 0.038*&quot;得分&quot; + 0.038*&quot;巨星&quot; + 0.037*&quot;刺激&quot; + 0.036*&quot;降息&quot; + 0.036*&quot;反弹&quot;&#x27;)  </span><br><span class="line"></span><br><span class="line">新标题 &#x27;巨星詹姆斯获得常规赛MVP&#x27; 的主题分布:  </span><br><span class="line">[(0, np.float32(0.27243596)), (1, np.float32(0.72756404))] </span><br></pre></td></tr></table></figure>
-
-
-<p>通过 LDA，不仅可以将一篇文档表示为一个主题概率分布（Gensim 默认以稀疏列表返回；例如 90% 体育、10% 财经），还能清晰地看到每个主题由哪些核心词构成。若新文本在词典中几乎无重叠词（<code>doc2bow</code> 为空），推断出的主题分布可能接近均匀（例如 2 个主题时约为 0.5&#x2F;0.5）。</p>
-<h3 id="Word2Vec模型实战"><a href="#Word2Vec模型实战" class="headerlink" title="Word2Vec模型实战"></a>Word2Vec模型实战</h3><p>与前两者不同，Word2Vec 的输入直接是<strong>分词后的句子列表</strong>。它的目标不是加权或寻找主题，而是根据上下文学习每个词语本身内在的、稠密的语义向量。不过，Word2Vec 训练结束后，神经网络本身通常会被丢弃。因为它的最终目标是获得那个高质量的<strong>词向量查询表</strong>，存储在 <code>model.wv</code> 属性中。后续所有的应用，都是围绕这个查询表展开的。</p>
-<h4 id="模型训练与核心参数"><a href="#模型训练与核心参数" class="headerlink" title="模型训练与核心参数"></a>模型训练与核心参数</h4><p>得益于 Gensim 的封装，Word2Vec 的训练代码极其简洁。主要的难点是如何根据语料特点调整超参数（如窗口大小、最小词频等），这些设置直接决定了词向量的质量，下面我们复用前文的新闻标题语料来进行演示。</p>
+<p>通过 LDA，不仅可以将一篇文档表示为一个主题概率分布（Gensim
+默认以稀疏列表返回；例如 90% 体育、10%
+财经），还能清晰地看到每个主题由哪些核心词构成。若新文本在词典中几乎无重叠词（<code>doc2bow</code>
+为空），推断出的主题分布可能接近均匀（例如 2 个主题时约为
+0.5/0.5）。</p>
+<h3 id="word2vec模型实战">Word2Vec模型实战</h3>
+<p>与前两者不同，Word2Vec
+的输入直接是<strong>分词后的句子列表</strong>。它的目标不是加权或寻找主题，而是根据上下文学习每个词语本身内在的、稠密的语义向量。不过，Word2Vec
+训练结束后，神经网络本身通常会被丢弃。因为它的最终目标是获得那个高质量的<strong>词向量查询表</strong>，存储在
+<code>model.wv</code>
+属性中。后续所有的应用，都是围绕这个查询表展开的。</p>
+<h4 id="模型训练与核心参数">模型训练与核心参数</h4>
+<p>得益于 Gensim 的封装，Word2Vec
+的训练代码极其简洁。主要的难点是如何根据语料特点调整超参数（如窗口大小、最小词频等），这些设置直接决定了词向量的质量，下面我们复用前文的新闻标题语料来进行演示。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> jieba  </span><br><span class="line"><span class="keyword">from</span> gensim.models <span class="keyword">import</span> Word2Vec  </span><br><span class="line"></span><br><span class="line"><span class="comment"># 1. 准备语料  </span></span><br><span class="line"></span><br><span class="line">headlines = [  </span><br><span class="line"></span><br><span class="line"> <span class="comment"># 财经  </span></span><br><span class="line"></span><br><span class="line"> <span class="string">&quot;央行降息，刺激股市反弹&quot;</span>,  </span><br><span class="line"> <span class="string">&quot;A股市场持续震荡，投资者需谨慎&quot;</span>,  </span><br><span class="line"> <span class="string">&quot;理财产品收益率创下新高&quot;</span>,  </span><br><span class="line"> <span class="string">&quot;证监会发布新规，规范市场交易&quot;</span>,  </span><br><span class="line"> <span class="string">&quot;创业板指数上涨，科技股领涨大盘&quot;</span>,  </span><br><span class="line"> <span class="string">&quot;房价调控政策出台，房地产市场降温&quot;</span>,  </span><br><span class="line"> <span class="string">&quot;全球股市动荡，影响资本市场信心&quot;</span>,  </span><br><span class="line"> <span class="string">&quot;分析师认为，当前股市风险与机遇并存，市场情绪复杂&quot;</span>,  </span><br><span class="line"></span><br><span class="line"> <span class="comment"># 体育  </span></span><br><span class="line"></span><br><span class="line"> <span class="string">&quot;球队赢得总决赛冠军，球员表现出色&quot;</span>,  </span><br><span class="line"> <span class="string">&quot;国家队公布最新一期足球集训名单&quot;</span>,  </span><br><span class="line"> <span class="string">&quot;篮球巨星刷新历史得分记录&quot;</span>,  </span><br><span class="line"> <span class="string">&quot;奥运会开幕，中国代表团旗手确定&quot;</span>,  </span><br><span class="line"> <span class="string">&quot;马拉松比赛圆满结束，选手创造佳绩&quot;</span>,  </span><br><span class="line"> <span class="string">&quot;电子竞技联赛吸引大量年轻观众&quot;</span>,  </span><br><span class="line"> <span class="string">&quot;这支球队的每位球员都表现出色&quot;</span>,  </span><br><span class="line"> <span class="string">&quot;球员转会市场活跃，多支球队积极引援&quot;</span>  </span><br><span class="line">]  </span><br><span class="line">tokenized_headlines = [jieba.lcut(title) <span class="keyword">for</span> title <span class="keyword">in</span> headlines]  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 训练Word2Vec模型  </span></span><br><span class="line"></span><br><span class="line">model = Word2Vec(tokenized_headlines, vector_size=<span class="number">50</span>, window=<span class="number">3</span>, min_count=<span class="number">1</span>, sg=<span class="number">1</span>)  </span><br></pre></td></tr></table></figure>
-
-
-<p>训练完成后，所有词向量都存储在<code>model.wv</code>对象中，这是一个<code>KeyedVectors</code>实例。代码中我们主要用到了<code>sentences</code>、<code>vector_size</code>、<code>window</code>、<code>min_count</code>和<code>min_count</code>和<code>sg</code> 这几个参数，其中：</p>
+<p>训练完成后，所有词向量都存储在<code>model.wv</code>对象中，这是一个<code>KeyedVectors</code>实例。代码中我们主要用到了<code>sentences</code>、<code>vector_size</code>、<code>window</code>、<code>min_count</code>和<code>min_count</code>和<code>sg</code>
+这几个参数，其中：</p>
 <ul>
-<li><code>sentences</code>: 输入的语料库（对应代码中的 <code>tokenized_headlines</code>），必须是 <code>list[list[str]]</code> 格式。</li>
-<li><code>vector_size</code>: 词向量的维度。维度越高，能表达的语义信息越丰富，但计算量也越大。通常在 50-300 之间选择。</li>
-<li><code>window</code>: 上下文窗口大小。表示在预测一个词时，需要考虑其前后多少个词。</li>
-<li><code>min_count</code>: <strong>最小词频过滤</strong>。任何在整个语料库中出现次数低于此值的词将被直接忽略。这是非常关键的一步，可以过滤掉大量噪音（如错别字、罕见词），并显著减小模型体积。</li>
-<li><code>sg</code>: 选择训练算法。<code>0</code> 表示 <strong>CBOW</strong> (根据上下文预测中心词)；<code>1</code> 表示 <strong>Skip-gram</strong> (根据中心词预测上下文)。</li>
+<li><code>sentences</code>: 输入的语料库（对应代码中的
+<code>tokenized_headlines</code>），必须是 <code>list[list[str]]</code>
+格式。</li>
+<li><code>vector_size</code>:
+词向量的维度。维度越高，能表达的语义信息越丰富，但计算量也越大。通常在
+50-300 之间选择。</li>
+<li><code>window</code>:
+上下文窗口大小。表示在预测一个词时，需要考虑其前后多少个词。</li>
+<li><code>min_count</code>:
+<strong>最小词频过滤</strong>。任何在整个语料库中出现次数低于此值的词将被直接忽略。这是非常关键的一步，可以过滤掉大量噪音（如错别字、罕见词），并显著减小模型体积。</li>
+<li><code>sg</code>: 选择训练算法。<code>0</code> 表示
+<strong>CBOW</strong> (根据上下文预测中心词)；<code>1</code> 表示
+<strong>Skip-gram</strong> (根据中心词预测上下文)。</li>
 </ul>
 <p>还有几个比较重要但是当前未使用的参数，它们负责模型的优化与采样：</p>
 <ul>
-<li><code>hs</code>: 选择优化策略。<code>0</code> 表示使用 <strong>Negative Sampling</strong> (负采样)；<code>1</code> 表示使用 <strong>Hierarchical Softmax</strong>。</li>
-<li><code>negative</code>: 当 <code>hs=0</code> 使用负采样时，为每个正样本随机选择多少个负样本。通常在 5-20 之间。</li>
-<li><code>sample</code>: <strong>高频词二次重采样阈值</strong>。这是一个控制高频词（如“的”、“是”）被随机跳过的机制，目的是减少它们对模型训练的过多影响，并加快训练速度。</li>
+<li><code>hs</code>: 选择优化策略。<code>0</code> 表示使用
+<strong>Negative Sampling</strong> (负采样)；<code>1</code> 表示使用
+<strong>Hierarchical Softmax</strong>。</li>
+<li><code>negative</code>: 当 <code>hs=0</code>
+使用负采样时，为每个正样本随机选择多少个负样本。通常在 5-20 之间。</li>
+<li><code>sample</code>:
+<strong>高频词二次重采样阈值</strong>。这是一个控制高频词（如“的”、“是”）被随机跳过的机制，目的是减少它们对模型训练的过多影响，并加快训练速度。</li>
 </ul>
-<h4 id="使用词向量"><a href="#使用词向量" class="headerlink" title="使用词向量"></a>使用词向量</h4><p>模型训练完成后，所有的操作都围绕 <code>model.wv</code> 展开，用于探索词语间的语义关系。小语料示例下，相似度数值通常较低且不稳定，仅作演示参考。</p>
+<h4 id="使用词向量">使用词向量</h4>
+<p>模型训练完成后，所有的操作都围绕 <code>model.wv</code>
+展开，用于探索词语间的语义关系。小语料示例下，相似度数值通常较低且不稳定，仅作演示参考。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. 寻找最相似的词  </span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在小语料上，结果可能不完美，但能体现出模型学习到了主题内的关联  </span></span><br><span class="line"></span><br><span class="line">similar_to_market = model.wv.most_similar(<span class="string">&#x27;股市&#x27;</span>)  </span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;与 &#x27;股市&#x27; 最相似的词: <span class="subst">&#123;similar_to_market&#125;</span>&quot;</span>)  </span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 计算两个词的余弦相似度  </span></span><br><span class="line"></span><br><span class="line">similarity = model.wv.similarity(<span class="string">&#x27;球队&#x27;</span>, <span class="string">&#x27;球员&#x27;</span>)  </span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;\n&#x27;球队&#x27; 和 &#x27;球员&#x27; 的相似度: <span class="subst">&#123;similarity:<span class="number">.4</span>f&#125;</span>&quot;</span>)  </span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 获取一个词的向量  </span></span><br><span class="line"></span><br><span class="line">market_vector = model.wv[<span class="string">&#x27;市场&#x27;</span>]  </span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;\n&#x27;市场&#x27; 的向量维度: <span class="subst">&#123;market_vector.shape&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-
 <p>输出如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">与 &#x27;股市&#x27; 最相似的词: [(&#x27;名单&#x27;, 0.3699544370174408), (&#x27;央行&#x27;, 0.3554984927177429), (&#x27;年轻&#x27;, 0.24192844331264496), (&#x27;联赛&#x27;, 0.23673078417778015), (&#x27;马拉松&#x27;, 0.20006775856018066), (&#x27;证监会&#x27;, 0.19390541315078735), (&#x27;每位&#x27;, 0.17580750584602356), (&#x27;积极&#x27;, 0.16841839253902435), (&#x27;球队&#x27;, 0.16585905849933624), (&#x27;理财产品&#x27;, 0.16510605812072754)]  </span><br><span class="line"></span><br><span class="line">&#x27;球队&#x27; 和 &#x27;球员&#x27; 的相似度: -0.1552  </span><br><span class="line"></span><br><span class="line">&#x27;市场&#x27; 的向量维度: (50,) 							</span><br></pre></td></tr></table></figure>
-
-<h4 id="模型的持久化"><a href="#模型的持久化" class="headerlink" title="模型的持久化"></a>模型的持久化</h4><p>在实际项目中，通常会把训练好的词向量保存下来。如果后续不再进行增量训练，推荐只保存 <code>KeyedVectors</code> 对象 (<code>model.wv</code>)。因为完整的模型对象包含了哈夫曼树、梯度累积量等仅在训练阶段需要的中间状态，去除这些冗余信息不仅能节省存储空间，更能降低内存占用并提升加载速度，保障线上服务的稳定性。</p>
+<h4 id="模型的持久化">模型的持久化</h4>
+<p>在实际项目中，通常会把训练好的词向量保存下来。如果后续不再进行增量训练，推荐只保存
+<code>KeyedVectors</code> 对象
+(<code>model.wv</code>)。因为完整的模型对象包含了哈夫曼树、梯度累积量等仅在训练阶段需要的中间状态，去除这些冗余信息不仅能节省存储空间，更能降低内存占用并提升加载速度，保障线上服务的稳定性。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> gensim.models <span class="keyword">import</span> KeyedVectors  </span><br><span class="line">    </span><br><span class="line"><span class="comment"># 保存词向量到文件  </span></span><br><span class="line"></span><br><span class="line">model.wv.save(<span class="string">&quot;news_vectors.kv&quot;</span>)  </span><br><span class="line"></span><br><span class="line"><span class="comment"># 从文件加载词向量  </span></span><br><span class="line"></span><br><span class="line">loaded_wv = KeyedVectors.load(<span class="string">&quot;news_vectors.kv&quot;</span>)  </span><br><span class="line"></span><br><span class="line"><span class="comment"># 加载后可以执行同样的操作  </span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;\n加载后，&#x27;球队&#x27; 和 &#x27;球员&#x27; 的相似度: <span class="subst">&#123;loaded_wv.similarity(<span class="string">&#x27;球队&#x27;</span>, <span class="string">&#x27;球员&#x27;</span>):<span class="number">.4</span>f&#125;</span>&quot;</span>) </span><br></pre></td></tr></table></figure>
-
 <p>输出如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">加载后，&#x27;球队&#x27; 和 &#x27;球员&#x27; 的相似度: -0.1552  </span><br></pre></td></tr></table></figure>
-
-
-<p>通过 Gensim，我们就可以非常方便地训练自己的 Word2Vec 模型，并利用它的语义捕捉能力进行相似度计算、语义类比等 NLP 任务。</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><p><a target="_blank" rel="noopener" href="https://datawhalechina.github.io/base-llm/#/">Base LLM | 从 NLP 到 LLM 的算法全栈教程</a></p>
-</li>
-<li><p><a href="/ai/tags/NLP/">NLP</a><br>​</p>
-</li>
+<p>通过 Gensim，我们就可以非常方便地训练自己的 Word2Vec
+模型，并利用它的语义捕捉能力进行相似度计算、语义类比等 NLP 任务。</p>
+<h2 id="参考">参考</h2>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://datawhalechina.github.io/base-llm/#/">Base LLM |
+从 NLP 到 LLM 的算法全栈教程</a></p></li>
+<li><p><a href="/ai/tags/NLP/">NLP</a> ​</p></li>
 </ul>
-</div><div class="tags"><ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/ai/tags/NLP/" rel="tag">NLP</a></li></ul></div><div class="post-nav"><a class="pre" href="/ai/2026/03/14/RNN%E3%80%81LSTM%E4%B8%8EGRU/">RNN、LSTM与GRU</a><a class="next" href="/ai/2026/03/01/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/">大模型学习路线</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="https://thginwalker.github.io"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/ai/categories/Hexo%E6%95%99%E7%A8%8B/">Hexo教程</a></li><li class="category-list-item"><a class="category-list-link" href="/ai/categories/NLP/">NLP</a></li><li class="category-list-item"><a class="category-list-link" href="/ai/categories/Transformer/">Transformer</a></li><li class="category-list-item"><a class="category-list-link" href="/ai/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/ai/tags/NLP/" style="font-size: 15px;">NLP</a> <a href="/ai/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 15px;">深度学习</a> <a href="/ai/tags/%E6%8A%80%E6%9C%AF/" style="font-size: 15px;">技术</a> <a href="/ai/tags/RNN/" style="font-size: 15px;">RNN</a> <a href="/ai/tags/LSTM/" style="font-size: 15px;">LSTM</a> <a href="/ai/tags/%E5%85%B6%E4%BB%96/" style="font-size: 15px;">其他</a> <a href="/ai/tags/Transformer/" style="font-size: 15px;">Transformer</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/ai/2026/04/24/Python%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/">Python深度学习入门基础（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/ai/2026/04/10/%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6%E4%B8%8ETransformer/">注意力机制与Transformer</a></li><li class="post-list-item"><a class="post-list-link" href="/ai/2026/03/14/RNN%E3%80%81LSTM%E4%B8%8EGRU/">RNN、LSTM与GRU</a></li><li class="post-list-item"><a class="post-list-link" href="/ai/2026/03/12/NLP%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">NLP基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/ai/2026/03/01/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/">大模型学习路线</a></li><li class="post-list-item"><a class="post-list-link" href="/ai/2026/02/23/%E5%A6%82%E4%BD%95%E5%86%99hexo%E5%8D%9A%E5%AE%A2/">如何写hexo博客</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="https://thginwalker.github.io/deal/" title="交易" target="_blank">交易</a><ul></ul><a href="https://thginwalker.github.io/deal/" title="目标" target="_blank">目标</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2026 <a href="/ai/." rel="nofollow">小小博客.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/ai/js/totop.js?v=1.0.0" async></script><script type="text/javascript" src="https://unpkg.com/@fancyapps/fancybox/dist/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/ai/js/fancybox.js?v=1.0.0" async></script><link rel="stylesheet" type="text/css" href="https://unpkg.com/@fancyapps/fancybox/dist/jquery.fancybox.min.css"><script type="text/javascript" src="/ai/js/copycode.js?v=1.0.0" successtext="复制成功！"></script><link rel="stylesheet" type="text/css" href="/ai/css/copycode.css?v=1.0.0"><script type="text/javascript" src="/ai/js/codeblock-resizer.js?v=1.0.0"></script><script type="text/javascript" src="/ai/js/smartresize.js?v=1.0.0"></script></div></body></html>
+</div><div class="tags"><ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/ai/tags/NLP/" rel="tag">NLP</a></li></ul></div><div class="post-nav"><a class="pre" href="/ai/2026/03/14/RNN%E3%80%81LSTM%E4%B8%8EGRU/">RNN、LSTM与GRU</a><a class="next" href="/ai/2026/03/01/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/">大模型学习路线</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="https://thginwalker.github.io"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/ai/categories/Hexo%E6%95%99%E7%A8%8B/">Hexo教程</a></li><li class="category-list-item"><a class="category-list-link" href="/ai/categories/NLP/">NLP</a></li><li class="category-list-item"><a class="category-list-link" href="/ai/categories/Transformer/">Transformer</a></li><li class="category-list-item"><a class="category-list-link" href="/ai/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/ai/tags/RNN/" style="font-size: 15px;">RNN</a> <a href="/ai/tags/LSTM/" style="font-size: 15px;">LSTM</a> <a href="/ai/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 15px;">深度学习</a> <a href="/ai/tags/NLP/" style="font-size: 15px;">NLP</a> <a href="/ai/tags/%E6%8A%80%E6%9C%AF/" style="font-size: 15px;">技术</a> <a href="/ai/tags/%E5%85%B6%E4%BB%96/" style="font-size: 15px;">其他</a> <a href="/ai/tags/Transformer/" style="font-size: 15px;">Transformer</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/ai/2026/04/26/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">从零开始深度学习</a></li><li class="post-list-item"><a class="post-list-link" href="/ai/2026/04/25/Python%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/">Python深度学习入门基础（二）</a></li><li class="post-list-item"><a class="post-list-link" href="/ai/2026/04/24/Python%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/">Python深度学习入门基础（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/ai/2026/04/10/%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6%E4%B8%8ETransformer/">注意力机制与Transformer</a></li><li class="post-list-item"><a class="post-list-link" href="/ai/2026/03/14/RNN%E3%80%81LSTM%E4%B8%8EGRU/">RNN、LSTM与GRU</a></li><li class="post-list-item"><a class="post-list-link" href="/ai/2026/03/12/NLP%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">NLP基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/ai/2026/03/01/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/">大模型学习路线</a></li><li class="post-list-item"><a class="post-list-link" href="/ai/2026/02/23/%E5%A6%82%E4%BD%95%E5%86%99hexo%E5%8D%9A%E5%AE%A2/">如何写hexo博客</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="https://thginwalker.github.io/deal/" title="交易" target="_blank">交易</a><ul></ul><a href="https://thginwalker.github.io/deal/" title="目标" target="_blank">目标</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2026 <a href="/ai/." rel="nofollow">小小博客.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/ai/js/totop.js?v=1.0.0" async></script><script type="text/javascript" src="https://unpkg.com/@fancyapps/fancybox/dist/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/ai/js/fancybox.js?v=1.0.0" async></script><link rel="stylesheet" type="text/css" href="https://unpkg.com/@fancyapps/fancybox/dist/jquery.fancybox.min.css"><script type="text/javascript" src="/ai/js/copycode.js?v=1.0.0" successtext="复制成功！"></script><link rel="stylesheet" type="text/css" href="/ai/css/copycode.css?v=1.0.0"><script type="text/x-mathjax-config">MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+</script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML" async></script><script type="text/javascript" src="/ai/js/codeblock-resizer.js?v=1.0.0"></script><script type="text/javascript" src="/ai/js/smartresize.js?v=1.0.0"></script></div></body></html>

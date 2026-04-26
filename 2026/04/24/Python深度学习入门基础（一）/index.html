@@ -1,175 +1,587 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content=""><title>Python深度学习入门基础（一） | 小小博客</title><link rel="stylesheet" type="text/css" href="/ai/css/style.css?v=1.0.0"><link rel="stylesheet" type="text/css" href="https://unpkg.com/normalize.css"><link rel="stylesheet" type="text/css" href="https://unpkg.com/purecss/build/pure-min.css"><link rel="stylesheet" type="text/css" href="https://unpkg.com/purecss/build/grids-responsive-min.css"><link rel="stylesheet" href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="https://unpkg.com/jquery/dist/jquery.min.js"></script><link rel="icon" mask="" sizes="any" href="/ai/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/ai/favicon.ico"><link rel="apple-touch-icon" href="/ai/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/ai/apple-touch-icon.png"><script type="text/javascript" src="https://unpkg.com/clipboard/dist/clipboard.min.js"></script><script type="text/javascript" src="https://unpkg.com/toastr/build/toastr.min.js"></script><link rel="stylesheet" href="https://unpkg.com/toastr/build/toastr.min.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">Python深度学习入门基础（一）</h1><a id="logo" href="/ai/.">小小博客</a><p class="description">计算机没什么用，他们只会告诉你答案。</p></div><div id="nav-menu"><a class="current" href="/ai/."><i class="fa fa-home"> 首页</i></a><a href="/ai/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/ai/about/"><i class="fa fa-user"> 关于</i></a><a href="/ai/special/"><i class="fa fa-file-pdf-o"> 专题</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">Python深度学习入门基础（一）</h1><div class="post-meta">2026-04-24<span> | </span><span class="category"><a href="/ai/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a></span></div><div class="post-content"><h2 id="一、函数"><a href="#一、函数" class="headerlink" title="一、函数"></a>一、函数</h2><p>在思考深度学习模型中，可以把函数看作接收数字（输入）并生成数字（输出）的盒子，就像一个小型工厂一样，它们对输入的处理有自己的内部规则。</p>
-<h3 id="示意图"><a href="#示意图" class="headerlink" title="示意图"></a>示意图</h3><img src="/ai/2026/04/24/Python%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E5%8F%A6%E4%B8%80%E7%A7%8D%E6%8F%8F%E7%BB%98%E5%87%BD%E6%95%B0%E7%9A%84%E6%96%B9%E6%B3%95.png" class="" title="这是一张示例图片">
-
-<h2 id="二、导数"><a href="#二、导数" class="headerlink" title="二、导数"></a>二、导数</h2><p>函数在某一点上的导数，可以简单地看作函数输出相对于该点输入的“变化率”。</p>
-<h3 id="数学"><a href="#数学" class="headerlink" title="数学"></a>数学</h3><p>首先来从数学角度精确地定义导数：可以使用一个数字来描述极限，即当改变某个特定的输入值 $a$ 时，函数 f 输出的变化：  </p>
-<p>$$ \frac{\mathrm{d}f}{\mathrm{d}u}(a) &#x3D; \lim_{\Delta \to 0} \frac{f(a + \Delta) - f(a - \Delta)}{2 \times \Delta} $$</p>
-<p>通过为 $\Delta$ 设置非常小的值（例如 0.001），可以在数值上近似此极限。因此，可以将导数计算为：  </p>
-<p>$$ \frac{\mathrm{d}f}{\mathrm{d}u}(a) &#x3D; \lim_{\Delta \to 0} \frac{f(a + 0.001) - f(a - 0.001)}{0.002} $$</p>
-<h3 id="示意图-1"><a href="#示意图-1" class="headerlink" title="示意图"></a>示意图</h3><p>事实上，可以把函数想象成小型工厂。现在想象那些工厂的输入通过一根线连接到输出。求解导数相当于回答这样一个问题：如果将函数的输入 $a$ 拉高一点，或者如果函数在 $a$ 处可能不对称，因此把 $a$ 拉低一点，那么根据工厂的内部运作机制，输出量将以这个小数值的多少倍进行变化呢？  </p>
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content=""><title>Python深度学习入门基础（一） | 小小博客</title><link rel="stylesheet" type="text/css" href="/ai/css/style.css?v=1.0.0"><link rel="stylesheet" type="text/css" href="https://unpkg.com/normalize.css"><link rel="stylesheet" type="text/css" href="https://unpkg.com/purecss/build/pure-min.css"><link rel="stylesheet" type="text/css" href="https://unpkg.com/purecss/build/grids-responsive-min.css"><link rel="stylesheet" href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="https://unpkg.com/jquery/dist/jquery.min.js"></script><link rel="icon" mask="" sizes="any" href="/ai/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/ai/favicon.ico"><link rel="apple-touch-icon" href="/ai/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/ai/apple-touch-icon.png"><script type="text/javascript" src="https://unpkg.com/clipboard/dist/clipboard.min.js"></script><script type="text/javascript" src="https://unpkg.com/toastr/build/toastr.min.js"></script><link rel="stylesheet" href="https://unpkg.com/toastr/build/toastr.min.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">Python深度学习入门基础（一）</h1><a id="logo" href="/ai/.">小小博客</a><p class="description">计算机没什么用，他们只会告诉你答案。</p></div><div id="nav-menu"><a class="current" href="/ai/."><i class="fa fa-home"> 首页</i></a><a href="/ai/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/ai/about/"><i class="fa fa-user"> 关于</i></a><a href="/ai/special/"><i class="fa fa-file-pdf-o"> 专题</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">Python深度学习入门基础（一）</h1><div class="post-meta">2026-04-24<span> | </span><span class="category"><a href="/ai/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a></span></div><div class="post-content"><h2 id="一函数">一、函数</h2>
+<p>在思考深度学习模型中，可以把函数看作接收数字（输入）并生成数字（输出）的盒子，就像一个小型工厂一样，它们对输入的处理有自己的内部规则。</p>
+<h3 id="示意图">示意图</h3>
+<img src="/ai/2026/04/24/Python%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E5%8F%A6%E4%B8%80%E7%A7%8D%E6%8F%8F%E7%BB%98%E5%87%BD%E6%95%B0%E7%9A%84%E6%96%B9%E6%B3%95.png" class="" title="这是一张示例图片">
+<h2 id="二导数">二、导数</h2>
+<p>函数在某一点上的导数，可以简单地看作函数输出相对于该点输入的“变化率”。</p>
+<h3 id="数学">数学</h3>
+<p>首先来从数学角度精确地定义导数：可以使用一个数字来描述极限，即当改变某个特定的输入值
+<span class="math inline"><em>a</em></span> 时，函数 f 输出的变化：</p>
+<p><span class="math display">$$ \frac{\mathrm{d}f}{\mathrm{d}u}(a) =
+\lim_{\Delta \to 0} \frac{f(a + \Delta) - f(a - \Delta)}{2 \times
+\Delta} $$</span></p>
+<p>通过为 <span class="math inline"><em>Δ</em></span>
+设置非常小的值（例如
+0.001），可以在数值上近似此极限。因此，可以将导数计算为：</p>
+<p><span class="math display">$$ \frac{\mathrm{d}f}{\mathrm{d}u}(a) =
+\lim_{\Delta \to 0} \frac{f(a + 0.001) - f(a - 0.001)}{0.002}
+$$</span></p>
+<h3 id="示意图-1">示意图</h3>
+<p>事实上，可以把函数想象成小型工厂。现在想象那些工厂的输入通过一根线连接到输出。求解导数相当于回答这样一个问题：如果将函数的输入
+<span class="math inline"><em>a</em></span> 拉高一点，或者如果函数在
+<span class="math inline"><em>a</em></span> 处可能不对称，因此把 <span
+class="math inline"><em>a</em></span>
+拉低一点，那么根据工厂的内部运作机制，输出量将以这个小数值的多少倍进行变化呢？</p>
 <img src="/ai/2026/04/24/Python%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E5%AF%BC%E6%95%B0%E5%8F%AF%E8%A7%86%E5%8C%96%E7%9A%84%E5%8F%A6%E4%B8%80%E7%A7%8D%E6%96%B9%E6%B3%95.png" class="" title="导数可视化的另一种方法">
-
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">deriv</span>(<span class="params">func: <span class="type">Callable</span>[[ndarray], ndarray], input_: ndarray,</span></span><br><span class="line"><span class="params">delta: <span class="built_in">float</span> = <span class="number">0.001</span></span>) -&gt; ndarray:</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    计算函数func在input_数组中每个元素处的导数。</span></span><br><span class="line"><span class="string">    &#x27;&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">return</span> (func(input_ + delta) - func(input_ - delta)) / (<span class="number">2</span> * delta)</span><br></pre></td></tr></table></figure>
-
-<h2 id="三、嵌套函数"><a href="#三、嵌套函数" class="headerlink" title="三、嵌套函数"></a>三、嵌套函数</h2><p>嵌套函数将成为理解神经网络的基础：函数可以被“嵌套”，从而形成“复合”函数。</p>
-<h3 id="数学-1"><a href="#数学-1" class="headerlink" title="数学"></a>数学</h3><p>嵌套函数在数学上表示为：</p>
-<p>$$ f_2(f_1(x)) &#x3D; y $$</p>
+<h3 id="代码">代码</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">deriv</span>(<span class="params">func: <span class="type">Callable</span>[[ndarray], ndarray], input_: ndarray,</span></span><br><span class="line"><span class="params">delta: <span class="built_in">float</span> = <span class="number">0.001</span></span>) -&gt; ndarray:</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    计算函数func在input_数组中每个元素处的导数。</span></span><br><span class="line"><span class="string">    &#x27;&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">return</span> (func(input_ + delta) - func(input_ - delta)) / (<span class="number">2</span> * delta)</span><br></pre></td></tr></table></figure>
+<h2 id="三嵌套函数">三、嵌套函数</h2>
+<p>嵌套函数将成为理解神经网络的基础：函数可以被“嵌套”，从而形成“复合”函数。</p>
+<h3 id="数学-1">数学</h3>
+<p>嵌套函数在数学上表示为：</p>
+<p><span
+class="math display"><em>f</em><sub>2</sub>(<em>f</em><sub>1</sub>(<em>x</em>)) = <em>y</em></span></p>
 <p>这不太直观，因为有个奇怪的地方：嵌套函数是“从外而内”读取的，而而运算实际上是“从内而外”执行的。</p>
-<h3 id="示意图-2"><a href="#示意图-2" class="headerlink" title="示意图"></a>示意图</h3><p>要表示嵌套函数，最直观的方法是使用小型工厂表示法，又称盒子表示法。</p>
+<h3 id="示意图-2">示意图</h3>
+<p>要表示嵌套函数，最直观的方法是使用小型工厂表示法，又称盒子表示法。</p>
 <p>直观地表示嵌套函数：</p>
 <img src="/ai/2026/04/24/Python%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E7%9B%B4%E8%A7%82%E5%9C%B0%E8%A1%A8%E7%A4%BA%E5%B5%8C%E5%A5%97%E5%87%BD%E6%95%B0.png" class="" title="直观地表示嵌套函数">
-
 <p>另一种表达法：</p>
 <img src="/ai/2026/04/24/Python%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E5%B5%8C%E5%A5%97%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%A6%E4%B8%80%E7%A7%8D%E8%A1%A8%E8%BE%BE%E6%B3%95.png" class="" title="嵌套函数的另一种表达法">
-
-<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> <span class="type">List</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 函数接受一个ndarray作为参数并生成一个ndarray</span></span><br><span class="line">Array_Function = <span class="type">Callable</span>[[ndarray], ndarray]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 链是一个函数列表</span></span><br><span class="line">Chain = <span class="type">List</span>[Array_Function]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义数据如何经过特定长度的链，以长度等于2为例</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">chain_length_2</span>(<span class="params">chain: Chain, a: ndarray</span>) -&gt; ndarray:</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    在一行代码中计算“链”中的两个函数。</span></span><br><span class="line"><span class="string">    &#x27;&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">assert</span> <span class="built_in">len</span>(chain) == <span class="number">2</span>, \</span><br><span class="line">    <span class="string">&quot;Length of input &#x27;chain&#x27; should be 2&quot;</span></span><br><span class="line">    f1 = chain[<span class="number">0</span>]</span><br><span class="line">    f2 = chain[<span class="number">1</span>]</span><br><span class="line">    <span class="keyword">return</span> f2(f1(x))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 函数接受一个ndarray作为参数并生成一个ndarray</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">Array_Function 是一个函数类型，这个函数必须满足：</span></span><br><span class="line"><span class="string">输入参数：一个 List[int]（整数列表，比如 [1, 2, 3]）</span></span><br><span class="line"><span class="string">返回值：一个 ndarray（NumPy 数组）</span></span><br><span class="line"><span class="string">下面这个函数符合 Array_Function 类型</span></span><br><span class="line"><span class="string">def sum_to_array(numbers: List[int]) -&gt; ndarray:</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;输入整数列表，返回一个包含总和的数组&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    return np.array([sum(numbers)])</span></span><br><span class="line"><span class="string">my_func: Array_Function = sum_to_array  # ✅ 类型匹配</span></span><br><span class="line"><span class="string">&quot;我声明一个叫 my_func 的变量，它应该是一个 Array_Function 类型的函数。现在，我把 sum_to_array 这个函数赋值给它。&quot;</span></span><br><span class="line"><span class="string">: Array_Function仅仅是由类型注解而已！</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line">Array_Function = <span class="type">Callable</span>[[<span class="type">List</span>[<span class="built_in">int</span>]], ndarray]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 链是一个函数列表</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">Chain 是一个列表类型，这个列表中的每个元素都必须是 Array_Function 类型的函数。</span></span><br><span class="line"><span class="string"># 创建一个函数链</span></span><br><span class="line"><span class="string">def step1(data: List[int]) -&gt; ndarray:</span></span><br><span class="line"><span class="string">    return np.array(data) * 2</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">def step2(data: List[int]) -&gt; ndarray:</span></span><br><span class="line"><span class="string">    return np.array(data) + 1</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">def step3(data: List[int]) -&gt; ndarray:</span></span><br><span class="line"><span class="string">    return np.array(data) ** 2</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"># 这些函数组成一个 Chain</span></span><br><span class="line"><span class="string">my_pipeline: Chain = [step1, step2, step3]</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"># 执行这个链（数据依次经过所有函数）</span></span><br><span class="line"><span class="string">def run_chain(chain: Chain, input_data: List[int]) -&gt; ndarray:</span></span><br><span class="line"><span class="string">    result = input_data</span></span><br><span class="line"><span class="string">    for func in chain:</span></span><br><span class="line"><span class="string">        result = func(result)  # 注意：这里需要传入 List[int]，但前一步可能返回 ndarray</span></span><br><span class="line"><span class="string">    return result</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="四、链式法则"><a href="#四、链式法则" class="headerlink" title="四、链式法则"></a>四、链式法则</h2><h3 id="数学-2"><a href="#数学-2" class="headerlink" title="数学"></a>数学</h3><p>链式法则是一个数学定理，用于计算复合函数的导数。从数学上讲，深度学习模型就是复合函数。  </p>
-<p>对于给定的值 $x$，我们有：  </p>
-<p>$$ \frac{\mathrm{d}f_2}{\mathrm{d}u}(x) &#x3D; \frac{\mathrm{d}f_2}{\mathrm{d}u}(f_1(x)) \times \frac{\mathrm{d}f_1}{\mathrm{d}u}(x) $$</p>
-<p>其中 $u$ 只是一个伪变量，代表函数的输入。</p>
-<h3 id="示意图-3"><a href="#示意图-3" class="headerlink" title="示意图"></a>示意图</h3><img src="/ai/2026/04/24/Python%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E9%93%BE%E5%BC%8F%E6%B3%95%E5%88%99%E7%A4%BA%E6%84%8F%E5%9B%BE.png" class="" title="链式法则示意图">
-
-<h3 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">sigmoid</span>(<span class="params">x: ndarray</span>) -&gt; ndarray:</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    将sigmoid函数应用于输入ndarray中的每个元素。</span></span><br><span class="line"><span class="string">    &#x27;&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span> / (<span class="number">1</span> + np.exp(-x))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 编写链式法则</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">chain_deriv_2</span>(<span class="params">chain: Chain, input_range: ndarray</span>) -&gt; ndarray:</span><br><span class="line">	<span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">	使用链式法则计算两个嵌套函数的导数： (f2(f1(x)))&#x27;=f2&#x27;(f1(x))*f1&#x27;(X)。</span></span><br><span class="line"><span class="string">	&#x27;&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">assert</span> <span class="built_in">len</span>(chain) == <span class="number">2</span>, \</span><br><span class="line">    <span class="string">&quot;This function requires &#x27;Chain&#x27; objects of length 2&quot;</span></span><br><span class="line">    <span class="keyword">assert</span> input_range.ndim == <span class="number">1</span>, \</span><br><span class="line">    <span class="string">&quot;Function requires a 1 dimensional ndarray as input_range&quot;</span></span><br><span class="line">    </span><br><span class="line">    f1 = chain[<span class="number">0</span>]</span><br><span class="line">    f2 = chain[<span class="number">1</span>]</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># df1/dx</span></span><br><span class="line">    f1_of_x = f1(input_range)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># df1/du</span></span><br><span class="line">    df1dx = deriv(f1, input_range)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># df2/du(f1(x))</span></span><br><span class="line">    df2du = deriv(f2, f1(input_range))</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 在每一点上将这些量想乘</span></span><br><span class="line">    <span class="keyword">return</span> df1dx * df2du</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="五、示例介绍"><a href="#五、示例介绍" class="headerlink" title="五、示例介绍"></a>五、示例介绍</h2><p>仔细研究一条稍长的链，假设有 3 个基本可微的函数，分别是 $f_1$ 、$f_2$ 和 $f_3$ ，如何计算它们的导数呢？</p>
-<h3 id="数学-3"><a href="#数学-3" class="headerlink" title="数学"></a>数学</h3><p>从数学上讲，对于包含 3 个基本可微的函数的复合函数，其导数的计算公式如下：</p>
-<p>$$ \frac{\mathrm{d}f_3}{\mathrm{d}u}(x) &#x3D; \frac{\mathrm{d}f_3}{\mathrm{d}u}(f_2(f_1(x))) \times \frac{\mathrm{d}f_2}{\mathrm{d}u}(f_1(x)) \times \frac{\mathrm{d}f_1}{\mathrm{d}u}(x) $$</p>
-<h3 id="示意图-4"><a href="#示意图-4" class="headerlink" title="示意图"></a>示意图</h3><p>要理解以上公式，最为直观的方法就是通过盒子示意图。</p>
+<h3 id="代码-1">代码</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> <span class="type">List</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 函数接受一个ndarray作为参数并生成一个ndarray</span></span><br><span class="line">Array_Function = <span class="type">Callable</span>[[ndarray], ndarray]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 链是一个函数列表</span></span><br><span class="line">Chain = <span class="type">List</span>[Array_Function]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义数据如何经过特定长度的链，以长度等于2为例</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">chain_length_2</span>(<span class="params">chain: Chain, a: ndarray</span>) -&gt; ndarray:</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    在一行代码中计算“链”中的两个函数。</span></span><br><span class="line"><span class="string">    &#x27;&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">assert</span> <span class="built_in">len</span>(chain) == <span class="number">2</span>, \</span><br><span class="line">    <span class="string">&quot;Length of input &#x27;chain&#x27; should be 2&quot;</span></span><br><span class="line">    f1 = chain[<span class="number">0</span>]</span><br><span class="line">    f2 = chain[<span class="number">1</span>]</span><br><span class="line">    <span class="keyword">return</span> f2(f1(x))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 函数接受一个ndarray作为参数并生成一个ndarray</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">Array_Function 是一个函数类型，这个函数必须满足：</span></span><br><span class="line"><span class="string">输入参数：一个 List[int]（整数列表，比如 [1, 2, 3]）</span></span><br><span class="line"><span class="string">返回值：一个 ndarray（NumPy 数组）</span></span><br><span class="line"><span class="string">下面这个函数符合 Array_Function 类型</span></span><br><span class="line"><span class="string">def sum_to_array(numbers: List[int]) -&gt; ndarray:</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;输入整数列表，返回一个包含总和的数组&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    return np.array([sum(numbers)])</span></span><br><span class="line"><span class="string">my_func: Array_Function = sum_to_array  # ✅ 类型匹配</span></span><br><span class="line"><span class="string">&quot;我声明一个叫 my_func 的变量，它应该是一个 Array_Function 类型的函数。现在，我把 sum_to_array 这个函数赋值给它。&quot;</span></span><br><span class="line"><span class="string">: Array_Function仅仅是由类型注解而已！</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line">Array_Function = <span class="type">Callable</span>[[<span class="type">List</span>[<span class="built_in">int</span>]], ndarray]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 链是一个函数列表</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">Chain 是一个列表类型，这个列表中的每个元素都必须是 Array_Function 类型的函数。</span></span><br><span class="line"><span class="string"># 创建一个函数链</span></span><br><span class="line"><span class="string">def step1(data: List[int]) -&gt; ndarray:</span></span><br><span class="line"><span class="string">    return np.array(data) * 2</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">def step2(data: List[int]) -&gt; ndarray:</span></span><br><span class="line"><span class="string">    return np.array(data) + 1</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">def step3(data: List[int]) -&gt; ndarray:</span></span><br><span class="line"><span class="string">    return np.array(data) ** 2</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"># 这些函数组成一个 Chain</span></span><br><span class="line"><span class="string">my_pipeline: Chain = [step1, step2, step3]</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"># 执行这个链（数据依次经过所有函数）</span></span><br><span class="line"><span class="string">def run_chain(chain: Chain, input_data: List[int]) -&gt; ndarray:</span></span><br><span class="line"><span class="string">    result = input_data</span></span><br><span class="line"><span class="string">    for func in chain:</span></span><br><span class="line"><span class="string">        result = func(result)  # 注意：这里需要传入 List[int]，但前一步可能返回 ndarray</span></span><br><span class="line"><span class="string">    return result</span></span><br></pre></td></tr></table></figure>
+<h2 id="四链式法则">四、链式法则</h2>
+<h3 id="数学-2">数学</h3>
+<p>链式法则是一个数学定理，用于计算复合函数的导数。从数学上讲，深度学习模型就是复合函数。</p>
+<p>对于给定的值 <span
+class="math inline"><em>x</em></span>，我们有：</p>
+<p><span class="math display">$$ \frac{\mathrm{d}f_2}{\mathrm{d}u}(x) =
+\frac{\mathrm{d}f_2}{\mathrm{d}u}(f_1(x)) \times
+\frac{\mathrm{d}f_1}{\mathrm{d}u}(x) $$</span></p>
+<p>其中 <span class="math inline"><em>u</em></span>
+只是一个伪变量，代表函数的输入。</p>
+<h3 id="示意图-3">示意图</h3>
+<img src="/ai/2026/04/24/Python%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E9%93%BE%E5%BC%8F%E6%B3%95%E5%88%99%E7%A4%BA%E6%84%8F%E5%9B%BE.png" class="" title="链式法则示意图">
+<h3 id="代码-2">代码</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">sigmoid</span>(<span class="params">x: ndarray</span>) -&gt; ndarray:</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    将sigmoid函数应用于输入ndarray中的每个元素。</span></span><br><span class="line"><span class="string">    &#x27;&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span> / (<span class="number">1</span> + np.exp(-x))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 编写链式法则</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">chain_deriv_2</span>(<span class="params">chain: Chain, input_range: ndarray</span>) -&gt; ndarray:</span><br><span class="line">	<span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">	使用链式法则计算两个嵌套函数的导数： (f2(f1(x)))&#x27;=f2&#x27;(f1(x))*f1&#x27;(X)。</span></span><br><span class="line"><span class="string">	&#x27;&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">assert</span> <span class="built_in">len</span>(chain) == <span class="number">2</span>, \</span><br><span class="line">    <span class="string">&quot;This function requires &#x27;Chain&#x27; objects of length 2&quot;</span></span><br><span class="line">    <span class="keyword">assert</span> input_range.ndim == <span class="number">1</span>, \</span><br><span class="line">    <span class="string">&quot;Function requires a 1 dimensional ndarray as input_range&quot;</span></span><br><span class="line">    </span><br><span class="line">    f1 = chain[<span class="number">0</span>]</span><br><span class="line">    f2 = chain[<span class="number">1</span>]</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># df1/dx</span></span><br><span class="line">    f1_of_x = f1(input_range)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># df1/du</span></span><br><span class="line">    df1dx = deriv(f1, input_range)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># df2/du(f1(x))</span></span><br><span class="line">    df2du = deriv(f2, f1(input_range))</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 在每一点上将这些量想乘</span></span><br><span class="line">    <span class="keyword">return</span> df1dx * df2du</span><br></pre></td></tr></table></figure>
+<h2 id="五示例介绍">五、示例介绍</h2>
+<p>仔细研究一条稍长的链，假设有 3 个基本可微的函数，分别是 <span
+class="math inline"><em>f</em><sub>1</sub></span> 、<span
+class="math inline"><em>f</em><sub>2</sub></span> 和 <span
+class="math inline"><em>f</em><sub>3</sub></span>
+，如何计算它们的导数呢？</p>
+<h3 id="数学-3">数学</h3>
+<p>从数学上讲，对于包含 3
+个基本可微的函数的复合函数，其导数的计算公式如下：</p>
+<p><span class="math display">$$ \frac{\mathrm{d}f_3}{\mathrm{d}u}(x) =
+\frac{\mathrm{d}f_3}{\mathrm{d}u}(f_2(f_1(x))) \times
+\frac{\mathrm{d}f_2}{\mathrm{d}u}(f_1(x)) \times
+\frac{\mathrm{d}f_1}{\mathrm{d}u}(x) $$</span></p>
+<h3 id="示意图-4">示意图</h3>
+<p>要理解以上公式，最为直观的方法就是通过盒子示意图。</p>
 <img src="/ai/2026/04/24/Python%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E9%80%9A%E8%BF%87%E7%9B%92%E5%AD%90%E8%A1%A8%E7%A4%BA%E6%B3%95%E7%90%86%E8%A7%A3%E5%A6%82%E4%BD%95%E8%AE%A1%E7%AE%973%E4%B8%AA%E5%B5%8C%E5%A5%97%E5%87%BD%E6%95%B0%E7%9A%84%E5%AF%BC%E6%95%B0.png" class="" title="通过盒子表示法理解如何计算3个嵌套函数的导数">
-
-<h3 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h3><p>结合上面的公式转换为计算导数的代码，我们可以在这个简单的示例中看到神经网络前向传递和后向传递的雏形：  </p>
+<h3 id="代码-3">代码</h3>
+<p>结合上面的公式转换为计算导数的代码，我们可以在这个简单的示例中看到神经网络前向传递和后向传递的雏形：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> ndarray</span><br><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> <span class="type">List</span>, <span class="type">Callable</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">chain_deriv_3</span>(<span class="params">chain: Chain, input_range: ndarray</span>) -&gt; ndarray:</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">     使用链式法则来计算3个嵌套函数的导数：</span></span><br><span class="line"><span class="string">    (f3(f2(f1)))&#x27; = f3&#x27;(f2(f1(x)))*f2&#x27;(f1(x))*f1&#x27;(x)。</span></span><br><span class="line"><span class="string">    &#x27;&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">assert</span> <span class="built_in">len</span>(chain) == <span class="number">3</span>, \</span><br><span class="line">        <span class="string">&quot;This function requires &#x27;Chain&#x27; objects to have length 3&quot;</span></span><br><span class="line">    f1 = chain[<span class="number">0</span>]</span><br><span class="line">    f2 = chain[<span class="number">1</span>]</span><br><span class="line">    f3 = chain[<span class="number">2</span>]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># f1(x)</span></span><br><span class="line">    f1_of_x = f1(input_range)</span><br><span class="line">    <span class="comment"># f2(f1(x))</span></span><br><span class="line">    f2_of_x = f2(f1_of_x)</span><br><span class="line">    <span class="comment"># df3du</span></span><br><span class="line">    df3du = deriv(f3, f2_of_x)</span><br><span class="line">    <span class="comment"># df2du</span></span><br><span class="line">    df2du = deriv(f2, f1_of_x)</span><br><span class="line">    <span class="comment"># df1dx</span></span><br><span class="line">    df1dx = deriv(f1, input_range)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 在每一点上将这些量相乘</span></span><br><span class="line">    <span class="keyword">return</span> df1dx * df2du * df3du</span><br></pre></td></tr></table></figure>
-
 <p>注意，在计算这个嵌套函数的链式法则时，这里对它进行了两次“传递”。</p>
-<ol>
-<li><p>“向前”传递它，计算出 f1_of_x 和 f2_of_x，这个过程可以称作（或视作）“前向传递”。</p>
-</li>
-<li><p>“向后”通过函数，使用在前向传递中计算出的量来计算构成导数的量。</p>
-</li>
+<ol type="1">
+<li><p>“向前”传递它，计算出 f1_of_x 和
+f2_of_x，这个过程可以称作（或视作）“前向传递”。</p></li>
+<li><p>“向后”通过函数，使用在前向传递中计算出的量来计算构成导数的量。</p></li>
 </ol>
 <p>最后，将这 3 个量相乘，得到导数。</p>
-<h2 id="六、多输入函数"><a href="#六、多输入函数" class="headerlink" title="六、多输入函数"></a>六、多输入函数</h2><p>我们已经从概念上理解了如何将函数串在一起形成复合函数，并且知道了如何将这些函数表示为一系列输入或输出的盒子，以及如何计算这些函数的导数。一方面通过数学公式理解了导数，另一方面通过“向前”组件和“向后”组件，根据传递过程中计算出的量理解了导数。  </p>
-<p>在深度学习中处理的函数往往并非只有一个输入。相反，它们有多个输入，在某些步骤中，这些输入以相加、相乘或其他方式组合在一起。正如下面介绍的，我们同样可以计算这些函数的输出相对于其输入的导数。  </p>
-<h3 id="数学-4"><a href="#数学-4" class="headerlink" title="数学"></a>数学</h3><p>如果输入是 $x$ 和 $y$，那么可以认为函数分两步进行。在步骤 1 中， $x$ 和 $y$ 传到了将它们相加的函数。将该函数表示为 $\alpha$（整个过程使用希腊字母表示函数名），然后将函数的输出表示为 $a$。从形式上看，这样很容易表示：</p>
-<p>$a&#x3D;\alpha(x,y)&#x3D;x+y$</p>
-<p>步骤 2 是将 $a$ 传给某个函数 $\sigma$（$\sigma$ 可以是任意连续函数，例如 sigmoid 函数或 square 函数，甚至是名称不以 $s$ 开头的函数）。将此函数的输出表示为 $s$，也就是：</p>
-<p>$$<br>s &#x3D; \sigma(a)<br>$$</p>
-<p>将整个函数用 $f$ 表示，可以写作：</p>
-<p>$$<br>f(x, y) &#x3D; \sigma(x + y)<br>$$</p>
+<h2 id="六多输入函数">六、多输入函数</h2>
+<p>我们已经从概念上理解了如何将函数串在一起形成复合函数，并且知道了如何将这些函数表示为一系列输入或输出的盒子，以及如何计算这些函数的导数。一方面通过数学公式理解了导数，另一方面通过“向前”组件和“向后”组件，根据传递过程中计算出的量理解了导数。</p>
+<p>在深度学习中处理的函数往往并非只有一个输入。相反，它们有多个输入，在某些步骤中，这些输入以相加、相乘或其他方式组合在一起。正如下面介绍的，我们同样可以计算这些函数的输出相对于其输入的导数。</p>
+<h3 id="数学-4">数学</h3>
+<p>如果输入是 <span class="math inline"><em>x</em></span> 和 <span
+class="math inline"><em>y</em></span>，那么可以认为函数分两步进行。在步骤
+1 中， <span class="math inline"><em>x</em></span> 和 <span
+class="math inline"><em>y</em></span>
+传到了将它们相加的函数。将该函数表示为 <span
+class="math inline"><em>α</em></span>（整个过程使用希腊字母表示函数名），然后将函数的输出表示为
+<span
+class="math inline"><em>a</em></span>。从形式上看，这样很容易表示：</p>
+<p><span
+class="math inline"><em>a</em> = <em>α</em>(<em>x</em>, <em>y</em>) = <em>x</em> + <em>y</em></span></p>
+<p>步骤 2 是将 <span class="math inline"><em>a</em></span> 传给某个函数
+<span class="math inline"><em>σ</em></span>（<span
+class="math inline"><em>σ</em></span> 可以是任意连续函数，例如 sigmoid
+函数或 square 函数，甚至是名称不以 <span
+class="math inline"><em>s</em></span> 开头的函数）。将此函数的输出表示为
+<span class="math inline"><em>s</em></span>，也就是：</p>
+<p><span
+class="math display"><em>s</em> = <em>σ</em>(<em>a</em>)</span></p>
+<p>将整个函数用 <span class="math inline"><em>f</em></span>
+表示，可以写作：</p>
+<p><span
+class="math display"><em>f</em>(<em>x</em>, <em>y</em>) = <em>σ</em>(<em>x</em> + <em>y</em>)</span></p>
 <p>从数学意义上理解，这样更为简洁，但这实际上是两个按顺序执行的运算，这一点在表达式中较为模糊。为了说明这一点，来看示意图。</p>
-<h3 id="示意图-5"><a href="#示意图-5" class="headerlink" title="示意图"></a>示意图</h3><img src="/ai/2026/04/24/Python%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E5%A4%9A%E8%BE%93%E5%85%A5%E5%87%BD%E6%95%B0.png" class="" title="多输入函数">
-
-<p>可以看到，两个输入进入 $\alpha$ 输出 $a$，然后 $a$ 再被传递给了 $\sigma$。</p>
-<h3 id="代码-4"><a href="#代码-4" class="headerlink" title="代码"></a>代码</h3><p>每当处理将多个 ndarray 作为输入的运算时，都必须检查它们的形状，从而确保满足该运算所需的所有条件。  </p>
+<h3 id="示意图-5">示意图</h3>
+<img src="/ai/2026/04/24/Python%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E5%A4%9A%E8%BE%93%E5%85%A5%E5%87%BD%E6%95%B0.png" class="" title="多输入函数">
+<p>可以看到，两个输入进入 <span class="math inline"><em>α</em></span>
+输出 <span class="math inline"><em>a</em></span>，然后 <span
+class="math inline"><em>a</em></span> 再被传递给了 <span
+class="math inline"><em>σ</em></span>。</p>
+<h3 id="代码-4">代码</h3>
+<p>每当处理将多个 ndarray
+作为输入的运算时，都必须检查它们的形状，从而确保满足该运算所需的所有条件。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">multiple_inputs_add</span>(<span class="params">x: ndarray, y: ndarray, sigma: Array_Function</span>) -&gt; <span class="built_in">float</span>:</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    具有多个输入和加法的函数，前向传递。</span></span><br><span class="line"><span class="string">    &#x27;&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">assert</span> x.shape == y.shape</span><br><span class="line">    a = x + y</span><br><span class="line">    <span class="keyword">return</span> sigma(a)</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="七、多输入函数的导数"><a href="#七、多输入函数的导数" class="headerlink" title="七、多输入函数的导数"></a>七、多输入函数的导数</h2><p>可以根据函数的两个输入来计算其输出的导数，这一点很容易理解。</p>
-<h3 id="数学-5"><a href="#数学-5" class="headerlink" title="数学"></a>数学</h3><p>根据链式法则，由于$f(x,y)&#x3D;\alpha(\alpha(x, y))$是嵌套函数，因此可以这样计算导数：  </p>
-<p>$$ \frac{\partial f}{\partial x} &#x3D; \frac{\partial \sigma}{\partial u}(\alpha(x, y)) \times \frac{\partial \alpha}{\partial x}(\alpha(x, y)) &#x3D; \frac{\partial \sigma}{\partial u}(x + y) \times \frac{\partial \alpha}{\partial x}(\alpha(x, y)) $$</p>
-<p>当然，$ \frac{\partial f}{\partial x}$的计算公式与此相同。</p>
+<h2 id="七多输入函数的导数">七、多输入函数的导数</h2>
+<p>可以根据函数的两个输入来计算其输出的导数，这一点很容易理解。</p>
+<h3 id="数学-5">数学</h3>
+<p>根据链式法则，由于<span
+class="math inline"><em>f</em>(<em>x</em>, <em>y</em>) = <em>α</em>(<em>α</em>(<em>x</em>, <em>y</em>))</span>是嵌套函数，因此可以这样计算导数：</p>
+<p><span class="math display">$$ \frac{\partial f}{\partial x} =
+\frac{\partial \sigma}{\partial u}(\alpha(x, y)) \times \frac{\partial
+\alpha}{\partial x}(\alpha(x, y)) = \frac{\partial \sigma}{\partial u}(x
++ y) \times \frac{\partial \alpha}{\partial x}(\alpha(x, y))
+$$</span></p>
+<p>当然，$ $的计算公式与此相同。</p>
 <p>现在要注意：</p>
-<p>$$\frac{\partial \sigma}{\partial u}(\alpha(x, y))&#x3D;1$$，无论 $x$（或 $y$）的值如何， $x$（或$y$）每增加一单位， $\alpha$ 都会增加一单位。</p>
+<p><span class="math display">$$\frac{\partial \sigma}{\partial
+u}(\alpha(x, y))=1$$</span>，无论 <span
+class="math inline"><em>x</em></span>（或 <span
+class="math inline"><em>y</em></span>）的值如何， <span
+class="math inline"><em>x</em></span>（或<span
+class="math inline"><em>y</em></span>）每增加一单位， <span
+class="math inline"><em>α</em></span> 都会增加一单位。</p>
 <p>基于这一点，稍后可以通过编写代码来计算这样一个函数的导数。</p>
-<h3 id="示意图-6"><a href="#示意图-6" class="headerlink" title="示意图"></a>示意图</h3><p>从概念上讲，计算多输入函数的导数与计算单输入函数的导数所用的方法是相同的：计算每个组成函数“后向”通过计算图的导数，然后将结果相乘即可得出总导数。</p>
+<h3 id="示意图-6">示意图</h3>
+<p>从概念上讲，计算多输入函数的导数与计算单输入函数的导数所用的方法是相同的：计算每个组成函数“后向”通过计算图的导数，然后将结果相乘即可得出总导数。</p>
 <img src="/ai/2026/04/24/Python%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E5%A4%9A%E8%BE%93%E5%85%A5%E5%87%BD%E6%95%B0%E5%90%8E%E5%90%91%E9%80%9A%E8%BF%87%E8%AE%A1%E7%AE%97%E5%9B%BE.png" class="" title="多输入函数后向通过计算图">
-
-<h3 id="代码-5"><a href="#代码-5" class="headerlink" title="代码"></a>代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">multiple_inputs_add_backward</span>(<span class="params">x: ndarray,</span></span><br><span class="line"><span class="params">                                y: ndarray,</span></span><br><span class="line"><span class="params">                                sigma: Array_Function</span>) -&gt; <span class="built_in">float</span>:</span><br><span class="line">	<span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">	计算这个简单函数对两个输入的导数。</span></span><br><span class="line"><span class="string">	&#x27;&#x27;&#x27;</span></span><br><span class="line">    <span class="comment"># 计算前向传递结果</span></span><br><span class="line">    a = x + y</span><br><span class="line">    <span class="comment"># 计算导数</span></span><br><span class="line">    dsda = deriv(sigma, a)</span><br><span class="line">    dadx, dady = <span class="number">1</span>, <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> dsda * dadx, dsda * dady</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="八、多向量输入函数"><a href="#八、多向量输入函数" class="headerlink" title="八、多向量输入函数"></a>八、多向量输入函数</h2><p>深度学习涉及处理输入为向量（vector）或矩阵（matrix）的函数。这些对象不仅可以进行加法、乘法等运算，还可以通过点积或矩阵乘法进行组合。前面提到的链式法则的数学原理，以及使用前向传递和后向传递计算函数导数的逻辑在这里仍然适用。</p>
-<h3 id="数学-6"><a href="#数学-6" class="headerlink" title="数学"></a>数学</h3><p>在神经网络中，表示单个数据点的典型方法是将 $n$ 个特征列为一行，其中每个特征都只是一个数字，如 $x_1$、$x_2$ 等表示如下：  </p>
-<p>$$X&#x3D;[x_1 \ x_2 \ \cdots \ x_n]$$</p>
+<h3 id="代码-5">代码</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">multiple_inputs_add_backward</span>(<span class="params">x: ndarray,</span></span><br><span class="line"><span class="params">                                y: ndarray,</span></span><br><span class="line"><span class="params">                                sigma: Array_Function</span>) -&gt; <span class="built_in">float</span>:</span><br><span class="line">	<span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">	计算这个简单函数对两个输入的导数。</span></span><br><span class="line"><span class="string">	&#x27;&#x27;&#x27;</span></span><br><span class="line">    <span class="comment"># 计算前向传递结果</span></span><br><span class="line">    a = x + y</span><br><span class="line">    <span class="comment"># 计算导数</span></span><br><span class="line">    dsda = deriv(sigma, a)</span><br><span class="line">    dadx, dady = <span class="number">1</span>, <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> dsda * dadx, dsda * dady</span><br></pre></td></tr></table></figure>
+<h2 id="八多向量输入函数">八、多向量输入函数</h2>
+<p>深度学习涉及处理输入为向量（vector）或矩阵（matrix）的函数。这些对象不仅可以进行加法、乘法等运算，还可以通过点积或矩阵乘法进行组合。前面提到的链式法则的数学原理，以及使用前向传递和后向传递计算函数导数的逻辑在这里仍然适用。</p>
+<h3 id="数学-6">数学</h3>
+<p>在神经网络中，表示单个数据点的典型方法是将 <span
+class="math inline"><em>n</em></span>
+个特征列为一行，其中每个特征都只是一个数字，如 <span
+class="math inline"><em>x</em><sub>1</sub></span>、<span
+class="math inline"><em>x</em><sub>2</sub></span> 等表示如下：</p>
+<p><span
+class="math display"><em>X</em> = [<em>x</em><sub>1</sub> <em>x</em><sub>2</sub> ⋯ <em>x</em><sub><em>n</em></sub>]</span></p>
 <p>其中一个典型示例是预测房价。</p>
-<h2 id="九、基于已有特征创建新特征"><a href="#九、基于已有特征创建新特征" class="headerlink" title="九、基于已有特征创建新特征"></a>九、基于已有特征创建新特征</h2><p>神经网络中最常见的运算也许就是计算已有特征的<strong>加权和</strong>，加权和可以强化某些特征而弱化其他特征，从而形成一种新特征，但它本身仅仅是旧特征的组合。用数学上的一种简洁的方式表达就是使用该观测值的<strong>点积</strong>（dot product），包含与特征$(w_1 \ w_2 \ \cdots \ w_n)$等长的一组权重。</p>
-<h3 id="数学-7"><a href="#数学-7" class="headerlink" title="数学"></a>数学</h3><p>如果存在如下情况： </p>
-<p>$$ W &#x3D; \begin{bmatrix} w_1 \ w_2 \ \vdots \ w_n \end{bmatrix} $$ </p>
-<p>那么可以将此运算的输出定义为： $$ N &#x3D; v(X, W) &#x3D; X \times W &#x3D; x_1 \times w_1 + x_2 \times w_2 + \cdots + x_n \times w_n $$</p>
-<h3 id="代码-6"><a href="#代码-6" class="headerlink" title="代码"></a>代码</h3><p>对矩阵乘法进行编码很简单：</p>
+<h2 id="九基于已有特征创建新特征">九、基于已有特征创建新特征</h2>
+<p>神经网络中最常见的运算也许就是计算已有特征的<strong>加权和</strong>，加权和可以强化某些特征而弱化其他特征，从而形成一种新特征，但它本身仅仅是旧特征的组合。用数学上的一种简洁的方式表达就是使用该观测值的<strong>点积</strong>（dot
+product），包含与特征<span
+class="math inline">(<em>w</em><sub>1</sub> <em>w</em><sub>2</sub> ⋯ <em>w</em><sub><em>n</em></sub>)</span>等长的一组权重。</p>
+<h3 id="数学-7">数学</h3>
+<p>如果存在如下情况：</p>
+<p><span class="math display">$$ W = \begin{bmatrix} w_1 \\ w_2 \\
+\vdots \\ w_n \end{bmatrix} $$</span></p>
+<p>那么可以将此运算的输出定义为： <span
+class="math display"><em>N</em> = <em>v</em>(<em>X</em>, <em>W</em>) = <em>X</em> × <em>W</em> = <em>x</em><sub>1</sub> × <em>w</em><sub>1</sub> + <em>x</em><sub>2</sub> × <em>w</em><sub>2</sub> + ⋯ + <em>x</em><sub><em>n</em></sub> × <em>w</em><sub><em>n</em></sub></span></p>
+<h3 id="代码-6">代码</h3>
+<p>对矩阵乘法进行编码很简单：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> ndarray</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">matmul_forward</span>(<span class="params">X: ndarray, W: ndarray</span>) -&gt; ndarray:</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    计算矩阵乘法的前向传递结果。</span></span><br><span class="line"><span class="string">    &#x27;&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">assert</span> X.shape[<span class="number">1</span>] == W.shape[<span class="number">0</span>], \</span><br><span class="line">        <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">        对于矩阵乘法，第一个数组中的列数应与第二个数组中的行数相匹配。而这里，</span></span><br><span class="line"><span class="string">        第一个数组中的列数为&#123;0&#125;，第二个数组中的行数为&#123;1&#125;。 &#x27;&#x27;&#x27;</span>.<span class="built_in">format</span>(X.shape[<span class="number">1</span>], W.shape[<span class="number">0</span>])</span><br><span class="line">    <span class="comment"># 矩阵乘法</span></span><br><span class="line">    N = np.dot(X, W)</span><br><span class="line">    <span class="keyword">return</span> N</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="十、多向量输入倒数的导数"><a href="#十、多向量输入倒数的导数" class="headerlink" title="十、多向量输入倒数的导数"></a>十、多向量输入倒数的导数</h2><p>对于仅以一个数字作为输入并生成一个输出的函数，例如 $f(x) &#x3D; x^2$ 或 $f(x) &#x3D;\mathrm{sigmoid}(x)$，计算导数很简单，只需应用微积分中的规则即可。然而，对于向量函数，其导数就没有那么简单了：如果将点积写为$v(X,W)&#x3D;N$这种形式，那么自然会产生一个问题：$\frac {\partial N}{\partial X}$和$\frac {\partial N}{\partial W}$分别是什么？</p>
-<h3 id="数学-8"><a href="#数学-8" class="headerlink" title="数学"></a>数学</h3><p>“矩阵的导数”实际上是指“矩阵中每个元素的导数”。由于 $X$ 有一行，因此它可以这样定义：  </p>
-<p>$$ \frac{\partial v}{\partial \mathbf{X}} &#x3D; \left[ \frac{\partial v}{\partial x_1} \ \frac{\partial v}{\partial x_2} \ \frac{\partial v}{\partial x_3} \right] $$</p>
-<p>然而，$v$ 的输出只是一个数字：$N &#x3D; x_1 \times w_1 + x_2 \times w_2 + x_3 \times w_3$。可以看到，如果 $x_1$ 改变了 $\epsilon$ 单位，那么 $N$ 将改变 $w_1 \times \epsilon$ 单位。同理，其他的 $x_i$ 元素也满足这种情况。因此可以得出下面的公式：<br>$$<br>\frac{\partial v}{\partial x_1} &#x3D; w_1<br>$$</p>
-<p>$$<br>\frac{\partial v}{\partial x_2} &#x3D; w_2<br>$$</p>
-<p>$$<br>\frac{\partial v}{\partial x_3} &#x3D; w_3<br>$$</p>
-<p>$$<br>\frac{\partial v}{\partial \mathbf{X}} &#x3D; \begin{bmatrix} w_1 &amp; w_2 &amp; w_3 \end{bmatrix} &#x3D; \mathbf{W}^T<br>$$</p>
+<h2 id="十多向量输入倒数的导数">十、多向量输入倒数的导数</h2>
+<p>对于仅以一个数字作为输入并生成一个输出的函数，例如 <span
+class="math inline"><em>f</em>(<em>x</em>) = <em>x</em><sup>2</sup></span>
+或 <span
+class="math inline"><em>f</em>(<em>x</em>) = sigmoid(<em>x</em>)</span>，计算导数很简单，只需应用微积分中的规则即可。然而，对于向量函数，其导数就没有那么简单了：如果将点积写为<span
+class="math inline"><em>v</em>(<em>X</em>, <em>W</em>) = <em>N</em></span>这种形式，那么自然会产生一个问题：<span
+class="math inline">$\frac {\partial N}{\partial X}$</span>和<span
+class="math inline">$\frac {\partial N}{\partial
+W}$</span>分别是什么？</p>
+<h3 id="数学-8">数学</h3>
+<p>“矩阵的导数”实际上是指“矩阵中每个元素的导数”。由于 <span
+class="math inline"><em>X</em></span> 有一行，因此它可以这样定义：</p>
+<p><span class="math display">$$ \frac{\partial v}{\partial \mathbf{X}}
+= \left[ \frac{\partial v}{\partial x_1} \ \frac{\partial v}{\partial
+x_2} \ \frac{\partial v}{\partial x_3} \right] $$</span></p>
+<p>然而，<span class="math inline"><em>v</em></span>
+的输出只是一个数字：<span
+class="math inline"><em>N</em> = <em>x</em><sub>1</sub> × <em>w</em><sub>1</sub> + <em>x</em><sub>2</sub> × <em>w</em><sub>2</sub> + <em>x</em><sub>3</sub> × <em>w</em><sub>3</sub></span>。可以看到，如果
+<span class="math inline"><em>x</em><sub>1</sub></span> 改变了 <span
+class="math inline"><em>ϵ</em></span> 单位，那么 <span
+class="math inline"><em>N</em></span> 将改变 <span
+class="math inline"><em>w</em><sub>1</sub> × <em>ϵ</em></span>
+单位。同理，其他的 <span
+class="math inline"><em>x</em><sub><em>i</em></sub></span>
+元素也满足这种情况。因此可以得出下面的公式： <span
+class="math display">$$
+\frac{\partial v}{\partial x_1} = w_1
+$$</span></p>
+<p><span class="math display">$$
+\frac{\partial v}{\partial x_2} = w_2
+$$</span></p>
+<p><span class="math display">$$
+\frac{\partial v}{\partial x_3} = w_3
+$$</span></p>
+<p><span class="math display">$$
+\frac{\partial v}{\partial \mathbf{X}} = \begin{bmatrix} w_1 &amp; w_2
+&amp; w_3 \end{bmatrix} = \mathbf{W}^T
+$$</span></p>
 <p>这个结果出乎意料地简练，掌握这一点极为关键，既可以理解深度学习的有效性，又可以知道如何清晰地实现深度学习。</p>
 <p>以此类推，可以得到如下公式。</p>
-<p>$$<br>\frac{\partial v}{\partial \mathbf{W}} &#x3D; \begin{bmatrix} x_1 \ x_2 \ x_3 \end{bmatrix} &#x3D; \mathbf{X}^T<br>$$</p>
-<h3 id="示意图-7"><a href="#示意图-7" class="headerlink" title="示意图"></a>示意图</h3><img src="/ai/2026/04/24/Python%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95%E7%9A%84%E5%90%8E%E5%90%91%E4%BC%A0%E9%80%92.png" class="" title="矩阵乘法的后向传递">
-
-<p>如前面的例子所示，当只处理加法和乘法时，计算这些导数很容易。但是如何利用矩阵乘法实现类似的操作呢？  上图的示意图并不直观，要准确地定义它，必须求助于本节中的数学公式。</p>
-<h3 id="代码-7"><a href="#代码-7" class="headerlink" title="代码"></a>代码</h3><p>从数学上推算答案应该是最困难的部分，对结果进行编码则比较简单：</p>
+<p><span class="math display">$$
+\frac{\partial v}{\partial \mathbf{W}} = \begin{bmatrix} x_1 \\ x_2 \\
+x_3 \end{bmatrix} = \mathbf{X}^T
+$$</span></p>
+<h3 id="示意图-7">示意图</h3>
+<img src="/ai/2026/04/24/Python%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95%E7%9A%84%E5%90%8E%E5%90%91%E4%BC%A0%E9%80%92.png" class="" title="矩阵乘法的后向传递">
+<p>如前面的例子所示，当只处理加法和乘法时，计算这些导数很容易。但是如何利用矩阵乘法实现类似的操作呢？
+上图的示意图并不直观，要准确地定义它，必须求助于本节中的数学公式。</p>
+<h3 id="代码-7">代码</h3>
+<p>从数学上推算答案应该是最困难的部分，对结果进行编码则比较简单：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">matmul_backward</span>(<span class="params">dN: ndarray, dW: ndarray, db: ndarray</span>) -&gt; ndarray:</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    计算矩阵乘法相对于第一个参数的后向传递结果</span></span><br><span class="line"><span class="string">    &#x27;&#x27;&#x27;</span></span><br><span class="line">    <span class="comment"># 后向传递</span></span><br><span class="line">    dNdX = np.transpose(W, (<span class="number">1</span>, <span class="number">0</span>))</span><br><span class="line">    <span class="keyword">return</span> dNdX</span><br></pre></td></tr></table></figure>
-
-<p>这里计算的 dNdX 表示 $X$ 的每个元素相对于输出 N 的和的偏导数。在本书中，这个量有一个特殊的名称，即 $X$ 的<strong>梯度</strong>（gradient）。这个概念是指，对于 $X$ 的单个元素（例如 $x_3$ ），dNdX  中的对应元素（具体来说是 dNdX[2]）是向量点积 N 的输出相对于 $x_3$ 的偏导数。在本书中，梯度仅指偏导数的多维对应物。具体来说，它是函数输出相对于该函数输入的每个元素的偏导数数组。</p>
-<h2 id="十一、向量函数及其导数：再进一步"><a href="#十一、向量函数及其导数：再进一步" class="headerlink" title="十一、向量函数及其导数：再进一步"></a>十一、向量函数及其导数：再进一步</h2><p>当然，深度学习模型不止涉及一个运算，它们包括长链式运算，其中一些是向量函数，另一些则只是将函数逐元素地应用于它们接受的 ndarray（输入）中。现在来计算包含这两种函数的复合函数的导数。假设函数接受向量 $X$ 和向量 $W$，执行点积（将其表示为 $v( X, W)$ ），然后将向量输入到函数$\sigma$中。这里将用新的语言来表达同样的目标：计算这个新函数的输出相对于向量 $X$ 和向量 $W$ 的梯度。</p>
-<h3 id="数学-9"><a href="#数学-9" class="headerlink" title="数学"></a>数学</h3><p>公式很简单，如下所示。 $$ s &#x3D; f(X, W) &#x3D; \sigma(v(X, W)) &#x3D; \sigma(x_1 \times w_1 + x_2 \times w_2 + x_3 \times w_3) $$</p>
-<h3 id="示意图-8"><a href="#示意图-8" class="headerlink" title="示意图"></a>示意图</h3><img src="/ai/2026/04/24/Python%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E5%90%91%E9%87%8F%E5%87%BD%E6%95%B0%E5%8F%8A%E5%85%B6%E5%AF%BC%E6%95%B0.png" class="" title="向量函数及其导数">
-
-<h3 id="代码-8"><a href="#代码-8" class="headerlink" title="代码"></a>代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">matrix_forward_extra</span>(<span class="params">X: ndarray,</span></span><br><span class="line"><span class="params">                         W: ndarray,</span></span><br><span class="line"><span class="params">                         sigma: Array_Function</span>) -&gt; ndarray:</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    计算涉及矩阵乘法的函数（一个额外的函数）的前向传递结果。</span></span><br><span class="line"><span class="string">    &#x27;&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">assert</span> X.shape[<span class="number">1</span>] == W.shape[<span class="number">0</span>]</span><br><span class="line">    <span class="comment"># 矩阵乘法</span></span><br><span class="line">    N = np.dot(X, W)</span><br><span class="line">    <span class="comment"># 通过sigma传递矩阵乘法的输出</span></span><br><span class="line">    S = sigma(N)</span><br><span class="line">    <span class="keyword">return</span> S</span><br></pre></td></tr></table></figure>
-
-<h3 id="向量函数及其导数：后向传递"><a href="#向量函数及其导数：后向传递" class="headerlink" title="向量函数及其导数：后向传递"></a>向量函数及其导数：后向传递</h3><p>类似地，后向传递只是前述示例的直接扩展。</p>
-<h4 id="1-数学"><a href="#1-数学" class="headerlink" title="1. 数学"></a>1. 数学</h4><p>由于 $f(X, W)$ 是嵌套函数，具体来说就是 $f(X, W) &#x3D; \sigma(v(X, W))$，因此该函数在 $X$ 处的导数可以这样表示：</p>
-<p>$$<br>\frac{\partial f}{\partial X} &#x3D; \frac{\partial \sigma}{\partial v}(v(X, W)) \times \frac{\partial v}{\partial X}(X, W)<br>$$</p>
+<p>这里计算的 dNdX 表示 <span class="math inline"><em>X</em></span>
+的每个元素相对于输出 N
+的和的偏导数。在本书中，这个量有一个特殊的名称，即 <span
+class="math inline"><em>X</em></span>
+的<strong>梯度</strong>（gradient）。这个概念是指，对于 <span
+class="math inline"><em>X</em></span> 的单个元素（例如 <span
+class="math inline"><em>x</em><sub>3</sub></span> ），dNdX
+中的对应元素（具体来说是 dNdX[2]）是向量点积 N 的输出相对于 <span
+class="math inline"><em>x</em><sub>3</sub></span>
+的偏导数。在本书中，梯度仅指偏导数的多维对应物。具体来说，它是函数输出相对于该函数输入的每个元素的偏导数数组。</p>
+<h2
+id="十一向量函数及其导数再进一步">十一、向量函数及其导数：再进一步</h2>
+<p>当然，深度学习模型不止涉及一个运算，它们包括长链式运算，其中一些是向量函数，另一些则只是将函数逐元素地应用于它们接受的
+ndarray（输入）中。现在来计算包含这两种函数的复合函数的导数。假设函数接受向量
+<span class="math inline"><em>X</em></span> 和向量 <span
+class="math inline"><em>W</em></span>，执行点积（将其表示为 <span
+class="math inline"><em>v</em>(<em>X</em>, <em>W</em>)</span>
+），然后将向量输入到函数<span
+class="math inline"><em>σ</em></span>中。这里将用新的语言来表达同样的目标：计算这个新函数的输出相对于向量
+<span class="math inline"><em>X</em></span> 和向量 <span
+class="math inline"><em>W</em></span> 的梯度。</p>
+<h3 id="数学-9">数学</h3>
+<p>公式很简单，如下所示。 <span
+class="math display"><em>s</em> = <em>f</em>(<em>X</em>, <em>W</em>) = <em>σ</em>(<em>v</em>(<em>X</em>, <em>W</em>)) = <em>σ</em>(<em>x</em><sub>1</sub> × <em>w</em><sub>1</sub> + <em>x</em><sub>2</sub> × <em>w</em><sub>2</sub> + <em>x</em><sub>3</sub> × <em>w</em><sub>3</sub>)</span></p>
+<h3 id="示意图-8">示意图</h3>
+<img src="/ai/2026/04/24/Python%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E5%90%91%E9%87%8F%E5%87%BD%E6%95%B0%E5%8F%8A%E5%85%B6%E5%AF%BC%E6%95%B0.png" class="" title="向量函数及其导数">
+<h3 id="代码-8">代码</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">matrix_forward_extra</span>(<span class="params">X: ndarray,</span></span><br><span class="line"><span class="params">                         W: ndarray,</span></span><br><span class="line"><span class="params">                         sigma: Array_Function</span>) -&gt; ndarray:</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    计算涉及矩阵乘法的函数（一个额外的函数）的前向传递结果。</span></span><br><span class="line"><span class="string">    &#x27;&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">assert</span> X.shape[<span class="number">1</span>] == W.shape[<span class="number">0</span>]</span><br><span class="line">    <span class="comment"># 矩阵乘法</span></span><br><span class="line">    N = np.dot(X, W)</span><br><span class="line">    <span class="comment"># 通过sigma传递矩阵乘法的输出</span></span><br><span class="line">    S = sigma(N)</span><br><span class="line">    <span class="keyword">return</span> S</span><br></pre></td></tr></table></figure>
+<h3 id="向量函数及其导数后向传递">向量函数及其导数：后向传递</h3>
+<p>类似地，后向传递只是前述示例的直接扩展。</p>
+<h4 id="数学-10">1. 数学</h4>
+<p>由于 <span
+class="math inline"><em>f</em>(<em>X</em>, <em>W</em>)</span>
+是嵌套函数，具体来说就是 <span
+class="math inline"><em>f</em>(<em>X</em>, <em>W</em>) = <em>σ</em>(<em>v</em>(<em>X</em>, <em>W</em>))</span>，因此该函数在
+<span class="math inline"><em>X</em></span> 处的导数可以这样表示：</p>
+<p><span class="math display">$$
+\frac{\partial f}{\partial X} = \frac{\partial \sigma}{\partial v}(v(X,
+W)) \times \frac{\partial v}{\partial X}(X, W)
+$$</span></p>
 <p>第一部分很简单：</p>
-<p>$$<br>\frac{\partial \sigma}{\partial v}(v(X, W)) &#x3D; \frac{\partial \sigma}{\partial v}(x_1 \times w_1 + x_2 \times w_2 + x_3 \times w_3)<br>$$</p>
-<p>这是一个很好的定义，$\sigma$ 是连续函数，可以在任意点求导。在这里，只在 $x_1 \times w_1 + x_2 \times w_2 + x_3 \times w_3$ 处对其求值。</p>
-<p>此外，我们已经推断出 $\frac{\partial v}{\partial X}(X, W) &#x3D; W^T$。因此，可以这样表达：<br>$$<br>\frac{\partial f}{\partial X} &#x3D; \frac{\partial \sigma}{\partial u}(v(X, W)) \times \frac{\partial v}{\partial X}(X, W) &#x3D; \frac{\partial \sigma}{\partial u}(x_1 \times w_1 + x_2 \times w_2 + x_3 \times w_3) \times W^T<br>$$</p>
-<p>与前面的示例一样，由于最终答案是数字 $\frac{\partial \sigma}{\partial u}(x_1 \times w_1 + x_2 \times w_2 + x_3 \times w_3)$ 乘以 $W^T$ 中的与 $X$ 形状相同的向量，因此这个公式会得出一个与 $X$ 形状相同的向量。</p>
-<h4 id="2-示意图"><a href="#2-示意图" class="headerlink" title="2. 示意图"></a>2. 示意图</h4><p>矩阵乘法的结果包含所计算的$\sigma$函数的导数，只需要在这个导数的基础上再添加一个乘法。  </p>
+<p><span class="math display">$$
+\frac{\partial \sigma}{\partial v}(v(X, W)) = \frac{\partial
+\sigma}{\partial v}(x_1 \times w_1 + x_2 \times w_2 + x_3 \times w_3)
+$$</span></p>
+<p>这是一个很好的定义，<span class="math inline"><em>σ</em></span>
+是连续函数，可以在任意点求导。在这里，只在 <span
+class="math inline"><em>x</em><sub>1</sub> × <em>w</em><sub>1</sub> + <em>x</em><sub>2</sub> × <em>w</em><sub>2</sub> + <em>x</em><sub>3</sub> × <em>w</em><sub>3</sub></span>
+处对其求值。</p>
+<p>此外，我们已经推断出 <span class="math inline">$\frac{\partial
+v}{\partial X}(X, W) = W^T$</span>。因此，可以这样表达： <span
+class="math display">$$
+\frac{\partial f}{\partial X} = \frac{\partial \sigma}{\partial u}(v(X,
+W)) \times \frac{\partial v}{\partial X}(X, W) = \frac{\partial
+\sigma}{\partial u}(x_1 \times w_1 + x_2 \times w_2 + x_3 \times w_3)
+\times W^T
+$$</span></p>
+<p>与前面的示例一样，由于最终答案是数字 <span
+class="math inline">$\frac{\partial \sigma}{\partial u}(x_1 \times w_1 +
+x_2 \times w_2 + x_3 \times w_3)$</span> 乘以 <span
+class="math inline"><em>W</em><sup><em>T</em></sup></span> 中的与 <span
+class="math inline"><em>X</em></span>
+形状相同的向量，因此这个公式会得出一个与 <span
+class="math inline"><em>X</em></span> 形状相同的向量。</p>
+<h4 id="示意图-9">2. 示意图</h4>
+<p>矩阵乘法的结果包含所计算的<span
+class="math inline"><em>σ</em></span>函数的导数，只需要在这个导数的基础上再添加一个乘法。</p>
 <img src="/ai/2026/04/24/Python%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E5%B8%A6%E6%9C%89%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95%E7%9A%84%E5%9B%BE%EF%BC%9A%E5%90%8E%E5%90%91%E4%BC%A0%E9%80%92.png" class="" title="带有矩阵乘法的图：后向传递">
-
-<h4 id="3-代码"><a href="#3-代码" class="headerlink" title="3. 代码"></a>3. 代码</h4><p>对后向传递进行编码也很简单：</p>
+<h4 id="代码-9">3. 代码</h4>
+<p>对后向传递进行编码也很简单：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">matrix_function_backward_1</span>(<span class="params">X: ndarray,</span></span><br><span class="line"><span class="params">                               W: ndarray,</span></span><br><span class="line"><span class="params">                               sigma: Array_Function</span>) -&gt; ndarray:</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    计算矩阵函数相对于第一个元素的导数。</span></span><br><span class="line"><span class="string">    &#x27;&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">assert</span> X.shape[<span class="number">1</span>] == W.shape[<span class="number">0</span>]</span><br><span class="line">    <span class="comment"># 矩阵乘法</span></span><br><span class="line">    N = np.dot(X, W)</span><br><span class="line">    <span class="comment"># 通过sigma传递矩阵乘法的输出</span></span><br><span class="line">    S = sigma(N)</span><br><span class="line">    <span class="comment"># 后向计算</span></span><br><span class="line">    dSdN = deriv(sigma, N)</span><br><span class="line">    <span class="comment"># dNdX</span></span><br><span class="line">    dNdX = np.transpose(W, (<span class="number">1</span>, <span class="number">0</span>))</span><br><span class="line">    <span class="comment"># 将它们相乘。因为这里的dNdX是1 × 1，所以顺序无关紧要</span></span><br><span class="line">    <span class="keyword">return</span> np.dot(dSdN, dNdX)</span><br></pre></td></tr></table></figure>
-
-<p>注意，这里显示的动态效果与 3 个嵌套函数示例显示的动态效果相同：计算前向传递（这里指 N）上的量，然后在后向传递期间进行使用。  </p>
-<h4 id="4-这是对的吗？"><a href="#4-这是对的吗？" class="headerlink" title="4. 这是对的吗？"></a>4. 这是对的吗？</h4><p>如何判断正在计算的这些导数是否正确？测试起来很简单，就是稍微扰动输入并观察输出结果的变化。例如，在这种情况下， $X$为：</p>
+<p>注意，这里显示的动态效果与 3
+个嵌套函数示例显示的动态效果相同：计算前向传递（这里指
+N）上的量，然后在后向传递期间进行使用。</p>
+<h4 id="这是对的吗">4. 这是对的吗？</h4>
+<p>如何判断正在计算的这些导数是否正确？测试起来很简单，就是稍微扰动输入并观察输出结果的变化。例如，在这种情况下，
+<span class="math inline"><em>X</em></span>为：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(X)</span><br><span class="line">[[ <span class="number">0.4723</span> <span class="number">0.6151</span> –<span class="number">1.7262</span>]]</span><br></pre></td></tr></table></figure>
-
-<p>如果将 $x_3$ 增加 0.01，即从 –1.7262 增加到 –1.7162，那么应该可以看到由输出梯度相对于$x_3$ × 0.01的前向函数生成的值有所增加：</p>
+<p>如果将 <span class="math inline"><em>x</em><sub>3</sub></span> 增加
+0.01，即从 –1.7262 增加到 –1.7162，那么应该可以看到由输出梯度相对于<span
+class="math inline"><em>x</em><sub>3</sub></span> ×
+0.01的前向函数生成的值有所增加：</p>
 <img src="/ai/2026/04/24/Python%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E6%A2%AF%E5%BA%A6%E6%A3%80%E6%9F%A5%E7%A4%BA%E6%84%8F%E5%9B%BE.png" class="" title="梯度检查示意图">
-
 <p>利用 matrix_function_backward_1 函数，可以看到梯度是 –0.1121：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(matrix_function_backward_1(X, W, sigmoid))</span><br><span class="line">[[ <span class="number">0.0852</span> –<span class="number">0.0557</span> –<span class="number">0.1121</span>]]</span><br></pre></td></tr></table></figure>
-
-<p>可以看到，在将 $x_3$ 递增 0.01 之后，函数的输出相应减少了约 0.01 × –0.1121 &#x3D; –0.001121，这可以帮助测试该梯度是否正确。如果减幅（或增幅）大于或小于此量，那么关于链式法则的计算就是错误的。然而，当执行计算时，少量增加 $x_3$ 确实会使函数的输出值减小0.01 × –0.1121，这意味着计算的导数是正确的！</p>
-<h2 id="十二、包含两个二维矩阵输入的计算图"><a href="#十二、包含两个二维矩阵输入的计算图" class="headerlink" title="十二、包含两个二维矩阵输入的计算图"></a>十二、包含两个二维矩阵输入的计算图</h2><p>在深度学习和更通用的机器学习中，需要处理输入为两个二维数组的运算，其中一个数组表示一批数据 $X$，另一个表示权重 $W$。具体来说，就是通过一个简单的示例详细说明，我们不再以一维向量的点积为例，而是介绍二维矩阵的乘法。  </p>
-<h3 id="数学-10"><a href="#数学-10" class="headerlink" title="数学"></a>数学</h3><p>假设 $X$ 和 $W$ 如下所示：</p>
-<p>$$<br>X &#x3D; \begin{bmatrix} x_{11} &amp; x_{12} &amp; x_{13} \ x_{21} &amp; x_{22} &amp; x_{23} \ x_{31} &amp; x_{32} &amp; x_{33} \end{bmatrix}<br>$$</p>
-<p>$$<br>W &#x3D; \begin{bmatrix} w_{11} &amp; w_{12} \ w_{21} &amp; w_{22} \ w_{31} &amp; w_{32} \end{bmatrix}<br>$$</p>
-<p>这可能对应一个数据集，其中每个观测值都具有 3 个特征，3 行可能对应要对其进行预测的 3 个观测值。</p>
+<p>可以看到，在将 <span
+class="math inline"><em>x</em><sub>3</sub></span> 递增 0.01
+之后，函数的输出相应减少了约 0.01 × –0.1121 =
+–0.001121，这可以帮助测试该梯度是否正确。如果减幅（或增幅）大于或小于此量，那么关于链式法则的计算就是错误的。然而，当执行计算时，少量增加
+<span class="math inline"><em>x</em><sub>3</sub></span>
+确实会使函数的输出值减小0.01 × –0.1121，这意味着计算的导数是正确的！</p>
+<h2
+id="十二包含两个二维矩阵输入的计算图">十二、包含两个二维矩阵输入的计算图</h2>
+<p>在深度学习和更通用的机器学习中，需要处理输入为两个二维数组的运算，其中一个数组表示一批数据
+<span class="math inline"><em>X</em></span>，另一个表示权重 <span
+class="math inline"><em>W</em></span>。具体来说，就是通过一个简单的示例详细说明，我们不再以一维向量的点积为例，而是介绍二维矩阵的乘法。</p>
+<p>### 数学</p>
+<p>假设 <span class="math inline"><em>X</em></span> 和 <span
+class="math inline"><em>W</em></span> 如下所示：</p>
+<p><span class="math display">$$
+X = \begin{bmatrix} x_{11} &amp; x_{12} &amp; x_{13} \\ x_{21} &amp;
+x_{22} &amp; x_{23} \\ x_{31} &amp; x_{32} &amp; x_{33} \end{bmatrix}
+$$</span></p>
+<p><span class="math display">$$
+W = \begin{bmatrix} w_{11} &amp; w_{12} \\ w_{21} &amp; w_{22} \\ w_{31}
+&amp; w_{32} \end{bmatrix}
+$$</span></p>
+<p>这可能对应一个数据集，其中每个观测值都具有 3 个特征，3
+行可能对应要对其进行预测的 3 个观测值。</p>
 <p>现在将为这些矩阵定义以下简单的运算。</p>
-<ol>
-<li>将这些矩阵相乘。和以前一样，将把执行此运算的函数表示为 $v(X, W)$，将输出表示为 $N$。因此，可以这样表示：$N &#x3D; v(X, W)$。</li>
-<li>将结果 $N$ 传递给可微函数 $\sigma$，并定义 $S &#x3D; \sigma(N)$。</li>
+<ol type="1">
+<li>将这些矩阵相乘。和以前一样，将把执行此运算的函数表示为 <span
+class="math inline"><em>v</em>(<em>X</em>, <em>W</em>)</span>，将输出表示为
+<span class="math inline"><em>N</em></span>。因此，可以这样表示：<span
+class="math inline"><em>N</em> = <em>v</em>(<em>X</em>, <em>W</em>)</span>。</li>
+<li>将结果 <span class="math inline"><em>N</em></span> 传递给可微函数
+<span class="math inline"><em>σ</em></span>，并定义 <span
+class="math inline"><em>S</em> = <em>σ</em>(<em>N</em>)</span>。</li>
 </ol>
-<p>和以前一样，现在的问题是：输出 $S$ 相对于 $X$ 和 $W$ 的梯度是多少？可以简单地再次使用链式法则吗？为什么？</p>
-<p>注意，本例与之前的示例有所不同：$S$ 不是数字，而是矩阵。那么，一个矩阵相对于另一矩阵的梯度意味着什么呢？</p>
-<p>这就引出了一个微妙但十分重要的概念：可以在目标多维数组上执行任何一系列运算，但是要对某些输出定义好梯度，这需要对序列中的最后一个数组求和（或以其他方式聚合成单个数字），这样“$X$ 中每个元素的变化会在多大程度上影响输出”这一问题才有意义。</p>
-<p>因此，在最后添加第 3 个函数 $\Lambda$，该函数获取 $S$ 中的元素并将其求和。</p>
-<p>通过数学把它具体化。首先，把 $X$ 和 $W$ 相乘：</p>
-<p>$$ \begin{aligned} X \times W &amp;&#x3D; \begin{bmatrix} x_{11} \times w_{11} + x_{12} \times w_{21} + x_{13} \times w_{31} &amp; x_{11} \times w_{12} + x_{12} \times w_{22} + x_{13} \times w_{32} \ x_{21} \times w_{11} + x_{22} \times w_{21} + x_{23} \times w_{31} &amp; x_{21} \times w_{12} + x_{22} \times w_{22} + x_{23} \times w_{32} \ x_{31} \times w_{11} + x_{32} \times w_{21} + x_{33} \times w_{31} &amp; x_{31} \times w_{12} + x_{32} \times w_{22} + x_{33} \times w_{32} \end{bmatrix} \ &amp;&#x3D; \begin{bmatrix} XW_{11} &amp; XW_{12} \ XW_{21} &amp; XW_{22} \ XW_{31} &amp; XW_{32} \end{bmatrix} \end{aligned} $$ 为了便于书写结果矩阵，这里将第 $i$ 行的第 $j$ 列表示为 $XW_{ij}$。 接下来，将该结果输入到 $\sigma$ 中，这意味着将 $\sigma$ 应用于 $X \times W$ 矩阵中的每个元素： $$ \begin{aligned} \sigma(X \times W) &amp;&#x3D; \begin{bmatrix} \sigma(x_{11} \times w_{11} + x_{12} \times w_{21} + x_{13} \times w_{31}) &amp; \sigma(x_{11} \times w_{12} + x_{12} \times w_{22} + x_{13} \times w_{32}) \ \sigma(x_{21} \times w_{11} + x_{22} \times w_{21} + x_{23} \times w_{31}) &amp; \sigma(x_{21} \times w_{12} + x_{22} \times w_{22} + x_{23} \times w_{32}) \ \sigma(x_{31} \times w_{11} + x_{32} \times w_{21} + x_{33} \times w_{31}) &amp; \sigma(x_{31} \times w_{12} + x_{32} \times w_{22} + x_{33} \times w_{32}) \end{bmatrix} \ &amp;&#x3D; \begin{bmatrix} \sigma(XW_{11}) &amp; \sigma(XW_{12}) \ \sigma(XW_{21}) &amp; \sigma(XW_{22}) \ \sigma(XW_{31}) &amp; \sigma(XW_{32}) \end{bmatrix} \end{aligned} $$ 最后，对这些元素求和： $$ \begin{aligned} L &#x3D; \Lambda(\sigma(X \times W)) &amp;&#x3D; \Lambda \left( \begin{bmatrix} \sigma(XW_{11}) &amp; \sigma(XW_{12}) \ \sigma(XW_{21}) &amp; \sigma(XW_{22}) \ \sigma(XW_{31}) &amp; \sigma(XW_{32}) \end{bmatrix} \right) \ &amp;&#x3D; \sigma(XW_{11}) + \sigma(XW_{12}) + \sigma(XW_{21}) + \sigma(XW_{22}) + \sigma(XW_{31}) + \sigma(XW_{32}) \end{aligned} $$ 现在回到了纯微积分的场景中：存在一个数字 $L$，想计算出 $L$ 相对于 $X$ 和 $W$ 的梯度，也就是明确这些输入矩阵中每个元素（$x_{11}$、$w_{21}$ 等）的变化对 $L$ 的影响。可以这样写： $$ \frac{\partial \Lambda}{\partial u}(X) &#x3D; \begin{bmatrix} \frac{\partial \Lambda}{\partial u}(x_{11}) &amp; \frac{\partial \Lambda}{\partial u}(x_{12}) &amp; \frac{\partial \Lambda}{\partial u}(x_{13}) \ \frac{\partial \Lambda}{\partial u}(x_{21}) &amp; \frac{\partial \Lambda}{\partial u}(x_{22}) &amp; \frac{\partial \Lambda}{\partial u}(x_{23}) \ \frac{\partial \Lambda}{\partial u}(x_{31}) &amp; \frac{\partial \Lambda}{\partial u}(x_{32}) &amp; \frac{\partial \Lambda}{\partial u}(x_{33}) \end{bmatrix} $$ 至此，我们已经从数学上理解了所面临的问题，接下来讨论示意图层面和代码层面。</p>
-<h3 id="示意图-9"><a href="#示意图-9" class="headerlink" title="示意图"></a>示意图</h3><p>从概念上讲，与前面介绍的多输入函数的计算图相比，包含两个二维矩阵输入的运算所做的工作其实是类似的。</p>
-<h3 id="代码-9"><a href="#代码-9" class="headerlink" title="代码"></a>代码</h3><p>对于输入为两个二维数组的运算，可以像下面这样编码。</p>
+<p>和以前一样，现在的问题是：输出 <span
+class="math inline"><em>S</em></span> 相对于 <span
+class="math inline"><em>X</em></span> 和 <span
+class="math inline"><em>W</em></span>
+的梯度是多少？可以简单地再次使用链式法则吗？为什么？</p>
+<p>注意，本例与之前的示例有所不同：<span
+class="math inline"><em>S</em></span>
+不是数字，而是矩阵。那么，一个矩阵相对于另一矩阵的梯度意味着什么呢？</p>
+<p>这就引出了一个微妙但十分重要的概念：可以在目标多维数组上执行任何一系列运算，但是要对某些输出定义好梯度，这需要对序列中的最后一个数组求和（或以其他方式聚合成单个数字），这样“<span
+class="math inline"><em>X</em></span>
+中每个元素的变化会在多大程度上影响输出”这一问题才有意义。</p>
+<p>因此，在最后添加第 3 个函数 <span
+class="math inline"><em>Λ</em></span>，该函数获取 <span
+class="math inline"><em>S</em></span> 中的元素并将其求和。</p>
+<p>通过数学把它具体化。首先，把 <span
+class="math inline"><em>X</em></span> 和 <span
+class="math inline"><em>W</em></span> 相乘：</p>
+<p><span class="math display">$$ \begin{aligned} X \times W &amp;=
+\begin{bmatrix} x_{11} \times w_{11} + x_{12} \times w_{21} + x_{13}
+\times w_{31} &amp; x_{11} \times w_{12} + x_{12} \times w_{22} + x_{13}
+\times w_{32} \\ x_{21} \times w_{11} + x_{22} \times w_{21} + x_{23}
+\times w_{31} &amp; x_{21} \times w_{12} + x_{22} \times w_{22} + x_{23}
+\times w_{32} \\ x_{31} \times w_{11} + x_{32} \times w_{21} + x_{33}
+\times w_{31} &amp; x_{31} \times w_{12} + x_{32} \times w_{22} + x_{33}
+\times w_{32} \end{bmatrix} \\ &amp;= \begin{bmatrix} XW_{11} &amp;
+XW_{12} \\ XW_{21} &amp; XW_{22} \\ XW_{31} &amp; XW_{32} \end{bmatrix}
+\end{aligned} $$</span> 为了便于书写结果矩阵，这里将第 <span
+class="math inline"><em>i</em></span> 行的第 <span
+class="math inline"><em>j</em></span> 列表示为 <span
+class="math inline"><em>X</em><em>W</em><sub><em>i</em><em>j</em></sub></span>。
+接下来，将该结果输入到 <span class="math inline"><em>σ</em></span>
+中，这意味着将 <span class="math inline"><em>σ</em></span> 应用于 <span
+class="math inline"><em>X</em> × <em>W</em></span> 矩阵中的每个元素：
+<span class="math display">$$ \begin{aligned} \sigma(X \times W) &amp;=
+\begin{bmatrix} \sigma(x_{11} \times w_{11} + x_{12} \times w_{21} +
+x_{13} \times w_{31}) &amp; \sigma(x_{11} \times w_{12} + x_{12} \times
+w_{22} + x_{13} \times w_{32}) \\ \sigma(x_{21} \times w_{11} + x_{22}
+\times w_{21} + x_{23} \times w_{31}) &amp; \sigma(x_{21} \times w_{12}
++ x_{22} \times w_{22} + x_{23} \times w_{32}) \\ \sigma(x_{31} \times
+w_{11} + x_{32} \times w_{21} + x_{33} \times w_{31}) &amp;
+\sigma(x_{31} \times w_{12} + x_{32} \times w_{22} + x_{33} \times
+w_{32}) \end{bmatrix} \\ &amp;= \begin{bmatrix} \sigma(XW_{11}) &amp;
+\sigma(XW_{12}) \\ \sigma(XW_{21}) &amp; \sigma(XW_{22}) \\
+\sigma(XW_{31}) &amp; \sigma(XW_{32}) \end{bmatrix} \end{aligned}
+$$</span> 最后，对这些元素求和： <span class="math display">$$
+\begin{aligned} L = \Lambda(\sigma(X \times W)) &amp;= \Lambda \left(
+\begin{bmatrix} \sigma(XW_{11}) &amp; \sigma(XW_{12}) \\ \sigma(XW_{21})
+&amp; \sigma(XW_{22}) \\ \sigma(XW_{31}) &amp; \sigma(XW_{32})
+\end{bmatrix} \right) \\ &amp;= \sigma(XW_{11}) + \sigma(XW_{12}) +
+\sigma(XW_{21}) + \sigma(XW_{22}) + \sigma(XW_{31}) + \sigma(XW_{32})
+\end{aligned} $$</span> 现在回到了纯微积分的场景中：存在一个数字 <span
+class="math inline"><em>L</em></span>，想计算出 <span
+class="math inline"><em>L</em></span> 相对于 <span
+class="math inline"><em>X</em></span> 和 <span
+class="math inline"><em>W</em></span>
+的梯度，也就是明确这些输入矩阵中每个元素（<span
+class="math inline"><em>x</em><sub>11</sub></span>、<span
+class="math inline"><em>w</em><sub>21</sub></span> 等）的变化对 <span
+class="math inline"><em>L</em></span> 的影响。可以这样写： <span
+class="math display">$$ \frac{\partial \Lambda}{\partial u}(X) =
+\begin{bmatrix} \frac{\partial \Lambda}{\partial u}(x_{11}) &amp;
+\frac{\partial \Lambda}{\partial u}(x_{12}) &amp; \frac{\partial
+\Lambda}{\partial u}(x_{13}) \\ \frac{\partial \Lambda}{\partial
+u}(x_{21}) &amp; \frac{\partial \Lambda}{\partial u}(x_{22}) &amp;
+\frac{\partial \Lambda}{\partial u}(x_{23}) \\ \frac{\partial
+\Lambda}{\partial u}(x_{31}) &amp; \frac{\partial \Lambda}{\partial
+u}(x_{32}) &amp; \frac{\partial \Lambda}{\partial u}(x_{33})
+\end{bmatrix} $$</span>
+至此，我们已经从数学上理解了所面临的问题，接下来讨论示意图层面和代码层面。</p>
+<h3 id="示意图-10">示意图</h3>
+<p>从概念上讲，与前面介绍的多输入函数的计算图相比，包含两个二维矩阵输入的运算所做的工作其实是类似的。</p>
+<h3 id="代码-10">代码</h3>
+<p>对于输入为两个二维数组的运算，可以像下面这样编码。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">matrix_function_forward_sum</span>(<span class="params">X: ndarray,</span></span><br><span class="line"><span class="params">                                W: ndarray,</span></span><br><span class="line"><span class="params">                                sigma: Array_Function</span>) -&gt; <span class="built_in">float</span>:</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    输入ndarray（X、 W）以及函数sigma，计算该函数的前向传递结果。</span></span><br><span class="line"><span class="string">    &#x27;&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">assert</span> X.shape[<span class="number">1</span>] == W.shape[<span class="number">0</span>]</span><br><span class="line">    <span class="comment"># 矩阵乘法</span></span><br><span class="line">    N = np.dot(X, W)</span><br><span class="line">    <span class="comment"># 通过sigma传递矩阵乘法的输出</span></span><br><span class="line">    S = sigma(N)</span><br><span class="line">    <span class="comment"># 将所有元素相加</span></span><br><span class="line">    L = np.<span class="built_in">sum</span>(S)</span><br><span class="line">    <span class="keyword">return</span> L</span><br></pre></td></tr></table></figure>
-
-<h2 id="十三、有趣的部分：后向传递"><a href="#十三、有趣的部分：后向传递" class="headerlink" title="十三、有趣的部分：后向传递"></a>十三、有趣的部分：后向传递</h2><p>现在，要对函数“执行后向传递”，这样一来，即使涉及矩阵乘法，也可以最终计算出 N相对于输入 ndarray 的每个元素的梯度。在学完本节之后，就能轻松地在第 2 章中开始训练真正的机器学习模型。  </p>
-<h3 id="数学（重点）"><a href="#数学（重点）" class="headerlink" title="数学（重点）"></a>数学（重点）</h3><p>xxxx</p>
-<h3 id="示意图-10"><a href="#示意图-10" class="headerlink" title="示意图"></a>示意图</h3><img src="/ai/2026/04/24/Python%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E5%A4%8D%E6%9D%82%E5%87%BD%E6%95%B0%E4%B8%AD%E7%9A%84%E5%90%8E%E5%90%91%E4%BC%A0%E9%80%92.png" class="" title="复杂函数中的后向传递">
-
-<h3 id="代码-10"><a href="#代码-10" class="headerlink" title="代码"></a>代码</h3><p>xxx</p>
-<h2 id="十四、小结"><a href="#十四、小结" class="headerlink" title="十四、小结"></a>十四、小结</h2><p>学完本章之后，你应该有信心理解复杂的嵌套数学函数，并通过将它们概念化为一系列盒子来解释它们的工作原理，每个盒子代表一个由线连接的单一组成函数。尤其需要注意的是，即使存在涉及二维 ndarray 的矩阵乘法，也可以编写代码来计算这些函数的输出相对于任何输入的导数，理解正确计算这些导数背后的数学原理。掌握这些基本概念，有助于接下来构建和训练神经网络。加油！  </p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<h2 id="十三有趣的部分后向传递">十三、有趣的部分：后向传递</h2>
+<p>现在，要对函数“执行后向传递”，这样一来，即使涉及矩阵乘法，也可以最终计算出
+N相对于输入 ndarray 的每个元素的梯度。在学完本节之后，就能轻松地在第 2
+章中开始训练真正的机器学习模型。</p>
+<h3 id="数学-11">数学</h3>
+<p>注意，可以直接计算。值<span
+class="math inline"><em>L</em></span>实际上是从<span
+class="math inline"><em>x</em><sub>11</sub></span>、<span
+class="math inline"><em>x</em><sub>12</sub></span>直到<span
+class="math inline"><em>x</em><sub>33</sub></span>的一个函数。</p>
+<p>但是，这似乎很复杂。链式法则的全部要点就是将复杂函数的导数分解成简单的部分，对每个部分执行计算，然后把结果相乘。如此一来，对这些操作进行编码就变得很容易：只需要逐步进行前向传递，保存传递过程中的结果，然后使用这些结果来计算后向传递所需的所有导数。</p>
+<p>下面展示这种方法<strong>仅适用涉及矩阵的情况</strong>。</p>
+<p>可以将 <span class="math inline"><em>L</em></span> 写成 <span
+class="math inline"><em>Λ</em>(<em>σ</em>(<em>v</em>(<em>X</em>, <em>W</em>)))</span>。如果这是一个常规函数，就可以这样编写链式法则：
+<span class="math display">$$ \frac{\partial \Lambda}{\partial X}(X) =
+\frac{\partial v}{\partial X}(X, W) \times \frac{\partial
+\sigma}{\partial u}(N) \times \frac{\partial \Lambda}{\partial u}(S)
+$$</span></p>
+<p>然后依次计算 3 个偏导数。前面在计算包含 3
+个嵌套函数的复合函数的导数时，我们使用链式法则分别对每个函数进行了求导，这里要执行同样的操作。下图表明，该方法同样适用于这种函数。</p>
+<p>由于一阶导数最直接，因此这里从一阶导数开始计算，主要是确定当 <span
+class="math inline"><em>S</em></span> 中每个元素值增加时，<span
+class="math inline"><em>Λ</em></span> 的输出 <span
+class="math inline"><em>L</em></span> 的增长情况。由于 <span
+class="math inline"><em>L</em></span> 是 <span
+class="math inline"><em>S</em></span>
+中所有元素的总和，因此这个导数很简单： <span class="math display">$$
+\frac{\partial \Lambda}{\partial u}(S) = \begin{bmatrix} 1 &amp; 1 \\ 1
+&amp; 1 \\ 1 &amp; 1 \end{bmatrix} $$</span></p>
+<p>只要 <span class="math inline"><em>S</em></span>
+中的任何元素有所增加，比如增加 0.46 个单位，<span
+class="math inline"><em>Λ</em></span> 就会增加 0.46 单位。</p>
+<p>接下来得到 <span class="math inline">$\frac{\partial \sigma}{\partial
+u}(N)$</span>。这只是对 <span class="math inline"><em>N</em></span>
+中元素进行求值的任一函数 <span class="math inline"><em>σ</em></span>
+的导数。在前面使用的 <span
+class="math inline"><em>X</em><em>W</em></span>
+语法中，这同样很容易计算：</p>
+<p><span class="math display">$$ \begin{bmatrix} \frac{\partial
+\sigma}{\partial u}(XW_{11}) &amp; \frac{\partial \sigma}{\partial
+u}(XW_{12}) \\ \frac{\partial \sigma}{\partial u}(XW_{21}) &amp;
+\frac{\partial \sigma}{\partial u}(XW_{22}) \\ \frac{\partial
+\sigma}{\partial u}(XW_{31}) &amp; \frac{\partial \sigma}{\partial
+u}(XW_{32}) \end{bmatrix} $$</span></p>
+<p>注意，我们现在可以肯定地说，能够将这两个导数按元素逐个相乘并计算
+<span class="math inline">$\frac{\partial \Lambda}{\partial
+u}(N)$</span>： <span class="math display">$$ \frac{\partial
+\Lambda}{\partial u}(N) = \frac{\partial \Lambda}{\partial u}(S) \odot
+\frac{\partial \sigma}{\partial u}(N) = \begin{bmatrix} \frac{\partial
+\sigma}{\partial u}(XW_{11}) &amp; \frac{\partial \sigma}{\partial
+u}(XW_{12}) \\ \frac{\partial \sigma}{\partial u}(XW_{21}) &amp;
+\frac{\partial \sigma}{\partial u}(XW_{22}) \\ \frac{\partial
+\sigma}{\partial u}(XW_{31}) &amp; \frac{\partial \sigma}{\partial
+u}(XW_{32}) \end{bmatrix} \times \begin{bmatrix} 1 &amp; 1 \\ 1 &amp; 1
+\\ 1 &amp; 1 \end{bmatrix} = \begin{bmatrix} \frac{\partial
+\sigma}{\partial u}(XW_{11}) &amp; \frac{\partial \sigma}{\partial
+u}(XW_{12}) \\ \frac{\partial \sigma}{\partial u}(XW_{21}) &amp;
+\frac{\partial \sigma}{\partial u}(XW_{22}) \\ \frac{\partial
+\sigma}{\partial u}(XW_{31}) &amp; \frac{\partial \sigma}{\partial
+u}(XW_{32}) \end{bmatrix} $$</span></p>
+<p>然而，现在陷入了困境。基于下图并应用链式法则，接下来要做的是获取
+<span class="math inline">$\frac{\partial v}{\partial
+u}(X)$</span>。但是，回想一下，<span
+class="math inline"><em>v</em></span> 的输出 <span
+class="math inline"><em>N</em></span> 只是 <span
+class="math inline"><em>X</em></span> 与 <span
+class="math inline"><em>W</em></span> 矩阵相乘的结果。因此，这里要知道
+<span class="math inline"><em>N</em></span>（<span
+class="math inline">3 × 2</span> 矩阵）中每个元素随着 <span
+class="math inline"><em>X</em></span> 中每个元素（<span
+class="math inline">3 × 3</span>
+矩阵）的增加而增加的量。如果上面的表述难以理解，只要明确一点就可以了，那就是现在根本不清楚如何定义它，或者无法确定这样做真的有效。</p>
+<p>为什么会出现这个问题呢？以前，我们很幸运，由于 <span
+class="math inline"><em>X</em></span> 和 <span
+class="math inline"><em>W</em></span> 在形状上可以相互转换，因此可以证明
+<span class="math inline">$\frac{\partial v}{\partial u}(X) =
+W^T$</span> 和 <span class="math inline">$\frac{\partial v}{\partial
+u}(W) = X^T$</span>。现在可以得出类似的结论吗？</p>
+<p><strong>“？”的值</strong></p>
+<p>更具体地说，现在需要弄清楚以下公式中的“？”到底是什么。</p>
+<p><span class="math display">$$
+\frac{\partial \Lambda}{\partial u}(X) = \frac{\partial
+\Lambda}{\partial u}(\sigma(N)) \times ? = \begin{bmatrix}
+\frac{\partial \sigma}{\partial u}(XW_{11}) &amp; \frac{\partial
+\sigma}{\partial u}(XW_{12}) \\
+\frac{\partial \sigma}{\partial u}(XW_{21}) &amp; \frac{\partial
+\sigma}{\partial u}(XW_{22}) \\
+\frac{\partial \sigma}{\partial u}(XW_{31}) &amp; \frac{\partial
+\sigma}{\partial u}(XW_{32})
+\end{bmatrix} \times ?
+$$</span></p>
+<p><strong>答案</strong></p>
+<p>事实证明，根据乘法的计算方式，“？”处的内容就是 <span
+class="math inline"><em>W</em><sup><em>T</em></sup></span>，这和刚才看到的向量点积的简单示例是一样的。有一种方法可以验证这一点，那就是直接针对
+<span class="math inline"><em>X</em></span> 中的每个元素计算 <span
+class="math inline"><em>L</em></span>
+的偏导数。这样一来，得到的矩阵确实显著地分解成：</p>
+<p><span class="math display">$$
+\frac{\partial \Lambda}{\partial u}(X) = \frac{\partial
+\Lambda}{\partial u}(S) \times \frac{\partial \sigma}{\partial u}(N)
+\times W^T
+$$</span></p>
+<p>其中第一个乘法是逐个元素执行的，第二个则是矩阵乘法。</p>
+<p>这意味着，<strong>即使计算图中的运算涉及将矩阵与多行和多列相乘，并且即使这些运算的输出形状与输入的形状不同，仍然可以将这些运算包含在计算图中，并且使用“链式法则”逻辑对它们进行反向传播</strong>。这个结果非常重要，如果没有这个结果，那么训练深度学习模型将变得更加烦琐，后文会进一步介绍这一点。</p>
+<h3 id="示意图-11">示意图</h3>
+<img src="/ai/2026/04/24/Python%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E5%A4%8D%E6%9D%82%E5%87%BD%E6%95%B0%E4%B8%AD%E7%9A%84%E5%90%8E%E5%90%91%E4%BC%A0%E9%80%92.png" class="" title="复杂函数中的后向传递">
+<p>只需要计算每个组成函数的偏导数，在其输入处进行求值，并将结果相乘，就可以得到最终的导数。要依次计算这些偏导数，唯一的方法就是从上述数学层面计算。</p>
+<h3 id="代码-11">代码</h3>
+<p>现在通过代码封装前面推导出的内容，此过程有助于加深对内容的理解：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">matrix_function_backward_sum_1</span>(<span class="params">X: ndarray,</span></span><br><span class="line"><span class="params">                                   W: ndarray,</span></span><br><span class="line"><span class="params">                                   sigma: Array_Function</span>) -&gt; ndarray:</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    计算矩阵函数相对于第一个矩阵输入的和的导数。</span></span><br><span class="line"><span class="string">    &#x27;&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">assert</span> X.shape[<span class="number">1</span>] == W.shape[<span class="number">0</span>]</span><br><span class="line">    <span class="comment"># 矩阵乘法</span></span><br><span class="line">    N = np.dot(X, W)</span><br><span class="line">    <span class="comment"># 通过sigma传递矩阵乘法的输出</span></span><br><span class="line">    S = sigma(N)</span><br><span class="line">    <span class="comment"># 将所有元素相加</span></span><br><span class="line">    L = np.<span class="built_in">sum</span>(S)</span><br><span class="line">    <span class="comment"># 注意，这里按数量指代导数，这点与数学不同，在数学中使用的是它们的函数名</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># dLdS——都是1</span></span><br><span class="line">    dLdS = np.ones_like(S)</span><br><span class="line">    <span class="comment"># dSdN</span></span><br><span class="line">    dSdN = deriv(sigma, N)</span><br><span class="line">    <span class="comment"># dLdN</span></span><br><span class="line">    dLdN = dLdS * dSdN</span><br><span class="line">    <span class="comment"># dNdX</span></span><br><span class="line">    dNdX = np.transpose(W, (<span class="number">1</span>, <span class="number">0</span>))</span><br><span class="line">    <span class="comment"># dLdX</span></span><br><span class="line">    dLdX = np.dot(dSdN, dNdX)</span><br><span class="line">    <span class="keyword">return</span> dLdX</span><br></pre></td></tr></table></figure>
+<p>现在，确认一切正常：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">np.random.seed(<span class="number">190204</span>)</span><br><span class="line">X = np.random.randn(<span class="number">3</span>, <span class="number">3</span>)</span><br><span class="line">W = np.random.randn(<span class="number">3</span>, <span class="number">2</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;X:&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(X)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;L:&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">round</span>(matrix_function_forward_sum(X, W, sigmoid), <span class="number">4</span>))</span><br><span class="line"><span class="built_in">print</span>()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;dLdX:&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(matrix_function_backward_sum_1(X, W , sigmoid))</span><br><span class="line">X:</span><br><span class="line">[[–<span class="number">1.5775</span> –<span class="number">0.6664</span> <span class="number">0.6391</span>]</span><br><span class="line">[–<span class="number">0.5615</span> <span class="number">0.7373</span> –<span class="number">1.4231</span>]</span><br><span class="line">[–<span class="number">1.4435</span> –<span class="number">0.3913</span> <span class="number">0.1539</span>]]</span><br><span class="line">L:</span><br><span class="line"><span class="number">2.3755</span></span><br><span class="line">dLdX:</span><br><span class="line">[[ <span class="number">0.2489</span> –<span class="number">0.3748</span> <span class="number">0.0112</span>]</span><br><span class="line">[ <span class="number">0.126</span> –<span class="number">0.2781</span> –<span class="number">0.1395</span>]</span><br><span class="line">[ <span class="number">0.2299</span> –<span class="number">0.3662</span> –<span class="number">0.0225</span>]]</span><br></pre></td></tr></table></figure>
+<p>和前面的示例一样，由于 <code>dldx</code> 表示 <span
+class="math inline"><em>X</em></span> 相对于 <span
+class="math inline"><em>L</em></span>
+的梯度，因此这意味着，左上角的元素表示 <span
+class="math inline">$\frac{\partial \Lambda}{\partial x_{11}}(X, W) =
+0.2489$</span>。</p>
+<p>如果这个示例的矩阵数学是正确的，则将 <span
+class="math inline"><em>x</em><sub>11</sub></span> 增加 <span
+class="math inline">0.001</span> 会导致 <span
+class="math inline"><em>L</em></span> 增加 <span
+class="math inline">0.001 × 0.2489</span>。事实上，代码的运行情况是这样的：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">X1 = X.copy()</span><br><span class="line">X1[<span class="number">0</span>, <span class="number">0</span>] += <span class="number">0.001</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">round</span>(</span><br><span class="line">(matrix_function_forward_sum(X1, W, sigmoid) - \</span><br><span class="line">matrix_function_forward_sum(X, W, sigmoid)) / <span class="number">0.001</span>, <span class="number">4</span>))</span><br><span class="line"><span class="number">0.2489</span></span><br></pre></td></tr></table></figure>
+<p>看起来梯度的计算是正确的！</p>
+<h4 id="直观地描述梯度">直观地描述梯度</h4>
+<p>回到前面提到的内容，将元素<span
+class="math inline"><em>x</em><sub>11</sub></span>传递给具有多重运算的函数，包括矩阵乘法、
+sigmoid 函数、求和运算。其中的矩阵乘法实际上是由矩阵 <span
+class="math inline"><em>X</em></span> 中的 9 个输入与矩阵 <span
+class="math inline"><em>W</em></span> 中的 6 个输入相结合，从而创建出的
+6 个输出的简写。然而，也可以将其视为单独的函数 WNSL，如下图所示。</p>
+<img src="/ai/2026/04/24/Python%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E7%94%A8%E5%8D%95%E4%B8%AA%E5%87%BD%E6%95%B0WNSL%E6%9D%A5%E6%8F%8F%E8%BF%B0%E5%B5%8C%E5%A5%97%E5%87%BD%E6%95%B0.png" class="" title="用单个函数WNSL来描述嵌套函数">
+<p>由于每个函数都是可微的，因此整个函数就是一个以 <span
+class="math inline"><em>x</em><sub>11</sub></span>
+为输入的可微函数。另外，梯度就是 <span
+class="math inline">$\frac{dL}{dx_{11}}$</span>。为了使其可视化，可以简单地绘制
+<span class="math inline"><em>L</em></span> 随着 <span
+class="math inline"><em>x</em><sub>11</sub></span>
+的变化而变化的情况。</p>
+<p><span
+class="math inline"><em>x</em><sub>11</sub></span>的初始值是-1.5775：
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;X:&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(X)</span><br><span class="line">X:</span><br><span class="line">[[–<span class="number">1.5775</span> –<span class="number">0.6664</span> <span class="number">0.6391</span>]</span><br><span class="line">[–<span class="number">0.5615</span> <span class="number">0.7373</span> –<span class="number">1.4231</span>]</span><br><span class="line">[–<span class="number">1.4435</span> –<span class="number">0.3913</span> <span class="number">0.1539</span>]]</span><br></pre></td></tr></table></figure></p>
+<p>对于将 <span class="math inline"><em>X</em></span> 和 <span
+class="math inline"><em>W</em></span> 输入到前面定义的计算图中，或者说将
+<span class="math inline"><em>X</em></span> 和 <span
+class="math inline"><em>W</em></span>
+输入到前面代码调用的函数中，如果绘制整个过程中所得到的 L
+值的图像，并且除了 <span
+class="math inline"><em>x</em><sub>11</sub>(<em>X</em>[0, 0])</span>外不做任何变动，可以得到下图所示的结果。</p>
+<img src="/ai/2026/04/24/Python%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/%E5%9C%A8%E4%BF%9D%E6%8C%81%20X%20%E5%92%8C%20W%20%E7%9A%84%E5%80%BC%E4%B8%BA%E5%B8%B8%E6%95%B0%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%EF%BC%8C%20L%20%E4%B8%8E%20x11%20%E7%9A%84%E5%AF%B9%E5%BA%94%E5%85%B3%E7%B3%BB.png" class="" title="在保持 X 和 W 的值为常数的情况下， L 与 x11 的对应关系">
+<p>确实，在只变动 <span
+class="math inline"><em>x</em><sub>11</sub></span>
+的情况下，这种关系看起来很明显。可以看到，此函数在纵轴上大约增加了
+0.5（从刚好超过 2.1 到刚好超过 2.6），并且在横轴上大约增加了
+2。因此，斜率大约为 <span class="math inline">$\frac{0.5}{2} =
+0.25$</span>，这正是刚刚计算的结果！</p>
+<p>复杂的矩阵数学事实上正确地计算了 <span
+class="math inline"><em>L</em></span> 相对于 <span
+class="math inline"><em>X</em></span>
+中所有元素的偏导数。此外，可以用类似的方法计算 <span
+class="math inline"><em>L</em></span> 相对于 <span
+class="math inline"><em>W</em></span> 的梯度。</p>
+<h2 id="十四小结">十四、小结</h2>
+<p>学完本章之后，你应该有信心理解复杂的嵌套数学函数，并通过将它们概念化为一系列盒子来解释它们的工作原理，每个盒子代表一个由线连接的单一组成函数。尤其需要注意的是，即使存在涉及二维
+ndarray
+的矩阵乘法，也可以编写代码来计算这些函数的输出相对于任何输入的导数，理解正确计算这些导数背后的数学原理。掌握这些基本概念，有助于接下来构建和训练神经网络。加油！</p>
+<h2 id="参考">参考</h2>
+<ul>
 <li>《Python深度学习入门：从零开始构建CNN和RNN》</li>
 </ul>
-</div><div class="tags"><ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/ai/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" rel="tag">深度学习</a></li></ul></div><div class="post-nav"><a class="next" href="/ai/2026/04/10/%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6%E4%B8%8ETransformer/">注意力机制与Transformer</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="https://thginwalker.github.io"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/ai/categories/Hexo%E6%95%99%E7%A8%8B/">Hexo教程</a></li><li class="category-list-item"><a class="category-list-link" href="/ai/categories/NLP/">NLP</a></li><li class="category-list-item"><a class="category-list-link" href="/ai/categories/Transformer/">Transformer</a></li><li class="category-list-item"><a class="category-list-link" href="/ai/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/ai/tags/NLP/" style="font-size: 15px;">NLP</a> <a href="/ai/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 15px;">深度学习</a> <a href="/ai/tags/%E6%8A%80%E6%9C%AF/" style="font-size: 15px;">技术</a> <a href="/ai/tags/RNN/" style="font-size: 15px;">RNN</a> <a href="/ai/tags/LSTM/" style="font-size: 15px;">LSTM</a> <a href="/ai/tags/%E5%85%B6%E4%BB%96/" style="font-size: 15px;">其他</a> <a href="/ai/tags/Transformer/" style="font-size: 15px;">Transformer</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/ai/2026/04/24/Python%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/">Python深度学习入门基础（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/ai/2026/04/10/%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6%E4%B8%8ETransformer/">注意力机制与Transformer</a></li><li class="post-list-item"><a class="post-list-link" href="/ai/2026/03/14/RNN%E3%80%81LSTM%E4%B8%8EGRU/">RNN、LSTM与GRU</a></li><li class="post-list-item"><a class="post-list-link" href="/ai/2026/03/12/NLP%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">NLP基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/ai/2026/03/01/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/">大模型学习路线</a></li><li class="post-list-item"><a class="post-list-link" href="/ai/2026/02/23/%E5%A6%82%E4%BD%95%E5%86%99hexo%E5%8D%9A%E5%AE%A2/">如何写hexo博客</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="https://thginwalker.github.io/deal/" title="交易" target="_blank">交易</a><ul></ul><a href="https://thginwalker.github.io/deal/" title="目标" target="_blank">目标</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2026 <a href="/ai/." rel="nofollow">小小博客.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/ai/js/totop.js?v=1.0.0" async></script><script type="text/javascript" src="https://unpkg.com/@fancyapps/fancybox/dist/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/ai/js/fancybox.js?v=1.0.0" async></script><link rel="stylesheet" type="text/css" href="https://unpkg.com/@fancyapps/fancybox/dist/jquery.fancybox.min.css"><script type="text/javascript" src="/ai/js/copycode.js?v=1.0.0" successtext="复制成功！"></script><link rel="stylesheet" type="text/css" href="/ai/css/copycode.css?v=1.0.0"><script type="text/javascript" src="/ai/js/codeblock-resizer.js?v=1.0.0"></script><script type="text/javascript" src="/ai/js/smartresize.js?v=1.0.0"></script></div></body></html>
+</div><div class="tags"><ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/ai/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" rel="tag">深度学习</a></li></ul></div><div class="post-nav"><a class="pre" href="/ai/2026/04/25/Python%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/">Python深度学习入门基础（二）</a><a class="next" href="/ai/2026/04/10/%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6%E4%B8%8ETransformer/">注意力机制与Transformer</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="https://thginwalker.github.io"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/ai/categories/Hexo%E6%95%99%E7%A8%8B/">Hexo教程</a></li><li class="category-list-item"><a class="category-list-link" href="/ai/categories/NLP/">NLP</a></li><li class="category-list-item"><a class="category-list-link" href="/ai/categories/Transformer/">Transformer</a></li><li class="category-list-item"><a class="category-list-link" href="/ai/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/ai/tags/RNN/" style="font-size: 15px;">RNN</a> <a href="/ai/tags/LSTM/" style="font-size: 15px;">LSTM</a> <a href="/ai/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 15px;">深度学习</a> <a href="/ai/tags/NLP/" style="font-size: 15px;">NLP</a> <a href="/ai/tags/%E6%8A%80%E6%9C%AF/" style="font-size: 15px;">技术</a> <a href="/ai/tags/%E5%85%B6%E4%BB%96/" style="font-size: 15px;">其他</a> <a href="/ai/tags/Transformer/" style="font-size: 15px;">Transformer</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/ai/2026/04/26/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">从零开始深度学习</a></li><li class="post-list-item"><a class="post-list-link" href="/ai/2026/04/25/Python%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/">Python深度学习入门基础（二）</a></li><li class="post-list-item"><a class="post-list-link" href="/ai/2026/04/24/Python%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/">Python深度学习入门基础（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/ai/2026/04/10/%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6%E4%B8%8ETransformer/">注意力机制与Transformer</a></li><li class="post-list-item"><a class="post-list-link" href="/ai/2026/03/14/RNN%E3%80%81LSTM%E4%B8%8EGRU/">RNN、LSTM与GRU</a></li><li class="post-list-item"><a class="post-list-link" href="/ai/2026/03/12/NLP%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">NLP基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/ai/2026/03/01/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/">大模型学习路线</a></li><li class="post-list-item"><a class="post-list-link" href="/ai/2026/02/23/%E5%A6%82%E4%BD%95%E5%86%99hexo%E5%8D%9A%E5%AE%A2/">如何写hexo博客</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="https://thginwalker.github.io/deal/" title="交易" target="_blank">交易</a><ul></ul><a href="https://thginwalker.github.io/deal/" title="目标" target="_blank">目标</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2026 <a href="/ai/." rel="nofollow">小小博客.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/ai/js/totop.js?v=1.0.0" async></script><script type="text/javascript" src="https://unpkg.com/@fancyapps/fancybox/dist/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/ai/js/fancybox.js?v=1.0.0" async></script><link rel="stylesheet" type="text/css" href="https://unpkg.com/@fancyapps/fancybox/dist/jquery.fancybox.min.css"><script type="text/javascript" src="/ai/js/copycode.js?v=1.0.0" successtext="复制成功！"></script><link rel="stylesheet" type="text/css" href="/ai/css/copycode.css?v=1.0.0"><script type="text/x-mathjax-config">MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+</script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML" async></script><script type="text/javascript" src="/ai/js/codeblock-resizer.js?v=1.0.0"></script><script type="text/javascript" src="/ai/js/smartresize.js?v=1.0.0"></script></div></body></html>
