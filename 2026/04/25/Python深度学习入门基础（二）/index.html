@@ -62,8 +62,117 @@ class="math inline"><em>X</em></span>
 <p>最后将所有这些具体化，并开始为真实的数据集构建第一个模型。接下来将从一个简单的线性回归模型入手，并展示如何用（一）中介绍的构成要素来表达它。</p>
 <h2 id="三线性回归">三、线性回归</h2>
 <p><strong>线性回归</strong>（linear
-regression）通常表示为如下形式：</p>
+regression）通常表示为如下形式：<br />
+<span
+class="math display"><em>y</em><sub><em>i</em></sub> = <em>β</em><sub>0</sub> + <em>β</em><sub>1</sub> × <em>x</em><sub>1</sub> + … + <em>β</em><sub><em>n</em></sub> × <em>x</em><sub><em>k</em></sub> + <em>ϵ</em></span></p>
+<p>该表示法从数学上描述了这样一个观点：每个目标的数值是 <span
+class="math inline"><em>X</em></span> 的 <span
+class="math inline"><em>k</em></span> 个特征的线性组合，再加上 <span
+class="math inline"><em>β</em><sub>0</sub></span>
+项以调整预测的基线值，即当所有特征的值为 0 时所做的预测。</p>
+<h3 id="线性回归示意图">线性回归：示意图</h3>
+<img src="/ai/2026/04/25/Python%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E4%BB%8E%E4%B9%98%E6%B3%95%E5%92%8C%E5%8A%A0%E6%B3%95%E7%9A%84%E5%B1%82%E9%9D%A2%E7%90%86%E8%A7%A3%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E8%BF%90%E7%AE%97.png" class="" title="从乘法和加法的层面理解线性回归运算">
+<p><strong>“训练”模型</strong></p>
+<p>“训练”一个模型意味着什么呢？概括地讲，模型接受数据，并以某种方式将其参数进行组合，以生成预测结果。例如，前面展示的线性回归模型接受数据
+<span class="math inline"><em>X</em></span> 和参数 <span
+class="math inline"><em>W</em></span>，并使用矩阵乘法产生预测 <span
+class="math inline"><em>P</em><sub>batch</sub></span>： <span
+class="math display">$$
+P_{\text{batch}} = \begin{bmatrix} P_1 \\ P_2 \\ P_3 \end{bmatrix}
+$$</span></p>
+<p>但是，要训练模型，还需要一个关键信息，即预测是否正确。要了解这一点，将目标
+<span class="math inline"><em>y</em><sub>batch</sub></span>
+的向量与传递给该函数的一系列观测值 <span
+class="math inline"><em>X</em><sub>batch</sub></span>
+关联起来，并计算出一个数字，它是 <span
+class="math inline"><em>y</em><sub>batch</sub></span> 和 <span
+class="math inline"><em>P</em><sub>batch</sub></span>
+的函数，代表模型对其所做预测的“惩罚”。这里可以选择<strong>均方误差</strong>（mean
+squared error, MSE），即模型预测“失误”的均值：</p>
+<p><span class="math display">$$
+\text{MSE}(P_{\text{batch}}, y_{\text{batch}}) =
+\text{MSE}\left(\begin{bmatrix} P_1 \\ P_2 \\ P_3 \end{bmatrix},
+\begin{bmatrix} y_1 \\ y_2 \\ y_3 \end{bmatrix}\right) = \frac{(y_1 -
+P_1)^2 + (y_2 - P_2)^2 + (y_3 - P_3)^2}{3}
+$$</span></p>
+<p>可以把这个数字称作 <span
+class="math inline"><em>L</em></span>，这里的关键是获得这个数字，一旦有了它，就可以使用（一）中介绍的所有技术来计算该数字相对于
+<span class="math inline"><em>W</em></span>
+中每个元素的梯度。然后，<strong>可以使用这些导数来更新<span
+class="math inline"><em>W</em></span>中的每个元素，逐渐减少<span
+class="math inline"><em>L</em></span>的值</strong>。可以重复这一过程，从而“训练”模型。</p>
+<h3
+id="线性回归更有用的示意图和数学">线性回归：更有用的示意图和数学</h3>
+<img src="/ai/2026/04/25/Python%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E7%94%A8%E8%AE%A1%E7%AE%97%E5%9B%BE%E8%A1%A8%E7%A4%BA%E7%9A%84%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E6%96%B9%E7%A8%8B.png" class="" title="用计算图表示的线性回归方程">
+<p>为了强调上图仍然表示一个嵌套函数，可以使用损失值 <span
+class="math inline"><em>L</em></span>，最终计算如下。</p>
+<p><span
+class="math display"><em>L</em> = <em>Λ</em>(<em>ν</em>(<em>X</em>, <em>W</em>), <em>y</em>)</span></p>
+<h3 id="加入截距项">加入截距项</h3>
+<p>将模型表示为示意图，这样做可以从概念上展示如何向模型添加截距项。仅需在末尾添加一个额外的步骤，即添加偏差项。</p>
+<img src="/ai/2026/04/25/Python%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E7%9A%84%E8%AE%A1%E7%AE%97%E5%9B%BE%EF%BC%8C%E6%9C%AB%E5%B0%BE%E5%8A%A0%E4%B8%8A%E4%B8%80%E4%B8%AA%E5%81%8F%E5%B7%AE%E9%A1%B9.png" class="" title="线性回归的计算图，末尾加上一个偏差项">
+<h3 id="线性回归代码">线性回归：代码</h3>
+<p>现在，将所有内容结合在一起编写函数，这个函数可以预测，还可以根据给定的观测数据<span
+class="math inline"><em>X</em><sub><em>b</em><em>a</em><em>t</em><em>c</em><em>h</em></sub></span>及其对应的目标<span
+class="math inline"><em>y</em><sub><em>b</em><em>a</em><em>t</em><em>c</em><em>h</em></sub></span>​计算损失值。回想一下，使用链式法则为嵌套函数计算导数涉及两个步骤：首先，执行前向传递，通过一系列运算将输入连续向前传递，并保存计算所得的量；然后，使用这些量在后向传递期间计算导数。</p>
+<p>下面的代码执行上述操作，将前向传递中计算所得的量保存在字典中。此外，为了区分前向传递中计算所得的量和参数本身（后向传递中同样需要），该函数将接受一个包含参数的字典：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> <span class="type">Tuple</span>, <span class="type">Dict</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> ndarray</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">forward_linear_regression</span>(<span class="params">X_batch: ndarray,</span></span><br><span class="line"><span class="params">                              y_batch: ndarray,</span></span><br><span class="line"><span class="params">                              weights: <span class="type">Dict</span>[<span class="built_in">str</span>, ndarray]</span>) -&gt; <span class="type">Tuple</span>[<span class="built_in">float</span>, <span class="type">Dict</span>[<span class="built_in">str</span>, ndarray]]:</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    分步线性回归的前向传递。</span></span><br><span class="line"><span class="string">    &#x27;&#x27;&#x27;</span></span><br><span class="line">    <span class="comment"># 断言X和y的批次大小相等</span></span><br><span class="line">    <span class="keyword">assert</span> X_batch.shape[<span class="number">0</span>] == y_batch.shape[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 断言矩阵惩乘法有效</span></span><br><span class="line">    <span class="keyword">assert</span> X_batch.shape[<span class="number">1</span>] == weights[<span class="string">&#x27;W&#x27;</span>].shape[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 断言B只是1 × 1的ndarray</span></span><br><span class="line">    <span class="keyword">assert</span> weights[<span class="string">&#x27;B&#x27;</span>].shape[<span class="number">0</span>] == weights[<span class="string">&#x27;B&#x27;</span>].shape[<span class="number">1</span>] == <span class="number">1</span></span><br><span class="line">    <span class="comment"># 执行前向传递中的运算</span></span><br><span class="line">    N = np.dot(X_batch, weights[<span class="string">&#x27;W&#x27;</span>])</span><br><span class="line"></span><br><span class="line">    P = N + weights[<span class="string">&#x27;B&#x27;</span>]</span><br><span class="line">    loss = np.mean(np.power(y_batch - P, <span class="number">2</span>))</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 保存前向传递中计算的信息</span></span><br><span class="line">    forward_info: <span class="type">Dict</span>[<span class="built_in">str</span>, ndarray] = &#123;&#125;</span><br><span class="line">    forward_info[<span class="string">&#x27;X&#x27;</span>] = X_batch</span><br><span class="line">    forward_info[<span class="string">&#x27;N&#x27;</span>] = N</span><br><span class="line">    forward_info[<span class="string">&#x27;P&#x27;</span>] = P</span><br><span class="line">    forward_info[<span class="string">&#x27;y&#x27;</span>] = y_batch</span><br><span class="line">    <span class="keyword">return</span> loss, forward_info</span><br></pre></td></tr></table></figure>
+<p>现在，我们已经准备就绪，可以开始“训练”这个模型了。接下来详细了解训练模型的意义及其实现方法。</p>
 <h2 id="四训练模型">四、训练模型</h2>
+<p>现在使用（一）中介绍的所有工具为 <span
+class="math inline"><em>W</em></span> 中的每个 <span
+class="math inline"><em>w</em><sub><em>i</em></sub></span> 计算 <span
+class="math inline">$\frac{\partial L}{\partial
+w_i}$</span>，同时也会计算 <span class="math inline">$\frac{\partial
+L}{\partial
+b}$</span>。如何实现呢？因为该函数的前向传递是通过一系列嵌套函数传递输入的，所以后向传递将仅涉及计算每个函数的偏导数，算出函数输入处的那些导数并将它们相乘。</p>
+<h3 id="计算梯度示意图">计算梯度：示意图</h3>
+<img src="/ai/2026/04/25/Python%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/%E5%90%8E%E5%90%91%E4%BC%A0%E9%80%92%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E8%AE%A1%E7%AE%97%E5%9B%BE.png" class="" title="后向传递线性回归计算图">
+<p>从概念上讲，我们需要类似上图所示的效果。</p>
+<p>我们只需向后退，计算每个组成函数的导数，算出函数在前向传递中输入处的导数，最后将这些导数相乘。这是大致的过程，下面来看一下实施细节。</p>
+<h3 id="计算梯度数学和一些代码">计算梯度：数学和一些代码</h3>
+<p>从上图可以看到，最终要计算的导数乘积为：</p>
+<p><span class="math display">$$
+\frac{\partial \Lambda}{\partial P}(P, Y) \times \frac{\partial
+\alpha}{\partial N}(N, B) \times \frac{\partial \nu}{\partial W}(X, W)
+$$</span></p>
+<p>它由 3 个部分组成，下面依次计算每个部分。</p>
+<p>首先是 <span class="math inline">$\frac{\partial \Lambda}{\partial
+P}(P, Y)$</span>。对于 <span class="math inline"><em>Y</em></span> 和
+<span class="math inline"><em>P</em></span> 中的每个元素，因为 <span
+class="math inline"><em>Λ</em>(<em>P</em>, <em>Y</em>) = (<em>Y</em> − <em>P</em>)<sup>2</sup></span>，所以可以得到：</p>
+<p><span class="math display">$$
+\frac{\partial \Lambda}{\partial P}(P, Y) = -1 \times (2 \times (Y - P))
+$$</span></p>
+<p>我们有点超前了，但代码很简单：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dLdP = -<span class="number">2</span> * (Y - P)</span><br></pre></td></tr></table></figure>
+<p>接下来要计算的是一个涉及矩阵的表达式：<span
+class="math inline">$\frac{\partial \alpha}{\partial N}(N,
+B)$</span>。由于 <span class="math inline"><em>α</em></span>
+只是加法，因此在（一）中用数字计算的逻辑同样适用于此，那就是将 <span
+class="math inline"><em>N</em></span> 中的任意元素增加 1 单位，那么
+<span
+class="math inline"><em>P</em> = <em>α</em>(<em>N</em>, <em>B</em>) = <em>N</em> + <em>B</em></span>
+会同时增加 1 单位。这样一来，<span class="math inline">$\frac{\partial
+\alpha}{\partial N}(N, B)$</span> 只是一个 +1+s 的矩阵，其形状与 <span
+class="math inline"><em>N</em></span>
+相同。因此，这个表达式对应的代码非常简单，如下所示：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dPdN = np.ones_like(N)</span><br></pre></td></tr></table></figure>
+<p>最后计算 <span class="math inline">$\frac{\partial \nu}{\partial
+W}(X, W)$</span>。正如第 1
+章所述，当计算嵌套函数的导数时（其中一个组成函数是矩阵乘法），可以这样做：</p>
+<p><span class="math display">$$
+\frac{\partial \nu}{\partial W}(X, W) = X^{\mathrm{T}}
+$$</span></p>
+<p>代码很简单：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dNdW = np.transpose(X, (<span class="number">1</span>, <span class="number">0</span>))</span><br></pre></td></tr></table></figure>
+<p>下面对截距项执行相同的操作。因为只是将其相加，所以截距项相对于输出的偏导数就是
+1：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dPdB = np.ones_like(weights[<span class="string">&#x27;B&#x27;</span>])</span><br></pre></td></tr></table></figure>
+<p>最后一步是将它们相乘，确保根据（一）中所述的计算过程对涉及
+<code>dNdW</code> 和 <code>dNdX</code> 的矩阵乘法使用正确的顺序。</p>
+<h3 id="计算梯度完整的代码">计算梯度：完整的代码</h3>
+<h3 id="使用梯度训练模型">使用梯度训练模型</h3>
 <h2 id="五评估模型训练集与测试集">五、评估模型：训练集与测试集</h2>
 <h2 id="六评估模型代码">六、评估模型：代码</h2>
 <h2 id="七从零开始构建神经网络">七、从零开始构建神经网络</h2>
@@ -71,7 +180,7 @@ regression）通常表示为如下形式：</p>
 <h2 id="九小结">九、小结</h2>
 <h2 id="参考">参考</h2>
 <p>《Python深度学习入门：从零开始构建CNN和RNN》</p>
-</div><div class="tags"><ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/ai/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" rel="tag">深度学习</a></li></ul></div><div class="post-nav"><a class="pre" href="/ai/2026/04/26/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">从零开始深度学习</a><a class="next" href="/ai/2026/04/24/Python%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/">Python深度学习入门基础（一）</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="https://thginwalker.github.io"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/ai/categories/Hexo%E6%95%99%E7%A8%8B/">Hexo教程</a></li><li class="category-list-item"><a class="category-list-link" href="/ai/categories/NLP/">NLP</a></li><li class="category-list-item"><a class="category-list-link" href="/ai/categories/Transformer/">Transformer</a></li><li class="category-list-item"><a class="category-list-link" href="/ai/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/ai/tags/RNN/" style="font-size: 15px;">RNN</a> <a href="/ai/tags/LSTM/" style="font-size: 15px;">LSTM</a> <a href="/ai/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 15px;">深度学习</a> <a href="/ai/tags/NLP/" style="font-size: 15px;">NLP</a> <a href="/ai/tags/%E6%8A%80%E6%9C%AF/" style="font-size: 15px;">技术</a> <a href="/ai/tags/%E5%85%B6%E4%BB%96/" style="font-size: 15px;">其他</a> <a href="/ai/tags/Transformer/" style="font-size: 15px;">Transformer</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/ai/2026/04/26/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">从零开始深度学习</a></li><li class="post-list-item"><a class="post-list-link" href="/ai/2026/04/25/Python%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/">Python深度学习入门基础（二）</a></li><li class="post-list-item"><a class="post-list-link" href="/ai/2026/04/24/Python%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/">Python深度学习入门基础（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/ai/2026/04/10/%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6%E4%B8%8ETransformer/">注意力机制与Transformer</a></li><li class="post-list-item"><a class="post-list-link" href="/ai/2026/03/14/RNN%E3%80%81LSTM%E4%B8%8EGRU/">RNN、LSTM与GRU</a></li><li class="post-list-item"><a class="post-list-link" href="/ai/2026/03/12/NLP%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">NLP基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/ai/2026/03/01/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/">大模型学习路线</a></li><li class="post-list-item"><a class="post-list-link" href="/ai/2026/02/23/%E5%A6%82%E4%BD%95%E5%86%99hexo%E5%8D%9A%E5%AE%A2/">如何写hexo博客</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="https://thginwalker.github.io/deal/" title="交易" target="_blank">交易</a><ul></ul><a href="https://thginwalker.github.io/deal/" title="目标" target="_blank">目标</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2026 <a href="/ai/." rel="nofollow">小小博客.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/ai/js/totop.js?v=1.0.0" async></script><script type="text/javascript" src="https://unpkg.com/@fancyapps/fancybox/dist/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/ai/js/fancybox.js?v=1.0.0" async></script><link rel="stylesheet" type="text/css" href="https://unpkg.com/@fancyapps/fancybox/dist/jquery.fancybox.min.css"><script type="text/javascript" src="/ai/js/copycode.js?v=1.0.0" successtext="复制成功！"></script><link rel="stylesheet" type="text/css" href="/ai/css/copycode.css?v=1.0.0"><script type="text/x-mathjax-config">MathJax.Hub.Config({
+</div><div class="tags"><ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/ai/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" rel="tag">深度学习</a></li></ul></div><div class="post-nav"><a class="pre" href="/ai/2026/04/26/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">从零开始深度学习</a><a class="next" href="/ai/2026/04/24/Python%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/">Python深度学习入门基础（一）</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="https://thginwalker.github.io"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/ai/categories/Hexo%E6%95%99%E7%A8%8B/">Hexo教程</a></li><li class="category-list-item"><a class="category-list-link" href="/ai/categories/NLP/">NLP</a></li><li class="category-list-item"><a class="category-list-link" href="/ai/categories/Transformer/">Transformer</a></li><li class="category-list-item"><a class="category-list-link" href="/ai/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/ai/tags/%E5%85%B6%E4%BB%96/" style="font-size: 15px;">其他</a> <a href="/ai/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 15px;">深度学习</a> <a href="/ai/tags/NLP/" style="font-size: 15px;">NLP</a> <a href="/ai/tags/RNN/" style="font-size: 15px;">RNN</a> <a href="/ai/tags/LSTM/" style="font-size: 15px;">LSTM</a> <a href="/ai/tags/Transformer/" style="font-size: 15px;">Transformer</a> <a href="/ai/tags/%E6%8A%80%E6%9C%AF/" style="font-size: 15px;">技术</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/ai/2026/05/03/My-New-Post/">My New Post</a></li><li class="post-list-item"><a class="post-list-link" href="/ai/2026/04/26/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">从零开始深度学习</a></li><li class="post-list-item"><a class="post-list-link" href="/ai/2026/04/25/Python%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%8C%EF%BC%89/">Python深度学习入门基础（二）</a></li><li class="post-list-item"><a class="post-list-link" href="/ai/2026/04/24/Python%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/">Python深度学习入门基础（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/ai/2026/04/10/%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6%E4%B8%8ETransformer/">注意力机制与Transformer</a></li><li class="post-list-item"><a class="post-list-link" href="/ai/2026/03/14/RNN%E3%80%81LSTM%E4%B8%8EGRU/">RNN、LSTM与GRU</a></li><li class="post-list-item"><a class="post-list-link" href="/ai/2026/03/12/NLP%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">NLP基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/ai/2026/03/01/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/">大模型学习路线</a></li><li class="post-list-item"><a class="post-list-link" href="/ai/2026/02/23/%E5%A6%82%E4%BD%95%E5%86%99hexo%E5%8D%9A%E5%AE%A2/">如何写hexo博客</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="https://thginwalker.github.io/deal/" title="交易" target="_blank">交易</a><ul></ul><a href="https://thginwalker.github.io/deal/" title="目标" target="_blank">目标</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2026 <a href="/ai/." rel="nofollow">小小博客.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/ai/js/totop.js?v=1.0.0" async></script><script type="text/javascript" src="https://unpkg.com/@fancyapps/fancybox/dist/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/ai/js/fancybox.js?v=1.0.0" async></script><link rel="stylesheet" type="text/css" href="https://unpkg.com/@fancyapps/fancybox/dist/jquery.fancybox.min.css"><script type="text/javascript" src="/ai/js/copycode.js?v=1.0.0" successtext="复制成功！"></script><link rel="stylesheet" type="text/css" href="/ai/css/copycode.css?v=1.0.0"><script type="text/x-mathjax-config">MathJax.Hub.Config({
   tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
   });
 </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML" async></script><script type="text/javascript" src="/ai/js/codeblock-resizer.js?v=1.0.0"></script><script type="text/javascript" src="/ai/js/smartresize.js?v=1.0.0"></script></div></body></html>
